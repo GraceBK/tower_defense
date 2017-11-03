@@ -33,6 +33,7 @@
 		65E20AD71FACC8500088885F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		65E20AD91FACC8720088885F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		65E20ADE1FACCAA90088885F /* libEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEngine.a; sourceTree = "<group>"; };
+		65E20AE11FACCCB40088885F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		65E20ADC1FACC95D0088885F /* doc */ = {
 			isa = PBXGroup;
 			children = (
+				65E20AE11FACCCB40088885F /* README.md */,
 			);
 			path = doc;
 			sourceTree = "<group>";
