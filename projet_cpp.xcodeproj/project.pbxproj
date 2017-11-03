@@ -12,6 +12,10 @@
 		65E20AD81FACC85C0088885F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD71FACC8500088885F /* OpenGL.framework */; };
 		65E20ADA1FACC87C0088885F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD91FACC8720088885F /* GLUT.framework */; };
 		65E20AE01FACCAD00088885F /* libEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20ADE1FACCAA90088885F /* libEngine.a */; };
+		65E20AF51FACCF980088885F /* MyGraphicEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20AF11FACCF970088885F /* MyGraphicEngine.cpp */; };
+		65E20AF61FACCF980088885F /* MyControlEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20AF21FACCF970088885F /* MyControlEngine.cpp */; };
+		65E20AF71FACCF980088885F /* Papillon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20AF31FACCF970088885F /* Papillon.cpp */; };
+		65E20AF81FACCF980088885F /* MyGameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20AF41FACCF970088885F /* MyGameEngine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +39,21 @@
 		65E20ADE1FACCAA90088885F /* libEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEngine.a; sourceTree = "<group>"; };
 		65E20AE11FACCCB40088885F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		65E20AE51FACCE2B0088885F /* GL */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GL; sourceTree = "<group>"; };
+		65E20AE61FACCF850088885F /* libGraphicInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libGraphicInclude.h; sourceTree = "<group>"; };
+		65E20AE71FACCF850088885F /* GraphicEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicEngine.h; sourceTree = "<group>"; };
+		65E20AE81FACCF850088885F /* MyControlEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyControlEngine.h; sourceTree = "<group>"; };
+		65E20AE91FACCF850088885F /* ControlEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlEngine.h; sourceTree = "<group>"; };
+		65E20AEA1FACCF850088885F /* MyGraphicEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGraphicEngine.h; sourceTree = "<group>"; };
+		65E20AEB1FACCF850088885F /* Stopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stopwatch.h; sourceTree = "<group>"; };
+		65E20AEC1FACCF850088885F /* MyGameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGameEngine.h; sourceTree = "<group>"; };
+		65E20AED1FACCF850088885F /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
+		65E20AEE1FACCF850088885F /* Papillon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Papillon.h; sourceTree = "<group>"; };
+		65E20AEF1FACCF850088885F /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
+		65E20AF01FACCF850088885F /* GraphicPrimitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicPrimitives.h; sourceTree = "<group>"; };
+		65E20AF11FACCF970088885F /* MyGraphicEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyGraphicEngine.cpp; sourceTree = "<group>"; };
+		65E20AF21FACCF970088885F /* MyControlEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyControlEngine.cpp; sourceTree = "<group>"; };
+		65E20AF31FACCF970088885F /* Papillon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Papillon.cpp; sourceTree = "<group>"; };
+		65E20AF41FACCF970088885F /* MyGameEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyGameEngine.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +112,17 @@
 		65E20ADB1FACC9360088885F /* include */ = {
 			isa = PBXGroup;
 			children = (
+				65E20AE91FACCF850088885F /* ControlEngine.h */,
+				65E20AED1FACCF850088885F /* Engine.h */,
+				65E20AEF1FACCF850088885F /* GameEngine.h */,
+				65E20AE71FACCF850088885F /* GraphicEngine.h */,
+				65E20AF01FACCF850088885F /* GraphicPrimitives.h */,
+				65E20AE61FACCF850088885F /* libGraphicInclude.h */,
+				65E20AE81FACCF850088885F /* MyControlEngine.h */,
+				65E20AEC1FACCF850088885F /* MyGameEngine.h */,
+				65E20AEA1FACCF850088885F /* MyGraphicEngine.h */,
+				65E20AEE1FACCF850088885F /* Papillon.h */,
+				65E20AEB1FACCF850088885F /* Stopwatch.h */,
 				65E20AE51FACCE2B0088885F /* GL */,
 			);
 			path = include;
@@ -109,6 +139,10 @@
 		65E20ADD1FACC98F0088885F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				65E20AF21FACCF970088885F /* MyControlEngine.cpp */,
+				65E20AF41FACCF970088885F /* MyGameEngine.cpp */,
+				65E20AF11FACCF970088885F /* MyGraphicEngine.cpp */,
+				65E20AF31FACCF970088885F /* Papillon.cpp */,
 				65E20ACD1FACC7450088885F /* main.cpp */,
 			);
 			path = src;
@@ -171,7 +205,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E20AF81FACCF980088885F /* MyGameEngine.cpp in Sources */,
+				65E20AF71FACCF980088885F /* Papillon.cpp in Sources */,
+				65E20AF51FACCF980088885F /* MyGraphicEngine.cpp in Sources */,
 				65E20ACE1FACC7450088885F /* main.cpp in Sources */,
+				65E20AF61FACCF980088885F /* MyControlEngine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
