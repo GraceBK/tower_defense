@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		65E20ACE1FACC7450088885F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20ACD1FACC7450088885F /* main.cpp */; };
+		65E20AD61FACC8480088885F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD51FACC80F0088885F /* Cocoa.framework */; };
+		65E20AD81FACC85C0088885F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD71FACC8500088885F /* OpenGL.framework */; };
+		65E20ADA1FACC87C0088885F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD91FACC8720088885F /* GLUT.framework */; };
+		65E20AE01FACCAD00088885F /* libEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20ADE1FACCAA90088885F /* libEngine.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		65E20ACA1FACC7450088885F /* projet_cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = projet_cpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E20ACD1FACC7450088885F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		65E20AD51FACC80F0088885F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		65E20AD71FACC8500088885F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		65E20AD91FACC8720088885F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		65E20ADE1FACCAA90088885F /* libEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEngine.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +40,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E20AE01FACCAD00088885F /* libEngine.a in Frameworks */,
+				65E20ADA1FACC87C0088885F /* GLUT.framework in Frameworks */,
+				65E20AD81FACC85C0088885F /* OpenGL.framework in Frameworks */,
+				65E20AD61FACC8480088885F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +55,7 @@
 			children = (
 				65E20ACC1FACC7450088885F /* projet_cpp */,
 				65E20ACB1FACC7450088885F /* Products */,
+				65E20AD41FACC80F0088885F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +70,44 @@
 		65E20ACC1FACC7450088885F /* projet_cpp */ = {
 			isa = PBXGroup;
 			children = (
+				65E20ADD1FACC98F0088885F /* src */,
+				65E20ADC1FACC95D0088885F /* doc */,
+				65E20ADB1FACC9360088885F /* include */,
 				65E20ACD1FACC7450088885F /* main.cpp */,
 			);
 			path = projet_cpp;
+			sourceTree = "<group>";
+		};
+		65E20AD41FACC80F0088885F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65E20ADE1FACCAA90088885F /* libEngine.a */,
+				65E20AD91FACC8720088885F /* GLUT.framework */,
+				65E20AD71FACC8500088885F /* OpenGL.framework */,
+				65E20AD51FACC80F0088885F /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65E20ADB1FACC9360088885F /* include */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		65E20ADC1FACC95D0088885F /* doc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		65E20ADD1FACC98F0088885F /* src */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +281,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -241,6 +293,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
