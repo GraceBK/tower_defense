@@ -34,6 +34,7 @@
 		65E20AD91FACC8720088885F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		65E20ADE1FACCAA90088885F /* libEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEngine.a; sourceTree = "<group>"; };
 		65E20AE11FACCCB40088885F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		65E20AE51FACCE2B0088885F /* GL */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GL; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +72,9 @@
 		65E20ACC1FACC7450088885F /* projet_cpp */ = {
 			isa = PBXGroup;
 			children = (
-				65E20ADD1FACC98F0088885F /* src */,
 				65E20ADC1FACC95D0088885F /* doc */,
+				65E20ADD1FACC98F0088885F /* src */,
 				65E20ADB1FACC9360088885F /* include */,
-				65E20ACD1FACC7450088885F /* main.cpp */,
 			);
 			path = projet_cpp;
 			sourceTree = "<group>";
@@ -93,6 +93,7 @@
 		65E20ADB1FACC9360088885F /* include */ = {
 			isa = PBXGroup;
 			children = (
+				65E20AE51FACCE2B0088885F /* GL */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -108,6 +109,7 @@
 		65E20ADD1FACC98F0088885F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				65E20ACD1FACC7450088885F /* main.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
