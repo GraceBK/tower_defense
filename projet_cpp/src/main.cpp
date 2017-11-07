@@ -18,11 +18,12 @@ int main(int argc, char * argv[]) {
     std::cout << "Hello, World!\n";
     
     Engine e(argc, argv);
-    std::vector<Papillon *> paps;
+    //std::vector<Papillon *> paps;
+    Damier *damier = new Damier();
     
-    GraphicEngine *ge = new MyGraphicEngine(&paps);
-    GameEngine *gme = new MyGameEngine(&paps);
-    ControlEngine *ce = new MyControlEngine(&paps);
+    GraphicEngine *ge = new MyGraphicEngine(damier);
+    GameEngine *gme = new MyGameEngine(damier);
+    ControlEngine *ce = new MyControlEngine(damier);
     
     e.setGraphicEngine(ge);
     e.setGameEngine(gme);

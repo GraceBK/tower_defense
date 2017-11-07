@@ -21,7 +21,9 @@ public:
     Case(float x, float y);
     ~Case();
     
-    void drawCase();
+    void draw();
+    
+    void toString();
     
     // GETTERS et SETTERS
     float getX();

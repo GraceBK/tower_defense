@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65C8C6841FB1B58400A37F8F /* Asteroids.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C8C6821FB1B58400A37F8F /* Asteroids.cpp */; };
+		65C8C6871FB1B6D000A37F8F /* Damier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C8C6851FB1B6D000A37F8F /* Damier.cpp */; };
 		65E20ACE1FACC7450088885F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20ACD1FACC7450088885F /* main.cpp */; };
 		65E20AD61FACC8480088885F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD51FACC80F0088885F /* Cocoa.framework */; };
 		65E20AD81FACC85C0088885F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD71FACC8500088885F /* OpenGL.framework */; };
@@ -31,6 +33,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		65C8C6821FB1B58400A37F8F /* Asteroids.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Asteroids.cpp; sourceTree = "<group>"; };
+		65C8C6831FB1B58400A37F8F /* Asteroids.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Asteroids.hpp; sourceTree = "<group>"; };
+		65C8C6851FB1B6D000A37F8F /* Damier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Damier.cpp; sourceTree = "<group>"; };
+		65C8C6861FB1B6D000A37F8F /* Damier.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Damier.hpp; sourceTree = "<group>"; };
 		65E20ACA1FACC7450088885F /* projet_cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = projet_cpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E20ACD1FACC7450088885F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		65E20AD51FACC80F0088885F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -113,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				65E20AFA1FACD9040088885F /* Case.hpp */,
+				65C8C6831FB1B58400A37F8F /* Asteroids.hpp */,
+				65C8C6861FB1B6D000A37F8F /* Damier.hpp */,
 				65E20AE91FACCF850088885F /* ControlEngine.h */,
 				65E20AED1FACCF850088885F /* Engine.h */,
 				65E20AEF1FACCF850088885F /* GameEngine.h */,
@@ -144,6 +152,8 @@
 				65E20AF11FACCF970088885F /* MyGraphicEngine.cpp */,
 				65E20ACD1FACC7450088885F /* main.cpp */,
 				65E20AF91FACD9040088885F /* Case.cpp */,
+				65C8C6821FB1B58400A37F8F /* Asteroids.cpp */,
+				65C8C6851FB1B6D000A37F8F /* Damier.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -207,6 +217,8 @@
 			files = (
 				65E20AF81FACCF980088885F /* MyGameEngine.cpp in Sources */,
 				65E20AF51FACCF980088885F /* MyGraphicEngine.cpp in Sources */,
+				65C8C6841FB1B58400A37F8F /* Asteroids.cpp in Sources */,
+				65C8C6871FB1B6D000A37F8F /* Damier.cpp in Sources */,
 				65E20ACE1FACC7450088885F /* main.cpp in Sources */,
 				65E20AF61FACCF980088885F /* MyControlEngine.cpp in Sources */,
 				65E20AFB1FACD9040088885F /* Case.cpp in Sources */,

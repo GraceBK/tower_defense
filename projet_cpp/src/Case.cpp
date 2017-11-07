@@ -12,10 +12,13 @@ Case::Case(float x, float y) : posX(x), posY(y), width(0.1), height(0.1), empty(
 
 Case::~Case() {}
 
-void Case::drawCase() {
+void Case::draw() {
     GraphicPrimitives::drawFillRect2D(posX, posY, width, height, 0.122, 0.224, 0.255);
 }
 
+void Case::toString() {
+    std::cout << "Case (" << posX << ", " << posY << " --> " << isEmpty() << std::endl;
+}
 
 // GETTERS et SETTERS
 float Case::getX() { return posX; }
