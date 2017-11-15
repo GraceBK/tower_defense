@@ -6,11 +6,15 @@ void MyGraphicEngine::Draw() {
         
         if (menu_jeu->isStart() == true) {
             // Si je suis dans le mode avec 1 ligne
+            interface_player();
+            
             grille->draw_();
             interface_vaisseaux();
             interface_boutons();
         } else if (menu_jeu->isStartN() == true) {
             // Si je suis dans le mode avec n lignes
+            interface_player();
+            
             grille->draw();
             interface_vaisseaux();
             interface_boutons();
@@ -45,7 +49,7 @@ void MyGraphicEngine::interface_vaisseaux() {
     std::strcpy(boum, v2.c_str());
     std::strcpy(atomic, v3.c_str());
     
-    float x(0.55), y(0.9), n(0.08);
+    float x(-0.95), y(0.8), n(0.08);
     
     GraphicPrimitives::drawFillRect2D(x, y, n, n, 0.298, 0.667, 0.361);
     GraphicPrimitives::drawText2D(defaut, x+0.12, y, 1.0, 1.0, 1.0);
@@ -63,4 +67,18 @@ void MyGraphicEngine::interface_boutons() {
     menu_jeu->draw_home();
     menu_jeu->draw_btn_save();
     menu_jeu->draw_btn_run();
+}
+
+
+
+
+
+void MyGraphicEngine::interface_player() {
+    float x(-0.95), y(0.93);
+    char * towers = new char[7]{'T','O','W','E','R','S','\0'};
+    GraphicPrimitives::drawFillRect2D(-1.0f, 0.55f, 2.0f, 0.35f, 0.043, 0.235, 0.231);
+    
+    GraphicPrimitives::drawFillRect2D(-1.0f, -1.0f, 0.5f, 1.90f, 0.043, 0.235, 0.231);
+    
+    GraphicPrimitives::drawText2D(towers, x, y, 1.0, 1.0, 1.0);
 }

@@ -10,6 +10,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             }
             if (menu_jeu->clic_btn_save((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "SAVE: Vous avez clique sur la SAVE" << std::endl;
+                grille->save();
             }
             if (menu_jeu->clic_btn_run((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "RUN: A l'attacque" << std::endl;
@@ -22,6 +23,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             }
             if (menu_jeu->clic_btn_save((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "SAVE: Vous avez clique sur la SAVE" << std::endl;
+                grille->save();
             }
             if (menu_jeu->clic_btn_run((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "RUN: A l'attacque" << std::endl;

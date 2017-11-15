@@ -21,7 +21,7 @@ class Damier {
     int taille = 12;
     float decalage = 0.105;
     float pos_x_case_zero = -0.8f;
-    float pos_y_case_zero = -0.8f;
+    float pos_y_case_zero = -0.9f;
     
     
     std::vector<Case> grille;
@@ -39,6 +39,10 @@ public:
     int indice_vaissaux(float x, float y);
     
     Case getCase(int x);
+    
+    
+    
+    
     
     
     

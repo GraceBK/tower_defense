@@ -32,5 +32,6 @@ public:
     
     void interface_vaisseaux();
     void interface_boutons();
+    void interface_player();
     
 };
