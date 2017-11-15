@@ -38,6 +38,8 @@ public:
     void draw_btn_exit();
     
     void draw_home();
+    void draw_btn_save();
+    void draw_btn_run();
     
     // Gestion des clics
     bool clic_btn_one(float clic_x, float clic_y);
@@ -46,6 +48,8 @@ public:
     bool clic_btn_exit(float clic_x, float clic_y);
     
     bool clic_home(float clic_x, float clic_y);
+    bool clic_btn_save(float clic_x, float clic_y);
+    bool clic_btn_run(float clic_x, float clic_y);
     
     // GETTERS et SETTERS
     bool isOver();

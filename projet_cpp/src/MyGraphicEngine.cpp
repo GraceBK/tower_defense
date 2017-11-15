@@ -5,8 +5,12 @@ void MyGraphicEngine::Draw() {
     if (menu_jeu->isOver() == false) {
         
         if (menu_jeu->isStart() == true) {
+            // Si je suis dans le mode avec 1 ligne
             grille->draw_();
+            interface_vaisseaux();
+            interface_boutons();
         } else if (menu_jeu->isStartN() == true) {
+            // Si je suis dans le mode avec n lignes
             grille->draw();
             interface_vaisseaux();
             interface_boutons();
@@ -57,4 +61,6 @@ void MyGraphicEngine::interface_vaisseaux() {
 
 void MyGraphicEngine::interface_boutons() {
     menu_jeu->draw_home();
+    menu_jeu->draw_btn_save();
+    menu_jeu->draw_btn_run();
 }

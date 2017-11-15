@@ -4,6 +4,11 @@
 
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        if (menu_jeu->isStart()) {
+            if (menu_jeu->clic_home((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
+                menu_jeu->setStart(false);
+            }
+        }
         if (menu_jeu->isStartN()) {
             //
             if (menu_jeu->clic_home((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {

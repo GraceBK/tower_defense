@@ -19,7 +19,7 @@ class Damier {
     int taille = 12;
     float decalage = 0.105;
     float pos_x_case_zero = -0.8f;
-    float pos_y_case_zero = -1.0f;
+    float pos_y_case_zero = -0.8f;
     
     
     std::vector<Case> grille;
