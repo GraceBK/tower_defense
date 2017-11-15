@@ -103,14 +103,14 @@ void Game::setStartN(bool b) { start_n = b; }
 
 
 void Game::draw_btn_save() {
-    float x(0.0f), y(-0.9f), w(0.4f), h(0.1f);
+    float x(0.0f), y(-0.95f), w(0.4f), h(0.1f);
     char * save = new char[12] {'S','A','U','V','E','G','A','R','D','E','R','\0'};
-    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0.043, 0.235, 0.231);
+    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0, 0.498, 0);
     GraphicPrimitives::drawText2D(save, x + 0.03, y + 0.03, 0.0, 0.0, 0.0);
 }
 
 bool Game::clic_btn_save(float clic_x, float clic_y) {
-    float x(0.0f), y(-0.9f), w(0.4f), h(0.1f);
+    float x(0.0f), y(-0.95f), w(0.4f), h(0.1f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
     } else {
@@ -121,14 +121,14 @@ bool Game::clic_btn_save(float clic_x, float clic_y) {
 
 
 void Game::draw_btn_run() {
-    float x(0.6f), y(-0.9f), w(0.3f), h(0.1f);
+    float x(0.45f), y(-0.95f), w(0.3f), h(0.1f);
     char * wave = new char[9]{ 'A','T','T','A','Q','U','E','R','\0' };
-    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0.043, 0.235, 0.231);
+    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0, 0.498, 0);
     GraphicPrimitives::drawText2D(wave, x + 0.03, y + 0.03, 0.0, 0.0, 0.0);
 }
 
 bool Game::clic_btn_run(float clic_x, float clic_y) {
-    float x(0.6f), y(-0.9f), w(0.3f), h(0.1f);
+    float x(0.45f), y(-0.95f), w(0.3f), h(0.1f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
     } else {
@@ -140,14 +140,14 @@ bool Game::clic_btn_run(float clic_x, float clic_y) {
 
 
 void Game::draw_home() {
-    float x(-1.0f), y(-0.9f), w(0.25f), h(0.1f);
+    float x(-0.3f), y(-0.95f), w(0.25f), h(0.1f);
     char * home = new char[8]{ 'A','C','C','U','E','I','L','\0' };
-    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0.043, 0.235, 0.231);
+    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0, 0.498, 0);
     GraphicPrimitives::drawText2D(home, x + 0.03, y + 0.03, 0.0, 0.0, 0.0);
 }
 
 bool Game::clic_home(float clic_x, float clic_y) {
-    float x(-1.0f), y(-0.9f), w(0.25f), h(0.1f);
+    float x(-0.3f), y(-0.95f), w(0.25f), h(0.1f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
     } else {
