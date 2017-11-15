@@ -1,8 +1,14 @@
 #pragma once
 #include "Engine.h"
-#include "Papillon.h"
+#include "Damier.hpp"
+#include "Vaisseaux.hpp"
+#include "Game.hpp"
+
 class MyControlEngine:public ControlEngine {
-    std::vector<Papillon * > *paps;
+    Game *menu_jeu;
+    
+    
+    std::vector<Vaisseaux *> *vaisseaux;
     
     // position du curseur
     int cursor_x = 400;
@@ -11,7 +17,10 @@ class MyControlEngine:public ControlEngine {
     float cursor_y_f = 400.f;
     
 public:
-    MyControlEngine(std::vector<Papillon * > * paps_):paps(paps_){}
+    MyControlEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux):menu_jeu(menu_jeu), grille(grille), vaisseaux(vaisseaux){}
     
-    virtual void MouseCallback(int button, int state, int x, int y) ;
+    virtual void MouseCallback(int button, int state, int x, int y);
+    virtual void KeyboardReleaseCallback(unsigned char key,int x, int y);
+    
+    Damier *grille;
 };

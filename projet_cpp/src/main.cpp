@@ -19,11 +19,15 @@ int main(int argc, char * argv[]) {
     
     Engine e(argc, argv);
     //std::vector<Papillon *> paps;
-    Damier *damier = new Damier();
+    Game *game = new Game();
     
-    GraphicEngine *ge = new MyGraphicEngine(damier);
-    GameEngine *gme = new MyGameEngine(damier);
-    ControlEngine *ce = new MyControlEngine(damier);
+    Damier *damier = new Damier();
+    std::vector<Vaisseaux *> vaisseaux;
+    
+    
+    GraphicEngine *ge = new MyGraphicEngine(game, damier, &vaisseaux);
+    GameEngine *gme = new MyGameEngine(game, damier, &vaisseaux);
+    ControlEngine *ce = new MyControlEngine(game, damier, &vaisseaux);
     
     e.setGraphicEngine(ge);
     e.setGameEngine(gme);

@@ -23,6 +23,8 @@ public:
     
     void draw();
     
+    void draw_();
+    
     void toString();
     
     // GETTERS et SETTERS

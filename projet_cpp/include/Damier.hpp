@@ -21,6 +21,7 @@ class Damier {
     float pos_x_case_zero = -0.8f;
     float pos_y_case_zero = -1.0f;
     
+    
     std::vector<Case> grille;
     
 public:
@@ -29,7 +30,13 @@ public:
     
     void draw();
     
+    void draw_();
+    
     void toString();
+    
+    int indice_vaissaux(float x, float y);
+    
+    Case getCase(int x);
 };
 
 #endif /* Damier_hpp */

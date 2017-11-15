@@ -1,13 +1,22 @@
 #pragma once
 
 #include "Engine.h"
-#include "Papillon.h"
+#include "Damier.hpp"
+#include "Vaisseaux.hpp"
+#include "Game.hpp"
+
 class MyGameEngine:public GameEngine {
-    std::vector<Papillon * > *paps;
+    
+    Game *menu_jeu;
+    
+    std::vector<Vaisseaux *> *vaisseaux;
+    
 public:
     
-    MyGameEngine(std::vector<Papillon * > * paps_):paps(paps_){}
+    MyGameEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux):menu_jeu(menu_jeu), grille(grille), vaisseaux(vaisseaux){}
     
     virtual void idle();
+    
+    Damier *grille;
     
 };

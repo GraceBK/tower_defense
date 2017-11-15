@@ -16,6 +16,10 @@ void Case::draw() {
     GraphicPrimitives::drawFillRect2D(posX, posY, width, height, 0.122, 0.224, 0.255);
 }
 
+void Case::draw_() {
+    GraphicPrimitives::drawFillRect2D(posX, posY, width, height, 0.0, 0.5, 0.255);
+}
+
 void Case::toString() {
     std::cout << "Case (" << posX << ", " << posY << " --> " << isEmpty() << std::endl;
 }
