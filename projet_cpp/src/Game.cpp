@@ -110,7 +110,7 @@ void Game::draw_btn_save() {
 }
 
 bool Game::clic_btn_save(float clic_x, float clic_y) {
-    float x(0.0f), y(-0.9f), w(0.25f), h(0.1f);
+    float x(0.0f), y(-0.9f), w(0.4f), h(0.1f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
     } else {
