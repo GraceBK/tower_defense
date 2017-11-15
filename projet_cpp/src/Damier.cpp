@@ -59,3 +59,26 @@ Case Damier::getCase(int x) {
         }
     }
 }*/
+
+
+void Damier::save() {
+    // On ouvre le fichier en mode ecriture
+    std::ofstream outfile;
+    outfile.open("save_partie.txt");
+    
+    
+    
+    // On ferme le fichier
+    outfile.close();
+}
+
+void Damier::load() {
+    // On ouvre le fichier en mode lecture
+    std::ifstream infile;
+    infile.open("save_partie.txt");
+    
+    
+    
+    // On ferme le fichier
+    infile.close();
+}

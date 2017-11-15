@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <vector>
 
+#include <fstream>
+
 #include "GraphicPrimitives.h"
 #include "Case.hpp"
 
@@ -37,6 +39,12 @@ public:
     int indice_vaissaux(float x, float y);
     
     Case getCase(int x);
+    
+    
+    
+    // Methode pour la sauvegarde
+    void save();
+    void load();
 };
 
 #endif /* Damier_hpp */
