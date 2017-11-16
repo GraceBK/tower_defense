@@ -52,12 +52,17 @@ void MyGraphicEngine::interface_vaisseaux() {
     
     float x(-0.95), y(0.78), n(0.08);
     
-    GraphicPrimitives::drawFillRect2D(x, y, n, n, 0.298, 0.667, 0.361);
+    //GraphicPrimitives::drawFillRect2D(x, y, n, n, 0.298, 0.667, 0.361);
+    GraphicPrimitives::drawFillTriangle2D(x, y, x+n, y+n/2, x, y+n, 0.298, 0.667, 0.361);
     GraphicPrimitives::drawText2D(defaut, x+0.12, y+0.02, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawFillRect2D(x, y-0.1, n, n, 0.69, 0.098, 0.11);
+    //GraphicPrimitives::drawFillRect2D(x, y-0.1, n, n, 0.69, 0.098, 0.11);
+    GraphicPrimitives::drawFillTriangle2D(x, y-0.1, x+n, y-0.1+n/2, x, y-0.1+n, 0.69, 0.098, 0.11);
     GraphicPrimitives::drawText2D(boum, x+0.12, y-0.08, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawFillRect2D(x, y-0.2, n, n, 0.573, 0.173, 0.573);
+    //GraphicPrimitives::drawFillRect2D(x, y-0.2, n, n, 0.573, 0.173, 0.573);
+    GraphicPrimitives::drawFillTriangle2D(x, y-0.2, x+n, y-0.2+n/2, x, y-0.2+n, 0.573, 0.173, 0.573);
     GraphicPrimitives::drawText2D(atomic, x+0.12, y-0.18, 1.0, 1.0, 1.0);
+    
+    //GraphicPrimitives::drawFillPolygone2D(<#std::vector<float> &x#>, <#std::vector<float> &y#>, 1.0, 1.0, 1.0);
     
     delete [] defaut;
     delete [] boum;

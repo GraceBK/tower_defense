@@ -14,6 +14,7 @@ Vaisseaux::~Vaisseaux() {}
 
 void Vaisseaux::draw() {
     GraphicPrimitives::drawFillRect2D(posX, posY, width, height, r, g, b);
+    GraphicPrimitives::drawFillTriangle2D(posX, posY, posX, posY, posX, posY, r, g, b);
 }
 
 
