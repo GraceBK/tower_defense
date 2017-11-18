@@ -41,6 +41,7 @@ public:
     void draw_btn_save();
     void draw_btn_run();
     
+    
     // Gestion des clics
     bool clic_btn_one(float clic_x, float clic_y);
     bool clic_btn_multi(float clic_x, float clic_y);

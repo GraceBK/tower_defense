@@ -5,6 +5,7 @@
 #include "Damier.hpp"
 #include "Vaisseaux.hpp"
 #include "Game.hpp"
+#include "Asteroids.hpp"
 
 class MyGraphicEngine:public GraphicEngine {
     
@@ -13,16 +14,18 @@ class MyGraphicEngine:public GraphicEngine {
     
     Damier *grille;
     std::vector<Vaisseaux *> *vaisseaux;
+    std::vector<Asteroids *> *asteroids;
     
     char * str;
 public:
     
-    MyGraphicEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux) :
+    MyGraphicEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux, std::vector<Asteroids *> *asteroids) :
         /*paps(paps_),*/
     /*str(new char[13]{'C','l','i','c',' ','&',' ','E','n','j','o','y','\0'}),*/
     menu_jeu(menu_jeu),
     grille(grille),
-    vaisseaux(vaisseaux)
+    vaisseaux(vaisseaux),
+    asteroids(asteroids)
         {}
     
     float x1,x2,vx1,vx2;

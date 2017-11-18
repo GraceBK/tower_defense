@@ -34,3 +34,4 @@ bool Case::isEmpty() { return empty; }
 
 void Case::setX(float newX) { posX = newX; }
 void Case::setY(float newY) { posY = newY; }
+void Case::setEmpty(bool vide) { empty = vide; }

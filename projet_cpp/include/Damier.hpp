@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <vector>
+#include <math.h>
 
 #include <fstream>
 
@@ -36,9 +37,16 @@ public:
     
     void toString();
     
-    int indice_vaissaux(float x, float y);
+    std::vector<int> indice_case_vaisseau(float x, float y);
+    
+    int mettre_vaissaux(float x, float y);
+    
+//    void ajouterVaisseaux(float x, float y);
     
     Case getCase(int x);
+    
+    float getInitPosX();
+    float getInitPosY();
     
     
     

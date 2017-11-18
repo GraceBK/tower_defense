@@ -23,11 +23,12 @@ int main(int argc, char * argv[]) {
     
     Damier *damier = new Damier();
     std::vector<Vaisseaux *> vaisseaux;
+    std::vector<Asteroids *> asteroids;// = new Asteroids(-0.4, -0.8+0.02);
     
     
-    GraphicEngine *ge = new MyGraphicEngine(game, damier, &vaisseaux);
-    GameEngine *gme = new MyGameEngine(game, damier, &vaisseaux);
-    ControlEngine *ce = new MyControlEngine(game, damier, &vaisseaux);
+    GraphicEngine *ge = new MyGraphicEngine(game, damier, &vaisseaux, &asteroids);
+    GameEngine *gme = new MyGameEngine(game, damier, &vaisseaux, &asteroids);
+    ControlEngine *ce = new MyControlEngine(game, damier, &vaisseaux, &asteroids);
     
     e.setGraphicEngine(ge);
     e.setGameEngine(gme);

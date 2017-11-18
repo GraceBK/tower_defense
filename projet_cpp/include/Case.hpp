@@ -37,6 +37,7 @@ public:
     
     void setX(float newX);
     void setY(float newY);
+    void setEmpty(bool vide);
     
 };
 

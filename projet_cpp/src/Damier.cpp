@@ -29,6 +29,7 @@ void Damier::draw() {
     for (int i(0); i < grille.size(); i++) {
         grille[i].draw();
     }
+//    GraphicPrimitives::drawFillRect2D(pos_x_case_zero+0.4, pos_y_case_zero+decalage, grille[0].getWidth(), grille[0].getHeight()+decalage*(taille-1), 1.0, 0.0, 0.0);
 }
 
 void Damier::draw_() {
@@ -47,10 +48,25 @@ Case Damier::getCase(int x) {
     return grille[x];
 }
 
-/*int Damier::indice_vaissaux(float x, float y) {
+float Damier::getInitPosX() { return pos_x_case_zero; }
+float Damier::getInitPosY() { return pos_y_case_zero; }
+
+std::vector<int> Damier::indice_case_vaisseau(float x, float y) {
+    std::vector<int> case_proche;
+    float res;
+    for (int i(0); i < grille.size(); ++i) {
+        res = 0;
+        if (res <= 0.11*sqrt(2)) {
+            case_proche.push_back(i);
+        }
+    }
+    return case_proche;
+}
+
+int Damier::mettre_vaissaux(float x, float y) {
     std::vector<int> vaisseaux;
     int v_id = 0;
-    //vaisseaux =
+    vaisseaux = indice_case_vaisseau(x, y);
     int indice = 0;
     for (int i(0); i < vaisseaux.size(); ++i) {
         indice = vaisseaux[i];
@@ -58,7 +74,26 @@ Case Damier::getCase(int x) {
             v_id = indice;
         }
     }
-}*/
+    std::cout << "case -> " << v_id << std::endl;
+    std::cout << "Q1 " << grille[v_id].isEmpty() << std::endl;
+    if (grille[v_id].isEmpty()) {
+        grille[v_id].setEmpty(false);
+        std::cout << "Q2 " << grille[v_id].isEmpty() << std::endl;
+        return v_id;
+    } else {
+        std::cout << "Q2 " << grille[v_id].isEmpty() << std::endl;
+        return -1;
+    }
+}
+
+
+//void Damier::ajouterVaisseaux(float x, float y) {
+//    int posX_ = (int) (x / grille 0.2f + 5);
+//    int posY_ = (int) (y / 0.2f + 5);
+//    if (grille[0]) {
+//        <#statements#>
+//    }
+//}
 
 
 void Damier::save() {

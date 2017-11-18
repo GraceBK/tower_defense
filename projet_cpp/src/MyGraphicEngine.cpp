@@ -12,6 +12,14 @@ void MyGraphicEngine::Draw() {
             grille->draw_();
             interface_vaisseaux();
             interface_boutons();
+            
+            for (int i(0); i < vaisseaux->size(); i++) {
+                (*vaisseaux)[i]->draw();
+            }
+            
+            for (int i(0); i < asteroids->size(); i++) {
+                (*asteroids)[i]->draw();
+            }
         } else if (menu_jeu->isStartN() == true) {
             // Si je suis dans le mode avec n lignes
             interface_player();
@@ -19,6 +27,15 @@ void MyGraphicEngine::Draw() {
             grille->draw();
             interface_vaisseaux();
             interface_boutons();
+            
+            for (int i(0); i < vaisseaux->size(); i++) {
+                (*vaisseaux)[i]->draw();
+            }
+            
+            for (int i(0); i < asteroids->size(); i++) {
+                (*asteroids)[i]->draw();
+            }
+            
         } else {
             menu_jeu->draw();
         }
