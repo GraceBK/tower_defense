@@ -8,7 +8,7 @@
 
 #include "Asteroids.hpp"
 
-Asteroids::Asteroids(float x, float y) : posX(x), posY(y), width(0.09), height(0.09), r(1.0), g(1.0), b(1.0) {}
+Asteroids::Asteroids(float x, float y) : posX(x), posY(y), width(0.09), height(0.09), r(1.0), g(1.0), b(1.0), vitesse(0.0009) {}
 
 Asteroids::~Asteroids() {}
 
@@ -17,7 +17,7 @@ void Asteroids::draw() {
 }
 
 void Asteroids::move() {
-    posX = posX - 0.01f;
+    posX = posX - vitesse*1;
 }
 
 void Asteroids::setX(float newX) { posX = posX - newX; }

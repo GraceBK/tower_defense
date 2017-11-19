@@ -39,6 +39,7 @@ public:
     
     float posX, posY, width, height;
     float r, g, b;
+    float vitesse;
 };
 
 #endif /* Asteroids_hpp */

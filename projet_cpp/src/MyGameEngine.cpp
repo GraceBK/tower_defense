@@ -3,7 +3,9 @@
 
 
 void MyGameEngine::idle(){
-    
+    if (menu_jeu->isOver() == false) {
+        move();
+    }
 }
 
 void MyGameEngine::move() {
