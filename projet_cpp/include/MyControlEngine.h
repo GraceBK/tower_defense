@@ -19,18 +19,27 @@ class MyControlEngine:public ControlEngine {
     float cursor_y_f = 400.f;
     
 public:
-    /*float random_between_two_int(float min, float max);*/
     MyControlEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux, std::vector<Asteroids *> *asteroids):menu_jeu(menu_jeu), grille(grille), vaisseaux(vaisseaux), asteroids(asteroids){}
     
     virtual void MouseCallback(int button, int state, int x, int y);
     virtual void KeyboardReleaseCallback(unsigned char key,int x, int y);
     
     Damier *grille;
-    
+    /**
+     * cette fonction permet d'ajouter des vaisseaux
+     * dans la grille
+     */
     void ajouterVaisseaux(float x, float y);
-    
+    /**
+     * cette fonction remet la grille a zero
+     * il remet toute les cases a zero afin de permettre
+     * l'ajout des vaisseaux quand on change la grille
+     */
+    void resetGrille();
+    /**
+     * cette fonction nous permet de lancer une vague d'asteroids
+     */
     void act();
-    
     /**
      true si le curseur est sur la grille de jeu,
      permet d'ajouter un vaisseaux

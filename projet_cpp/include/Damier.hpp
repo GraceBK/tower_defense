@@ -40,17 +40,12 @@ public:
     std::vector<int> indice_case_vaisseau(float x, float y);
     
     int mettre_vaissaux(float x, float y);
-    
-//    void ajouterVaisseaux(float x, float y);
+    void reset_grille();
     
     Case getCase(int x);
     
     float getInitPosX();
     float getInitPosY();
-    
-    
-    
-    
     
     
     

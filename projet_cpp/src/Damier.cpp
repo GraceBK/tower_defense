@@ -81,19 +81,16 @@ int Damier::mettre_vaissaux(float x, float y) {
         std::cout << "Q2 " << grille[v_id].isEmpty() << std::endl;
         return v_id;
     } else {
-        std::cout << "Q2 " << grille[v_id].isEmpty() << std::endl;
+        std::cout << "Q12 " << grille[v_id].isEmpty() << std::endl;
         return -1;
     }
 }
 
-
-//void Damier::ajouterVaisseaux(float x, float y) {
-//    int posX_ = (int) (x / grille 0.2f + 5);
-//    int posY_ = (int) (y / 0.2f + 5);
-//    if (grille[0]) {
-//        <#statements#>
-//    }
-//}
+void Damier::reset_grille() {
+    for (int i(0); i < taille*taille; i++) {
+        grille[i].setEmpty(true);
+    }
+}
 
 
 void Damier::save() {
