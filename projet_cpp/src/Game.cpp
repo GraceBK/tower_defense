@@ -100,6 +100,9 @@ void Game::setStart(bool b) { start = b; }
 bool Game::isStartN() { return start_n; }
 void Game::setStartN(bool b) { start_n = b; }
 
+bool Game::isRunning() { return is_running; }
+void Game::setRunning(bool b) { is_running = b; }
+
 
 
 void Game::draw_btn_save() {

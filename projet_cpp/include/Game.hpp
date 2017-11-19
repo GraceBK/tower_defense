@@ -18,6 +18,7 @@ class Game {
     bool start;
     bool start_n;
     bool finished;  // fin d'une partie
+    bool is_running; // si une vague est lancee
     
     char * nX1 = new char[8]{'1', ' ', 'L', 'i', 'g', 'n', 's', '\0'};
     char * nXn = new char[6]{'M', 'u', 'l', 't', 'i', '\0'};
@@ -61,6 +62,9 @@ public:
     
     bool isStartN();
     void setStartN(bool b);
+    
+    bool isRunning();
+    void setRunning(bool b);
 };
 
 #endif /* Game_hpp */
