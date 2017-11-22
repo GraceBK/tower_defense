@@ -1,5 +1,9 @@
 #pragma once
 
+#include <algorithm>    // std::random_shuffle
+#include <ctime>        // std::time
+#include <cstdlib>      // std::rand, std::srand
+
 #include "Engine.h"
 #include "Damier.hpp"
 #include "Vaisseaux.hpp"
@@ -29,5 +33,7 @@ public:
     
     void move();
     void genererAsteroids();
+    void startAsteroids();
+    int my_random(int n);
     
 };

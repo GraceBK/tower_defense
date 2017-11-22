@@ -9,6 +9,8 @@ void MyGraphicEngine::Draw() {
             // Si je suis dans le mode avec 1 ligne
             interface_player();
             
+            menu_jeu->show_stats();
+            
             grille->draw_();
             interface_vaisseaux();
             interface_boutons();
@@ -23,6 +25,8 @@ void MyGraphicEngine::Draw() {
         } else if (menu_jeu->isStartN() == true) {
             // Si je suis dans le mode avec n lignes
             interface_player();
+            
+            menu_jeu->show_stats();
             
             grille->draw();
             interface_vaisseaux();

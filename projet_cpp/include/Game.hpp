@@ -10,10 +10,13 @@
 #define Game_hpp
 
 #include <stdio.h>
+#include <string>
 #include "GraphicPrimitives.h"
 
 class Game {
     float r, g, b;
+    
+    int score, argent;
     
     bool start;
     bool start_n;
@@ -41,6 +44,8 @@ public:
     void draw_home();
     void draw_btn_save();
     void draw_btn_run();
+    
+    void show_stats();
     
     
     // Gestion des clics

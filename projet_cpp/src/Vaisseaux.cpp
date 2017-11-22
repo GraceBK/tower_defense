@@ -14,6 +14,19 @@ Vaisseaux::~Vaisseaux() {}
 
 void Vaisseaux::draw() {
     GraphicPrimitives::drawFillTriangle2D(posX, posY, posX+0.1, posY+0.05, posX, posY+0.1, r, g, b);
+    for (std::vector<float>::iterator mis = missile.begin(); mis != missile.end(); mis++) {
+        GraphicPrimitives::drawFillRect2D(*mis, posY, 0.04, 0.04, 1.0, 0.0, 0.0);
+    }
+}
+
+void Vaisseaux::tirer() {
+    struct timeval t1, t2;
+    gettimeofday(&t1, NULL);
+    if (1) {
+        missile.push_back(posX + width);
+    }
+    
+    gettimeofday(&t2, NULL);
 }
 
 void Vaisseaux::setR(float r_c) { r = r_c; }

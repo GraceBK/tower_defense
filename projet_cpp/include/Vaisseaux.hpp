@@ -10,6 +10,8 @@
 #define Vaisseaux_hpp
 
 #include <stdio.h>
+#include <sys/time.h>
+//#include <list>
 
 #include "GraphicPrimitives.h"
 
@@ -22,6 +24,7 @@ public:
     void draw();
     
     void toString();
+    void tirer();
     
     // GETTERS et SETTERS
     float getX();
@@ -37,8 +40,8 @@ public:
     
     
     float posX, posY, width, height;
-    
     float r, g, b;
+    std::vector<float> missile;
 };
 
 #endif /* Vaisseaux_hpp */

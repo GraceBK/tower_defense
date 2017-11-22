@@ -11,10 +11,10 @@
 Damier::Damier() {
     float x = pos_x_case_zero;
     float y = pos_y_case_zero;
-    for (int i(0); i < taille; i++) {
+    for (int i(0); i < height; i++) {
         y = y + decalage;
         x = -0.4;
-        for (int z(0); z < taille; z++) {
+        for (int z(0); z < width; z++) {
             grille.push_back(Case(x, y));
             x = x + decalage;
         }
@@ -50,6 +50,8 @@ Case Damier::getCase(int x) {
 
 float Damier::getInitPosX() { return pos_x_case_zero; }
 float Damier::getInitPosY() { return pos_y_case_zero; }
+float Damier::getHeight() { return height; }
+float Damier::getWidth() { return width; }
 
 std::vector<int> Damier::indice_case_vaisseau(float x, float y) {
     std::vector<int> case_proche;
@@ -87,7 +89,7 @@ int Damier::mettre_vaissaux(float x, float y) {
 }
 
 void Damier::reset_grille() {
-    for (int i(0); i < taille*taille; i++) {
+    for (int i(0); i < width*height; i++) {
         grille[i].setEmpty(true);
     }
 }

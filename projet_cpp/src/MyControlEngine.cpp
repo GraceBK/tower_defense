@@ -72,9 +72,21 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
             }
             if (key == 'z') {
                 std::cout << "VAISSEAU de type BOUMER" << std::endl;
+                int case_index;
+                case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
+                std::cout << "======> " << case_index << std::endl;
+                if (case_index != -1) {
+                    vaisseaux->push_back(new Vaisseaux1(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
+                } else {}
             }
             if (key == 'e') {
                 std::cout << "VAISSEAU de type ATOMIC" << std::endl;
+                int case_index;
+                case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
+                std::cout << "======> " << case_index << std::endl;
+                if (case_index != -1) {
+                    vaisseaux->push_back(new Vaisseaux2(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
+                } else {}
             }
         }
     }
@@ -120,7 +132,7 @@ void MyControlEngine::act() {
 }
 
 bool MyControlEngine::cursorInGrille(float x, float y) {
-    float posX(grille->getInitPosX()+0.4), posY(grille->getInitPosY()+0.105), w(grille->getCase(0).getWidth()+0.105*((12/2)-1)), h(grille->getCase(0).getHeight()+0.105*(12-1));
+    float posX(grille->getInitPosX()+0.4), posY(grille->getInitPosY()+0.105), w(grille->getCase(0).getWidth()+0.105*((grille->getWidth()/2)-1)), h(grille->getCase(0).getHeight()+0.105*(grille->getHeight()-1));
     if (x >= posX && x <= posX + w && y >= posY && y <= posY + h) {
         return true;
     } else {

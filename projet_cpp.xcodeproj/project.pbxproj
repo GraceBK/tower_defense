@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65BFFA491FC42E540026DB43 /* Vaisseaux2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */; };
+		65BFFA4C1FC42E780026DB43 /* Vaisseaux1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */; };
+		65BFFA4F1FC42EC20026DB43 /* Asteroids1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA4D1FC42EC20026DB43 /* Asteroids1.cpp */; };
+		65BFFA521FC42EDD0026DB43 /* Asteroids2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA501FC42EDD0026DB43 /* Asteroids2.cpp */; };
 		65C8C6841FB1B58400A37F8F /* Asteroids.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C8C6821FB1B58400A37F8F /* Asteroids.cpp */; };
 		65C8C6871FB1B6D000A37F8F /* Damier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C8C6851FB1B6D000A37F8F /* Damier.cpp */; };
 		65C8C68A1FB1C48200A37F8F /* Vaisseaux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C8C6881FB1C48200A37F8F /* Vaisseaux.cpp */; };
@@ -35,6 +39,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vaisseaux2.cpp; sourceTree = "<group>"; };
+		65BFFA481FC42E540026DB43 /* Vaisseaux2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vaisseaux2.hpp; sourceTree = "<group>"; };
+		65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vaisseaux1.cpp; sourceTree = "<group>"; };
+		65BFFA4B1FC42E780026DB43 /* Vaisseaux1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vaisseaux1.hpp; sourceTree = "<group>"; };
+		65BFFA4D1FC42EC20026DB43 /* Asteroids1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Asteroids1.cpp; sourceTree = "<group>"; };
+		65BFFA4E1FC42EC20026DB43 /* Asteroids1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Asteroids1.hpp; sourceTree = "<group>"; };
+		65BFFA501FC42EDD0026DB43 /* Asteroids2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Asteroids2.cpp; sourceTree = "<group>"; };
+		65BFFA511FC42EDD0026DB43 /* Asteroids2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Asteroids2.hpp; sourceTree = "<group>"; };
 		65C8C6821FB1B58400A37F8F /* Asteroids.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Asteroids.cpp; sourceTree = "<group>"; };
 		65C8C6831FB1B58400A37F8F /* Asteroids.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Asteroids.hpp; sourceTree = "<group>"; };
 		65C8C6851FB1B6D000A37F8F /* Damier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Damier.cpp; sourceTree = "<group>"; };
@@ -127,8 +139,12 @@
 				65C8C68C1FB1D2AB00A37F8F /* Game.hpp */,
 				65E20AFA1FACD9040088885F /* Case.hpp */,
 				65C8C6831FB1B58400A37F8F /* Asteroids.hpp */,
+				65BFFA4E1FC42EC20026DB43 /* Asteroids1.hpp */,
+				65BFFA511FC42EDD0026DB43 /* Asteroids2.hpp */,
 				65C8C6861FB1B6D000A37F8F /* Damier.hpp */,
 				65C8C6891FB1C48200A37F8F /* Vaisseaux.hpp */,
+				65BFFA4B1FC42E780026DB43 /* Vaisseaux1.hpp */,
+				65BFFA481FC42E540026DB43 /* Vaisseaux2.hpp */,
 				65E20AE91FACCF850088885F /* ControlEngine.h */,
 				65E20AED1FACCF850088885F /* Engine.h */,
 				65E20AEF1FACCF850088885F /* GameEngine.h */,
@@ -161,8 +177,12 @@
 				65E20ACD1FACC7450088885F /* main.cpp */,
 				65E20AF91FACD9040088885F /* Case.cpp */,
 				65C8C6821FB1B58400A37F8F /* Asteroids.cpp */,
+				65BFFA4D1FC42EC20026DB43 /* Asteroids1.cpp */,
+				65BFFA501FC42EDD0026DB43 /* Asteroids2.cpp */,
 				65C8C6851FB1B6D000A37F8F /* Damier.cpp */,
 				65C8C6881FB1C48200A37F8F /* Vaisseaux.cpp */,
+				65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */,
+				65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */,
 				65C8C68B1FB1D2AB00A37F8F /* Game.cpp */,
 			);
 			path = src;
@@ -227,13 +247,17 @@
 			files = (
 				65C8C68D1FB1D2AB00A37F8F /* Game.cpp in Sources */,
 				65E20AF81FACCF980088885F /* MyGameEngine.cpp in Sources */,
+				65BFFA521FC42EDD0026DB43 /* Asteroids2.cpp in Sources */,
+				65BFFA4F1FC42EC20026DB43 /* Asteroids1.cpp in Sources */,
 				65E20AF51FACCF980088885F /* MyGraphicEngine.cpp in Sources */,
+				65BFFA4C1FC42E780026DB43 /* Vaisseaux1.cpp in Sources */,
 				65C8C6841FB1B58400A37F8F /* Asteroids.cpp in Sources */,
 				65C8C6871FB1B6D000A37F8F /* Damier.cpp in Sources */,
 				65E20ACE1FACC7450088885F /* main.cpp in Sources */,
 				65E20AF61FACCF980088885F /* MyControlEngine.cpp in Sources */,
 				65E20AFB1FACD9040088885F /* Case.cpp in Sources */,
 				65C8C68A1FB1C48200A37F8F /* Vaisseaux.cpp in Sources */,
+				65BFFA491FC42E540026DB43 /* Vaisseaux2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

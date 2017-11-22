@@ -8,7 +8,10 @@
 
 #include "Game.hpp"
 
-Game::Game() {}
+Game::Game() {
+    score = 0;
+    argent = 80;
+}
 
 
 void Game::drawGameOver() {
@@ -156,4 +159,15 @@ bool Game::clic_home(float clic_x, float clic_y) {
     } else {
         return false;
     }
+}
+
+void Game::show_stats() {
+    float x(-0.95+0.75f), y(0.93-0.23f);
+    char ar[5], sc[5], le[3];
+    sprintf(ar, "%d", argent);
+    sprintf(sc, "%d", score);
+    sprintf(le, "%d", score);
+    GraphicPrimitives::drawText2D(ar, x, y + 0.1f, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(sc, x, y, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(le, x + 0.55f, y, 1.0, 1.0, 1.0);
 }

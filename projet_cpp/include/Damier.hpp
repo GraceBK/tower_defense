@@ -19,7 +19,8 @@
 #include "Case.hpp"
 
 class Damier {
-    int taille = 12;
+    int height = 12;
+    int width = 12;
     float decalage = 0.105;
     float pos_x_case_zero = -0.8f;
     float pos_y_case_zero = -0.9f;
@@ -46,6 +47,9 @@ public:
     
     float getInitPosX();
     float getInitPosY();
+    
+    float getHeight();
+    float getWidth();
     
     
     
