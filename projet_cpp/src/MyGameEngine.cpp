@@ -4,12 +4,13 @@
 
 void MyGameEngine::idle(){
     if (menu_jeu->isOver() == false) {
-        if (!menu_jeu->isRunning()) {
+        if (menu_jeu->isStart()) {
+            if (menu_jeu->isRunning()) {
 //            genererAsteroids();
-//            startAsteroids();
-//            move();
+                startAsteroids();
+                move();
+            }
         }
-        
     }
 }
 

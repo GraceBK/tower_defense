@@ -17,6 +17,17 @@ void Vaisseaux::draw() {
     for (std::vector<float>::iterator mis = missile.begin(); mis != missile.end(); mis++) {
         GraphicPrimitives::drawFillRect2D(*mis, posY, 0.04, 0.04, 1.0, 0.0, 0.0);
     }
+//    GraphicPrimitives::drawFillRect2D(posX+0.11, posY+0.04, 0.05, 0.02, 1.0, 0.0, 0.0);
+    
+//    GraphicPrimitives::drawFillRect2D(posX+0.11, posY+0.045, 0.05, 0.010, 1.0, 0.0, 0.0);
+    
+//    // missile en T
+//    GraphicPrimitives::drawFillRect2D(posX+0.11, posY+0.045, 0.05, 0.010, 1.0, 0.0, 0.0);
+//    GraphicPrimitives::drawFillRect2D(posX+0.15, posY+0.025, 0.01, 0.05, 1.0, 0.0, 0.0);
+    
+    // missile en +
+    GraphicPrimitives::drawFillRect2D(posX+0.11, posY+0.045, 0.05, 0.010, 1.0, 0.0, 0.0);
+    GraphicPrimitives::drawFillRect2D(posX+0.13, posY+0.025, 0.01, 0.05, 1.0, 0.0, 0.0);
 }
 
 void Vaisseaux::tirer() {

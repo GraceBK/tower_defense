@@ -36,12 +36,6 @@ void MyGraphicEngine::Draw() {
         // si c'est Game Over j'affiche le message Game Over ensuite je retourne normalement au menu
         menu_jeu->drawGameOver();
     }
-//    menu_jeu->draw();
-    //grille->draw();
-    
-//    for (int i(0); i < vaisseaux->size(); i++) {
-//        (*vaisseaux)[i]->draw();
-//    }
 }
 
 void MyGraphicEngine::interface_vaisseaux() {

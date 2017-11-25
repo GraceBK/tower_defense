@@ -15,6 +15,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             if (menu_jeu->clic_home((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 menu_jeu->setStart(false);
                 // J'efface les vaisseaux
+                menu_jeu->setRunning(false);
                 resetGrille();
             }
             if (menu_jeu->clic_btn_save((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
@@ -23,7 +24,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             }
             if (menu_jeu->clic_btn_run((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "RUN: A l'attacque" << std::endl;
-//                menu_jeu->setRunning(true);
+                menu_jeu->setRunning(true);
 //                act();
             }
         } else {
@@ -134,4 +135,7 @@ void MyControlEngine::resetGrille() {
         vaisseaux->erase(vaisseaux->begin() + i);
     }
     grille->reset_grille();
+    for (int i = (int) asteroids->size() - 1; i >= 0; i--) {
+        asteroids->erase(asteroids->begin() + i);
+    }
 }
