@@ -18,8 +18,8 @@ class Game {
     
     int score, argent;
     
+    bool in_help;
     bool start;
-    bool start_n;
     bool finished;  // fin d'une partie
     bool is_running; // si une vague est lancee
     
@@ -62,11 +62,11 @@ public:
     bool isOver();
     void setOver(bool b);
     
+    bool inHelp();
+    void setHelp(bool b);
+    
     bool isStart();
     void setStart(bool b);
-    
-    bool isStartN();
-    void setStartN(bool b);
     
     bool isRunning();
     void setRunning(bool b);

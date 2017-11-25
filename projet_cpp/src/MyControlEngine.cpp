@@ -4,7 +4,14 @@
 
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        if (menu_jeu->inHelp()) {
+            if (menu_jeu->clic_home((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
+                menu_jeu->setHelp(false);
+                // Je retourne au MENU
+            }
+        }
         if (menu_jeu->isStart()) {
+            //
             if (menu_jeu->clic_home((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 menu_jeu->setStart(false);
                 // J'efface les vaisseaux
@@ -19,33 +26,17 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 //                menu_jeu->setRunning(true);
 //                act();
             }
-        }
-        if (menu_jeu->isStartN()) {
-            //
-            if (menu_jeu->clic_home((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
-                menu_jeu->setStartN(false);
-                // J'efface les vaisseaux
-                resetGrille();
-            }
-            if (menu_jeu->clic_btn_save((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
-                std::cout << "SAVE: Vous avez clique sur la SAVE" << std::endl;
-                grille->save();
-            }
-            if (menu_jeu->clic_btn_run((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
-                std::cout << "RUN: A l'attacque" << std::endl;
-//                act();
-            }
         } else {
             if (menu_jeu->clic_btn_help((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
-                std::cout << "Jeu sur 1 ligne" << std::endl;
-                menu_jeu->setStart(true);
+                std::cout << "HELP" << std::endl;
+                menu_jeu->setHelp(true);
             }
             if (menu_jeu->clic_btn_play((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
-                std::cout << "Jeu sur plusieurs ligne" << std::endl;
-                menu_jeu->setStartN(true);
+                std::cout << "PLAY" << std::endl;
+                menu_jeu->setStart(true);
             }
             if (menu_jeu->clic_btn_load((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
-                std::cout << "Jeu chargé" << std::endl;
+                std::cout << "LOAD" << std::endl;
             }
             /*
              je quitte la partie en appuyant sur la touche 'p' ou
@@ -60,7 +51,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 }
 
 void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
-    if (menu_jeu->isStart() || menu_jeu->isStartN()) {
+    if (menu_jeu->isStart()) {
         if (cursorInGrille((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f)) {
             if (key == 'a') {
                 int case_index;
@@ -92,9 +83,7 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
     }
 }
 
-void MyControlEngine::ajouterVaisseaux(float x, float y) {
-//    int posX_ = (int) (x / grille->)
-}
+void MyControlEngine::ajouterVaisseaux(float x, float y) {}
 
 void MyControlEngine::act() {
 //    float posX((grille->getInitPosX()+0.4)+(grille->getCase(0).getWidth()+(0.105*(12-1)))), y(grille->getInitPosY()+0.105), y2 = y + grille->getCase(0).getHeight()+0.105*(11-1);

@@ -5,25 +5,12 @@ void MyGraphicEngine::Draw() {
     if (menu_jeu->isOver() == false) {
         GraphicPrimitives::drawFillRect2D(-1, -1, 2.0f, 2.0f, 0, 0.098, 0);  //fond ecrant
         
-        if (menu_jeu->isStart() == true) {
-            // Si je suis dans le mode avec 1 ligne
-            interface_player();
+        if (menu_jeu->inHelp() == true) {
+            // Si je suis dans HELP
+            menu_jeu->draw_home();
             
-            menu_jeu->show_stats();
-            
-            grille->draw_();
-            interface_vaisseaux();
-            interface_boutons();
-            
-            for (int i(0); i < vaisseaux->size(); i++) {
-                (*vaisseaux)[i]->draw();
-            }
-            
-            for (int i(0); i < asteroids->size(); i++) {
-                (*asteroids)[i]->draw();
-            }
-        } else if (menu_jeu->isStartN() == true) {
-            // Si je suis dans le mode avec n lignes
+        } else if (menu_jeu->isStart() == true) {
+            // Si je suis dans PLAY
             interface_player();
             
             menu_jeu->show_stats();
@@ -40,6 +27,7 @@ void MyGraphicEngine::Draw() {
                 (*asteroids)[i]->draw();
             }
         } else {
+            // Je reste dans le MENU (page d'ACCEUIL)
             menu_jeu->draw();
         }
         

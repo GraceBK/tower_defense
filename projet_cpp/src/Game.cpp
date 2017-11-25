@@ -97,11 +97,11 @@ bool Game::clic_btn_exit(float clic_x, float clic_y) {
 bool Game::isOver() { return finished; }
 void Game::setOver(bool b) { finished = b; }
 
+bool Game::inHelp() { return in_help; }
+void Game::setHelp(bool b) { in_help = b; }
+
 bool Game::isStart() { return start; }
 void Game::setStart(bool b) { start = b; }
-
-bool Game::isStartN() { return start_n; }
-void Game::setStartN(bool b) { start_n = b; }
 
 bool Game::isRunning() { return is_running; }
 void Game::setRunning(bool b) { is_running = b; }
