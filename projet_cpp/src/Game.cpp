@@ -21,38 +21,47 @@ void Game::drawGameOver() {
 
 // Affichage du menu principal
 void Game::draw() {
-    draw_btn_one();
-    draw_btn_multi();
+    draw_btn_help();
+    draw_btn_play();
     draw_btn_load();
     draw_btn_exit();
 }
 
-void Game::draw_btn_one() {
-    float x(-0.5f), y(0.05f), w(0.45f), h(0.45f), r(0.992), g(0.761), b(0.204);
+void Game::draw_btn_help() {
+    float x(-0.5f), y(-0.5f), w(0.45f), h(0.45f), r(0.09), g(0.459), b(0.722);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[8]{'1', ' ', 'L', 'i', 'g', 'n', 'e', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[5]{'H', 'E', 'L', 'P', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
 }
 
-void Game::draw_btn_multi() {
-    float x(0.05f), y(0.05f), w(0.45f), h(0.45f), r(0.459), g(0.741), b(0.306);
+void Game::draw_btn_play() {
+    float x(-0.5f), y(0.05f), w(0.45f), h(0.45f), r(0.992), g(0.761), b(0.204);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[9]{'n', ' ', 'L', 'i', 'g', 'n', 'e', 's', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[5]{'P', 'L', 'A', 'Y', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
 }
 
 void Game::draw_btn_load() {
-    float x(-0.5f), y(-0.5f), w(0.45f), h(0.45f), r(0.09), g(0.459), b(0.722);
+    float x(0.05f), y(0.05f), w(0.45f), h(0.45f), r(0.459), g(0.741), b(0.306);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[8]{'R', 'e', ' ', 'p', 'l', 'a', 'y', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[8]{'R', 'E', ' ', 'P', 'L', 'A', 'Y', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
 }
 
 void Game::draw_btn_exit() {
     float x(0.05f), y(-0.5f), w(0.45f), h(0.45f), r(0.929), g(0.314), b(0.192);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[8]{'Q', 'u', 'i', 't', 't', 'e', 'r', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[5]{'E', 'X', 'I', 'T', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
 }
 
 // Gestion des clics
-bool Game::clic_btn_one(float clic_x, float clic_y) {
+bool Game::clic_btn_help(float clic_x, float clic_y) {
+    float x(-0.5f), y(-0.5f), w(0.45f), h(0.45f);
+    if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool Game::clic_btn_play(float clic_x, float clic_y) {
     float x(-0.5f), y(0.05f), w(0.45f), h(0.45f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
@@ -61,17 +70,8 @@ bool Game::clic_btn_one(float clic_x, float clic_y) {
     }
 }
 
-bool Game::clic_btn_multi(float clic_x, float clic_y) {
-    float x(0.05f), y(0.05f), w(0.45f), h(0.45f);
-    if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 bool Game::clic_btn_load(float clic_x, float clic_y) {
-    float x(-0.5f), y(-0.5f), w(0.45f), h(0.45f);
+    float x(0.05f), y(0.05f), w(0.45f), h(0.45f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
     } else {

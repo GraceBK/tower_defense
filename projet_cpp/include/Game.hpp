@@ -36,8 +36,8 @@ public:
     
     // Méthode de draw bouton
     void draw();
-    void draw_btn_one();
-    void draw_btn_multi();
+    void draw_btn_help();
+    void draw_btn_play();
     void draw_btn_load();
     void draw_btn_exit();
     
@@ -49,8 +49,8 @@ public:
     
     
     // Gestion des clics
-    bool clic_btn_one(float clic_x, float clic_y);
-    bool clic_btn_multi(float clic_x, float clic_y);
+    bool clic_btn_help(float clic_x, float clic_y);
+    bool clic_btn_play(float clic_x, float clic_y);
     bool clic_btn_load(float clic_x, float clic_y);
     bool clic_btn_exit(float clic_x, float clic_y);
     

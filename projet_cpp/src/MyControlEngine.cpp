@@ -36,11 +36,11 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
 //                act();
             }
         } else {
-            if (menu_jeu->clic_btn_one((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
+            if (menu_jeu->clic_btn_help((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "Jeu sur 1 ligne" << std::endl;
                 menu_jeu->setStart(true);
             }
-            if (menu_jeu->clic_btn_multi((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
+            if (menu_jeu->clic_btn_play((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "Jeu sur plusieurs ligne" << std::endl;
                 menu_jeu->setStartN(true);
             }
