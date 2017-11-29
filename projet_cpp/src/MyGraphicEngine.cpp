@@ -4,7 +4,7 @@
 #include "../include/MyGraphicEngine.h"
 
 void MyGraphicEngine::Draw() {
-    if (menu_jeu->isOver() == false) {
+//    if (menu_jeu->isOver() == false) {
         GraphicPrimitives::drawFillRect2D(-1, -1, 2.0f, 2.0f, 0, 0.098, 0);  //fond ecrant
         
         if (menu_jeu->inHelp() == true) {
@@ -12,32 +12,40 @@ void MyGraphicEngine::Draw() {
             menu_jeu->draw_home();
             
         } else if (menu_jeu->isStart() == true) {
-            // Si je suis dans PLAY
-            interface_player();
-            
-            menu_jeu->show_stats();
-            
-            grille->draw();
-            interface_vaisseaux();
-            interface_boutons();
-            
-            for (int i(0); i < vaisseaux->size(); i++) {
-                (*vaisseaux)[i]->draw();
-            }
-            
-            for (int i(0); i < asteroids->size(); i++) {
-                (*asteroids)[i]->draw();
+            if (menu_jeu->getVie() < 0.5f) {
+                // Si je suis dans PLAY
+                interface_player();
+                
+                menu_jeu->show_stats();
+                
+                grille->draw();
+                interface_vaisseaux();
+                interface_boutons();
+                
+                for (int i(0); i < vaisseaux->size(); i++) {
+                    (*vaisseaux)[i]->draw();
+                }
+                
+                for (int i(0); i < asteroids->size(); i++) {
+                    (*asteroids)[i]->draw();
+                }
+            } else {
+                
+//                GraphicPrimitives::drawText2D(menu_jeu->getBank(), -0.1f, 0.0f, 1.0f, 1.0f, 1.0f);
+                menu_jeu->drawGameOver();
+                
+//                menu_jeu->draw_home();
             }
         } else {
             // Je reste dans le MENU (page d'ACCEUIL)
             menu_jeu->draw();
         }
-        
-        
-    } else {
+    /*}*//* else {
         // si c'est Game Over j'affiche le message Game Over ensuite je retourne normalement au menu
-        menu_jeu->drawGameOver();
-    }
+        if (menu_jeu->getVie() >= 0.5f) {
+            menu_jeu->drawGameOver();
+        }
+    }*/
 }
 
 void MyGraphicEngine::interface_vaisseaux() {
@@ -88,6 +96,8 @@ void MyGraphicEngine::interface_player() {
     GraphicPrimitives::drawText2D(bank, x + 0.55f, y - 0.13f, 0.0, 0.0, 0.0);
     GraphicPrimitives::drawText2D(score, x + 0.55f, y - 0.23f, 0.0, 0.0, 0.0);
     GraphicPrimitives::drawText2D(lives, x + 1.1f, y - 0.13f, 0.0, 0.0, 0.0);
-    GraphicPrimitives::drawFillRect2D(x + 1.3f, y - 0.135f, 0.5f, 0.05f, 0.69, 0.098, 0.11);
+    GraphicPrimitives::drawFillRect2D(x + 1.3f, y - 0.135f, 0.5f - menu_jeu->getVie(), 0.05f, 0.69, 0.098, 0.11);
     GraphicPrimitives::drawText2D(level, x + 1.1f, y - 0.23f, 0.0, 0.0, 0.0);
+    
+//    std::cout << "VIE" << menu_jeu->getVie() << std::endl;
 }

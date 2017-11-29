@@ -18,6 +18,10 @@ Game::Game() {
 
 void Game::drawGameOver() {
     float x(-0.1), y(0.1), r(1.0), g(0.0), b(0.0);
+    char sc[5];
+    sprintf(sc, "%d", score);
+    GraphicPrimitives::drawText2D(game_score, x - 0.05f, y - 0.1f, 1.0f, 1.0f, 1.0f);
+    GraphicPrimitives::drawText2D(sc, x + 0.3f, y - 0.1f, 1.0, 1.0, 1.0);
     GraphicPrimitives::drawText2D(game_over, x, y, r, g, b);
 }
 
@@ -107,6 +111,10 @@ void Game::setStart(bool b) { start = b; }
 
 bool Game::isRunning() { return is_running; }
 void Game::setRunning(bool b) { is_running = b; }
+
+
+float Game::getVie() { return vie; }
+void Game::setVie(float v) { vie += v; }
 
 
 

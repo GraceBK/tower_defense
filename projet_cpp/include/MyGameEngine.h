@@ -8,6 +8,8 @@
 #include "Damier.hpp"
 #include "Vaisseaux.hpp"
 #include "Asteroids.hpp"
+#include "Asteroids1.hpp"
+#include "Asteroids2.hpp"
 #include "Game.hpp"
 
 class MyGameEngine:public GameEngine {
@@ -25,8 +27,8 @@ class MyGameEngine:public GameEngine {
     
 public:
     
-    MyGameEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux, std::vector<Asteroids *> *asteroids):menu_jeu(menu_jeu), grille(grille), vaisseaux(vaisseaux), asteroids(asteroids){srand(unsigned (time(NULL)));    // permet de generer un random semblable au precedent
-        
+    MyGameEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux, std::vector<Asteroids *> *asteroids):menu_jeu(menu_jeu), grille(grille), vaisseaux(vaisseaux), asteroids(asteroids) {
+        srand(unsigned (time(NULL)));    // permet de generer un random semblable au precedent
     }
     
     virtual void idle();

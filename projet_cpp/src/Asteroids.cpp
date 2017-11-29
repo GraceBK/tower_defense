@@ -37,3 +37,6 @@ void Asteroids::setX(float newX) { posX = posX - newX; }
 void Asteroids::setR(float r_c) { r = r_c; }
 void Asteroids::setG(float g_c) { g = g_c; }
 void Asteroids::setB(float b_c) { b = b_c; }
+
+float Asteroids::getX() { return posX; }
+float Asteroids::getY() { return posY; }

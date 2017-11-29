@@ -28,11 +28,14 @@ class Game {
     char * exit = new char[8]{'Q', 'u', 'i', 't', 't', 'e', 'r', '\0'};
 
     char * game_over = new char[10] {'G','A','M','E',' ','O','V','E','R','\0'};
+    char * game_score = new char[14] {'S','C','O','R','E',' ','F','I','N','A','L',':',' ','\0'};
     
     /** Prix des vaissaux */
     int prix_v = 20;
     int prix_v1 = 30;
     int prix_v2 = 40;
+    
+    float vie = 0.0f;
     
 public:
     Game();
@@ -85,6 +88,9 @@ public:
     void setPrixV(int p);
     void setPrixV1(int p);
     void setPrixV2(int p);
+    
+    float getVie();
+    void setVie(float v);
 };
 
 #endif /* Game_hpp */

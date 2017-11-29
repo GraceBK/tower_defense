@@ -5,7 +5,7 @@
 #include "../include/MyGameEngine.h"
 
 void MyGameEngine::idle(){
-    if (menu_jeu->isOver() == false) {
+    if (!menu_jeu->isOver()) {
         if (menu_jeu->isStart()) {
             for (int i(0); i < vaisseaux->size(); i++) {
                 (*vaisseaux)[i]->tirer();
@@ -42,7 +42,7 @@ void MyGameEngine::startAsteroids() {
     tab[10] = 0.26;
     tab[11] = 0.365;
     
-    std::cout << tab[rand()%grille->getHeight()] << std::endl;
+//    std::cout << tab[rand()%grille->getHeight()] << std::endl;
     
     
     std::vector<float> my_vector;
@@ -55,12 +55,36 @@ void MyGameEngine::startAsteroids() {
     gettimeofday(&t2, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
     temps2 = t2.tv_sec * 1000000 + t2.tv_usec;
     /** choix ligne */
-    if ((temps2 - temps1) > 2* 1000000) {
-        asteroids->push_back(new Asteroids(posX-0.3, tab[rand()%grille->getHeight()]));
+    if ((temps2 - temps1) > 0.9*1000000) {
+        /** probabilite d'avoir des asteroids differents */
+        int freq = (rand()%12);
+        if (freq <= 2) {
+            asteroids->push_back(new Asteroids1(posX, tab[rand()%grille->getHeight()]));
+        } else {
+            asteroids->push_back(new Asteroids(posX, tab[rand()%grille->getHeight()]));
+        }
         gettimeofday(&t1, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
         temps1 = t1.tv_sec * 1000000 + t1.tv_usec;
     }
+    
     /** vitesse de deplacement des missiles */
+    /*for (std::vector<Asteroids *>::iterator asteroid = asteroids->begin(); asteroid != asteroids->end(); asteroid++) {
+//        std::cout << (*asteroid)->getX() << std::endl;
+//        if ((*asteroid)->getX() < 0.0f) {
+            std::cout << "------------------" << std::endl;
+//        }
+    }*/
+    
+    
+    
+    
+    /** On supprime les asteroids une fois arrivee en fin de route */
+    for (int i(0); i < asteroids->size(); i++) {
+        if ((*asteroids)[i]->getX() < (grille->getInitPosX()+0.4)) {
+            asteroids->erase(asteroids->begin() + i);
+            menu_jeu->setVie(0.1f);
+        }
+    }
     
 }
 

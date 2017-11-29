@@ -11,8 +11,6 @@
 #include "../include/Asteroids2.hpp"
 
 Asteroids2::Asteroids2(float x, float y) : Asteroids(x, y) {
-    width = 0.1;
-    height = 0.1;
     r = 0.69;
     g = 0.098;
     b = 0.11;
