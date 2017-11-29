@@ -25,14 +25,16 @@ class MyGameEngine:public GameEngine {
     
 public:
     
-    MyGameEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux, std::vector<Asteroids *> *asteroids):menu_jeu(menu_jeu), grille(grille), vaisseaux(vaisseaux), asteroids(asteroids){}
+    MyGameEngine(Game *menu_jeu, Damier *grille, std::vector<Vaisseaux *> *vaisseaux, std::vector<Asteroids *> *asteroids):menu_jeu(menu_jeu), grille(grille), vaisseaux(vaisseaux), asteroids(asteroids){srand(unsigned (time(NULL)));    // permet de generer un random semblable au precedent
+        
+    }
     
     virtual void idle();
     
     Damier *grille;
     
     void move();
-    void genererAsteroids();
+
     void startAsteroids();
     int my_random(int n);
     

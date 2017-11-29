@@ -49,8 +49,8 @@ public:
     float getInitPosX();
     float getInitPosY();
     
-    float getHeight();
-    float getWidth();
+    int getHeight();
+    int getWidth();
     
     // Methode pour la sauvegarde
     void save();

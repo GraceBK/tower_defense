@@ -52,8 +52,8 @@ Case Damier::getCase(int x) {
 
 float Damier::getInitPosX() { return pos_x_case_zero; }
 float Damier::getInitPosY() { return pos_y_case_zero; }
-float Damier::getHeight() { return height; }
-float Damier::getWidth() { return width; }
+int Damier::getHeight() { return height; }
+int Damier::getWidth() { return width; }
 
 std::vector<int> Damier::indice_case_vaisseau(float x, float y) {
     std::vector<int> case_proche;
