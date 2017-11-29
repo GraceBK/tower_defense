@@ -17,6 +17,8 @@ Vaisseaux1::Vaisseaux1(float x, float y) : Vaisseaux(x, y) {
     r = 0.69;
     g = 0.098;
     b = 0.11;
+    type = 1;
+    frequence = 2;
 }
 
 Vaisseaux1::~Vaisseaux1() {}

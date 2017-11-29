@@ -43,8 +43,9 @@ public:
     float posX, posY, width, height;
     float r, g, b;
     std::vector<float> missiles;
-    int frequence;
-    int puissance;
+    double frequence;  // la frequence de tire
+    int puissance;  // la puissance du tire
+    float vitesse;    // la vitesse de  deplacement du tire
     int type;
     int prix = 10;
     
