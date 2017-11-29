@@ -1,14 +1,20 @@
 
-#include "MyGameEngine.h"
+//#include "MyGameEngine.h"
 
+
+#include "../include/MyGameEngine.h"
 
 void MyGameEngine::idle(){
     if (menu_jeu->isOver() == false) {
         if (menu_jeu->isStart()) {
+            for (int i(0); i < vaisseaux->size(); i++) {
+                (*vaisseaux)[i]->tirer();
+            }
+//            grille->action();
             if (menu_jeu->isRunning()) {
 //            genererAsteroids();
                 startAsteroids();
-                move();
+                //move();
             }
         }
     }

@@ -6,7 +6,10 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-#include "Vaisseaux2.hpp"
+//#include "Vaisseaux2.hpp"
+
+#include "../include/Vaisseaux.hpp"
+#include "../include/Vaisseaux2.hpp"
 
 Vaisseaux2::Vaisseaux2(float x, float y) : Vaisseaux(x, y) {
     width = 0.1;

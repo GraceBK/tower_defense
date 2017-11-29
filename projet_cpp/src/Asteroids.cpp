@@ -6,7 +6,8 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-#include "Asteroids.hpp"
+//#include "Asteroids.hpp"
+#include "../include/Asteroids.hpp"
 
 Asteroids::Asteroids(float x, float y) : posX(x), posY(y), width(0.09), height(0.09), r(1.0), g(1.0), b(1.0), vitesse(0.0009) {}
 
@@ -14,6 +15,7 @@ Asteroids::~Asteroids() {}
 
 void Asteroids::draw() {
     GraphicPrimitives::drawFillRect2D(posX, posY, width, height, r, g, b);
+    
 }
 
 void Asteroids::move() {

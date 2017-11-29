@@ -6,7 +6,9 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-#include "Damier.hpp"
+//#include "Damier.hpp"
+
+#include "../include/Damier.hpp"
 
 Damier::Damier() {
     float x = pos_x_case_zero;
@@ -87,6 +89,17 @@ int Damier::mettre_vaissaux(float x, float y) {
         return -1;
     }
 }
+
+//void Damier::action() {
+////    for (int i(0); i < height; i++) {
+////        for (int j(0); i < width; j++) {
+//            Vaisseaux temp = vaisseaux[4];
+////            if (temp != NULL) {
+//    temp.tirer();
+////            }
+////        }
+////    }
+//}
 
 void Damier::reset_grille() {
     for (int i(0); i < width*height; i++) {

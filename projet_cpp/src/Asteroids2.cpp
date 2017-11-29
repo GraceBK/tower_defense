@@ -6,7 +6,9 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-#include "Asteroids2.hpp"
+//#include "Asteroids2.hpp"
+#include "../include/Asteroids.hpp"
+#include "../include/Asteroids2.hpp"
 
 Asteroids2::Asteroids2(float x, float y) : Asteroids(x, y) {
     width = 0.1;

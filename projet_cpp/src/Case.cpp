@@ -6,7 +6,8 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-#include "Case.hpp"
+//#include "Case.hpp"
+#include "../include/Case.hpp"
 
 Case::Case(float x, float y) : posX(x), posY(y), width(0.1), height(0.1), empty(true) {}
 

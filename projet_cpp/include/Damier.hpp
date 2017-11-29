@@ -17,6 +17,7 @@
 
 #include "GraphicPrimitives.h"
 #include "Case.hpp"
+#include "Vaisseaux.hpp"
 
 class Damier {
     int height = 12;
@@ -41,6 +42,7 @@ public:
     std::vector<int> indice_case_vaisseau(float x, float y);
     
     int mettre_vaissaux(float x, float y);
+    void action();
     void reset_grille();
     
     Case getCase(int x);
@@ -56,6 +58,9 @@ public:
     // Methode pour la sauvegarde
     void save();
     void load();
+    
+    
+//    Vaisseaux *vaisseaux;
 };
 
 #endif /* Damier_hpp */

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <sys/time.h>
 //#include <list>
+#include <ctime>
 
 #include "GraphicPrimitives.h"
 
@@ -41,7 +42,14 @@ public:
     
     float posX, posY, width, height;
     float r, g, b;
-    std::vector<float> missile;
+    std::vector<float> missiles;
+    int frequence;
+    int puissance;
+    int type;
+    int prix = 10;
+    
+    long int temps1 = time(0);
+    long int temps2;
 };
 
 #endif /* Vaisseaux_hpp */
