@@ -55,10 +55,10 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
              */
             if (menu_jeu->clic_btn_exit((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "BYE" << std::endl;
-                menu_jeu->setRunning(false);
-                menu_jeu->setOver(false);
-                menu_jeu->setStart(false);
-                menu_jeu->setHelp(false);
+//                menu_jeu->setRunning(false);
+//                menu_jeu->setOver(false);
+//                menu_jeu->setStart(false);
+//                menu_jeu->setHelp(false);
                 exit(0);
             }
         }

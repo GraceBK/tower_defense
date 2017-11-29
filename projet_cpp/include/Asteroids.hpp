@@ -10,6 +10,8 @@
 #define Asteroids_hpp
 
 #include <stdio.h>
+#include <sys/time.h>
+#include <ctime>
 #include "GraphicPrimitives.h"
 
 class Asteroids {
@@ -40,6 +42,9 @@ public:
     float posX, posY, width, height;
     float r, g, b;
     float vitesse;
+    
+    long int temps1 = time(0);
+    long int temps2;
 };
 
 #endif /* Asteroids_hpp */

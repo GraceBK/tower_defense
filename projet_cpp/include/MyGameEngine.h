@@ -36,4 +36,7 @@ public:
     void startAsteroids();
     int my_random(int n);
     
+    long int temps1 = time(0);
+    long int temps2;
+    
 };

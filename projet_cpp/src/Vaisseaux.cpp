@@ -43,7 +43,7 @@ void Vaisseaux::tirer() {
     }
     /** vitesse de deplacement des missiles */
     for (std::vector<float>::iterator missile = missiles.begin(); missile != missiles.end(); missile++) {
-        *missile = *missile + 0.01;
+        *missile = *missile + vitesse;
     }
 }
 

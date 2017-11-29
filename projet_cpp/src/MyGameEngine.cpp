@@ -14,7 +14,7 @@ void MyGameEngine::idle(){
             if (menu_jeu->isRunning()) {
 //            genererAsteroids();
                 startAsteroids();
-                //move();
+                move();
             }
         }
     }
@@ -57,10 +57,25 @@ void MyGameEngine::genererAsteroids() {
 }
 
 void MyGameEngine::startAsteroids() {
-    std::srand(unsigned (std::time(0)));    // permet de generer un random semblable au precedent
+//    std::srand(unsigned (std::time(0)));    // permet de generer un random semblable au precedent
     std::vector<float> my_vector;
+    float posX((grille->getInitPosX()+0.4)+(grille->getCase(0).getWidth()+(0.105*(grille->getWidth()-1)))), y(grille->getInitPosY()+0.105), y2 = y + grille->getCase(0).getHeight()+0.105*(11-1);
     // on met les points de depart des Asteroids dans my_vector
     
+    struct timeval t1, t2;
+    gettimeofday(&t2, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
+    temps2 = t2.tv_sec * 1000000 + t2.tv_usec;
+    /** choix ligne */
+    if ((temps2 - temps1) > 1000000) {
+        
+        float alea = (y+1) + (((float) rand())/(float)RAND_MAX) * (y2-(y+1))/**()*/;
+        asteroids->push_back(new Asteroids(posX-0.3, alea));
+        gettimeofday(&t1, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
+        temps1 = t1.tv_sec * 1000000 + t1.tv_usec;
+    }
+    /** vitesse de deplacement des missiles */
+    
+    /*
     my_vector.push_back(-0.79);
     my_vector.push_back(-0.685);
     my_vector.push_back(-0.58);
@@ -84,7 +99,7 @@ void MyGameEngine::startAsteroids() {
         std::cout << ' ' << *it;
         asteroids->push_back(new Asteroids(posX-0.3, *it));
     }
-    std::cout << '\n';
+    std::cout << '\n';*/
 }
 
 int MyGameEngine::my_random(int n) {
