@@ -16,7 +16,7 @@
 class Game {
     float r, g, b;
     
-    int score, argent;
+    int score, bank;
     
     bool in_help;
     bool start;
@@ -28,6 +28,11 @@ class Game {
     char * exit = new char[8]{'Q', 'u', 'i', 't', 't', 'e', 'r', '\0'};
 
     char * game_over = new char[10] {'G','A','M','E',' ','O','V','E','R','\0'};
+    
+    /** Prix des vaissaux */
+    int prix_v = 20;
+    int prix_v1 = 30;
+    int prix_v2 = 40;
     
 public:
     Game();
@@ -70,6 +75,16 @@ public:
     
     bool isRunning();
     void setRunning(bool b);
+    
+    int getBank();
+    int getPrixV();
+    int getPrixV1();
+    int getPrixV2();
+    
+    void setBank(int p);
+    void setPrixV(int p);
+    void setPrixV1(int p);
+    void setPrixV2(int p);
 };
 
 #endif /* Game_hpp */

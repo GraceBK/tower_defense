@@ -12,7 +12,7 @@
 
 Game::Game() {
     score = 0;
-    argent = 80;
+    bank = 100;
 }
 
 
@@ -110,6 +110,18 @@ void Game::setRunning(bool b) { is_running = b; }
 
 
 
+int Game::getBank() { return bank; }
+int Game::getPrixV() { return prix_v; }
+int Game::getPrixV1() { return prix_v1; }
+int Game::getPrixV2() { return prix_v2; }
+
+void Game::setBank(int p) { bank = p; }
+void Game::setPrixV(int p) { prix_v = p; }
+void Game::setPrixV1(int p) { prix_v1 = p; }
+void Game::setPrixV2(int p) { prix_v2 = p; }
+
+
+
 void Game::draw_btn_save() {
     float x(0.0f), y(-0.95f), w(0.4f), h(0.1f);
     char * save = new char[12] {'S','A','U','V','E','G','A','R','D','E','R','\0'};
@@ -166,7 +178,7 @@ bool Game::clic_home(float clic_x, float clic_y) {
 void Game::show_stats() {
     float x(-0.95+0.75f), y(0.93-0.23f);
     char ar[5], sc[5], le[3];
-    sprintf(ar, "%d", argent);
+    sprintf(ar, "%d", bank);
     sprintf(sc, "%d", score);
     sprintf(le, "%d", score);
     GraphicPrimitives::drawText2D(ar, x, y + 0.1f, 1.0, 1.0, 1.0);

@@ -22,7 +22,8 @@ void Case::draw_() {
 }
 
 void Case::toString() {
-    std::cout << "Case (" << posX << ", " << posY << ") --> " << isEmpty() << std::endl;
+//    std::cout << "Case (" << posX << ", " << posY << ") --> " << isEmpty() << std::endl;
+    std::cout << isEmpty() << " " << "type_vaisseau,"; // << std::endl;
 }
 
 // GETTERS et SETTERS

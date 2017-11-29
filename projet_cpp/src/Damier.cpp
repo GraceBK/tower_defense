@@ -114,8 +114,8 @@ void Damier::save() {
     outfile.open("save_partie.txt");
     
     // On ecrit les datas dans le fichier "save_partie.txt"
+//    outfile << "COUCOU tu dois enregistrer une grille (°_°)" << std::endl;
     outfile << "COUCOU tu dois enregistrer une grille (°_°)" << std::endl;
-    
     
     // On ferme le fichier
     outfile.close();

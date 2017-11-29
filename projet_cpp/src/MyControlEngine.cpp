@@ -23,6 +23,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             if (menu_jeu->clic_btn_save((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "SAVE: Vous avez clique sur la SAVE" << std::endl;
                 grille->save();
+                grille->toString();
             }
             if (menu_jeu->clic_btn_run((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "RUN: A l'attacque" << std::endl;
@@ -33,13 +34,20 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             if (menu_jeu->clic_btn_help((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "HELP" << std::endl;
                 menu_jeu->setHelp(true);
+                menu_jeu->setRunning(false);
+                menu_jeu->setOver(false);
+                menu_jeu->setStart(false);
             }
             if (menu_jeu->clic_btn_play((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "PLAY" << std::endl;
                 menu_jeu->setStart(true);
+                menu_jeu->setOver(false);
+                menu_jeu->setHelp(false);
             }
             if (menu_jeu->clic_btn_load((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "LOAD" << std::endl;
+                menu_jeu->setOver(false);
+                menu_jeu->setHelp(false);
             }
             /*
              je quitte la partie en appuyant sur la touche 'p' ou
@@ -47,6 +55,10 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
              */
             if (menu_jeu->clic_btn_exit((x-cursor_x) / cursor_x_f, (y-cursor_y)/ -cursor_y_f)) {
                 std::cout << "BYE" << std::endl;
+                menu_jeu->setRunning(false);
+                menu_jeu->setOver(false);
+                menu_jeu->setStart(false);
+                menu_jeu->setHelp(false);
                 exit(0);
             }
         }
@@ -57,30 +69,39 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
     if (menu_jeu->isStart()) {
         if (cursorInGrille((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f)) {
             if (key == 'a') {
-                int case_index;
-                case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
-                std::cout << "======> " << case_index << std::endl;
-                if (case_index != -1) {
-                    vaisseaux->push_back(new Vaisseaux(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
-                } else {}
+                if (menu_jeu->getBank() >= menu_jeu->getPrixV()) {
+                    int case_index;
+                    case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
+                    std::cout << "======> " << case_index << std::endl;
+                    if (case_index != -1) {
+                        vaisseaux->push_back(new Vaisseaux(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
+                        menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV());
+                    } else {}
+                }
             }
             if (key == 'z') {
                 std::cout << "VAISSEAU de type BOUMER" << std::endl;
-                int case_index;
-                case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
-                std::cout << "======> " << case_index << std::endl;
-                if (case_index != -1) {
-                    vaisseaux->push_back(new Vaisseaux1(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
-                } else {}
+                if (menu_jeu->getBank() >= menu_jeu->getPrixV1()) {
+                    int case_index;
+                    case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
+                    std::cout << "======> " << case_index << std::endl;
+                    if (case_index != -1) {
+                        vaisseaux->push_back(new Vaisseaux1(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
+                        menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV1());
+                    } else {}
+                }
             }
             if (key == 'e') {
                 std::cout << "VAISSEAU de type ATOMIC" << std::endl;
-                int case_index;
-                case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
-                std::cout << "======> " << case_index << std::endl;
-                if (case_index != -1) {
-                    vaisseaux->push_back(new Vaisseaux2(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
-                } else {}
+                if (menu_jeu->getBank() >= menu_jeu->getPrixV2()) {
+                    int case_index;
+                    case_index = grille->mettre_vaissaux((x-cursor_x) / cursor_x_f, (y-cursor_y) / -cursor_y_f);
+                    std::cout << "======> " << case_index << std::endl;
+                    if (case_index != -1) {
+                        vaisseaux->push_back(new Vaisseaux2(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
+                        menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV2());
+                    } else {}
+                }
             }
         }
     }
@@ -140,4 +161,9 @@ void MyControlEngine::resetGrille() {
     for (int i = (int) asteroids->size() - 1; i >= 0; i--) {
         asteroids->erase(asteroids->begin() + i);
     }
+    menu_jeu->setBank(100);
+    menu_jeu->setRunning(false);
+    menu_jeu->setOver(false);
+    menu_jeu->setStart(false);
+    menu_jeu->setHelp(false);
 }

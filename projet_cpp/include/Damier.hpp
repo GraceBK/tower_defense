@@ -26,7 +26,6 @@ class Damier {
     float pos_x_case_zero = -0.8f;
     float pos_y_case_zero = -0.9f;
     
-    
     std::vector<Case> grille;
     
 public:
@@ -52,8 +51,6 @@ public:
     
     float getHeight();
     float getWidth();
-    
-    
     
     // Methode pour la sauvegarde
     void save();
