@@ -51,6 +51,40 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
             Si la distance entre *missile et getX de l'asteroids est comprise entre [0, 0.009] donc il y a touché sa cible
          */
         
+        for (int i(0); i < asteroids->size(); i++) {
+            if (distance(*missile, posY, (*asteroids)[i]->getX(), (*asteroids)[i]->getY()) < 0.05) {
+                std::cout << "Touché " << i << " " << missiles.size() << std::endl;
+                
+                if (type == 1) {
+                    // missile en T
+                    std::cout << "T " << i << std::endl;
+                } else if (type == 2) {
+                    // missile en +
+                    std::cout << "+ " << i << std::endl;
+                } else {
+                    std::cout << "n " << i << std::endl;
+                }
+                
+//                missiles.erase(missiles.begin());
+//                for (int j(0); j < missiles.size(); j++) {
+//                    missiles.erase(missiles.begin() + j);
+//                    if (missiles.size() != 0) {
+//                        missiles.back();
+//                    }
+//                    missiles.erase(missiles.begin());
+//                }
+            }
+            /*if ((*asteroids)[i]->getX() < 0.0f) {
+                std::cout << "------------------" << (*asteroids)[1]->getY() << std::endl;
+            }*/
+        }
+        
+        /*
+         if (distance(*missie, posY, (*asteoids)[i]->getX(), (*asteoids)[i]->getY() < 0.05) {
+            std::cout << "Touché" << std::endl;
+         }
+         */
+        
         /*for (int i(0); i < asteroids->size(); i++) {
             if ((*asteroids)[i]->getX() < 0.0f) {
                 std::cout << "------------------" << (*asteroids)[1]->getY() << std::endl;
@@ -60,6 +94,12 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
 //        std::cout << "------>ASTE " << (*asteroids)[1]->getY() << std::endl;
     }
 //    std::cout << "------> " << posY << std::endl;
+}
+                
+float Vaisseaux::distance(float x1, float y1, float x2, float y2) {
+    float dx = x2 - x1;
+    float dy = y2 - y1;
+    return sqrtf((dx * dx) + (dy * dy));
 }
 
 void Vaisseaux::setR(float r_c) { r = r_c; }

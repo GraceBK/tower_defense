@@ -28,6 +28,7 @@ public:
     void toString();
     
     void move();
+    bool touche(int type_missile);
     
     // GETTERS et SETTERS
     float getX();

@@ -32,6 +32,20 @@ void Asteroids::move() {
     posX = posX - vitesse*1;
 }
 
+bool Asteroids::touche(int type_missile) {
+    if (type_missile == 1) {
+        std::cout << "VAISO 1" << std::endl;
+        return true;
+    } else if (type_missile == 2) {
+        std::cout << "VAISO 2" << std::endl;
+        return true;
+    } else {
+        std::cout << "VAISO Default" << std::endl;
+        return true;
+    }
+    return false;
+}
+
 void Asteroids::setX(float newX) { posX = posX - newX; }
 
 void Asteroids::setR(float r_c) { r = r_c; }

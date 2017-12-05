@@ -13,6 +13,7 @@
 #include <sys/time.h>
 //#include <list>
 #include <ctime>
+#include <cmath>
 
 #include "GraphicPrimitives.h"
 #include "Asteroids.hpp"
@@ -52,6 +53,8 @@ public:
     
     long int temps1 = time(0);
     long int temps2;
+    
+    float distance(float x1, float y1, float x2, float y2);
 };
 
 #endif /* Vaisseaux_hpp */

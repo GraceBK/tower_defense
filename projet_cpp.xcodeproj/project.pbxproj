@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6511D7301FD69AAA0029D048 /* all_others.c in Sources */ = {isa = PBXBuildFile; fileRef = 6511D72F1FD69AAA0029D048 /* all_others.c */; };
+		657503091FD71F340091CA68 /* all_others.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657503071FD71F340091CA68 /* all_others.cpp */; };
+		6575030A1FD71F340091CA68 /* Polygone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657503081FD71F340091CA68 /* Polygone.cpp */; };
 		65BFFA491FC42E540026DB43 /* Vaisseaux2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */; };
 		65BFFA4C1FC42E780026DB43 /* Vaisseaux1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */; };
 		65BFFA4F1FC42EC20026DB43 /* Asteroids1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA4D1FC42EC20026DB43 /* Asteroids1.cpp */; };
@@ -40,8 +41,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6511D72E1FD69AAA0029D048 /* all_others.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = all_others.h; sourceTree = "<group>"; };
-		6511D72F1FD69AAA0029D048 /* all_others.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = all_others.c; sourceTree = "<group>"; };
+		657503071FD71F340091CA68 /* all_others.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = all_others.cpp; sourceTree = "<group>"; };
+		657503081FD71F340091CA68 /* Polygone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygone.cpp; sourceTree = "<group>"; };
+		6575030B1FD71F620091CA68 /* Polygone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Polygone.hpp; sourceTree = "<group>"; };
+		6575030C1FD71F620091CA68 /* all_others.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = all_others.hpp; sourceTree = "<group>"; };
 		65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vaisseaux2.cpp; sourceTree = "<group>"; };
 		65BFFA481FC42E540026DB43 /* Vaisseaux2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vaisseaux2.hpp; sourceTree = "<group>"; };
 		65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vaisseaux1.cpp; sourceTree = "<group>"; };
@@ -139,7 +142,8 @@
 		65E20ADB1FACC9360088885F /* include */ = {
 			isa = PBXGroup;
 			children = (
-				6511D72E1FD69AAA0029D048 /* all_others.h */,
+				6575030C1FD71F620091CA68 /* all_others.hpp */,
+				6575030B1FD71F620091CA68 /* Polygone.hpp */,
 				65C8C68C1FB1D2AB00A37F8F /* Game.hpp */,
 				65E20AFA1FACD9040088885F /* Case.hpp */,
 				65C8C6831FB1B58400A37F8F /* Asteroids.hpp */,
@@ -188,7 +192,8 @@
 				65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */,
 				65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */,
 				65C8C68B1FB1D2AB00A37F8F /* Game.cpp */,
-				6511D72F1FD69AAA0029D048 /* all_others.c */,
+				657503071FD71F340091CA68 /* all_others.cpp */,
+				657503081FD71F340091CA68 /* Polygone.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -256,11 +261,12 @@
 				65BFFA4F1FC42EC20026DB43 /* Asteroids1.cpp in Sources */,
 				65E20AF51FACCF980088885F /* MyGraphicEngine.cpp in Sources */,
 				65BFFA4C1FC42E780026DB43 /* Vaisseaux1.cpp in Sources */,
-				6511D7301FD69AAA0029D048 /* all_others.c in Sources */,
 				65C8C6841FB1B58400A37F8F /* Asteroids.cpp in Sources */,
 				65C8C6871FB1B6D000A37F8F /* Damier.cpp in Sources */,
+				6575030A1FD71F340091CA68 /* Polygone.cpp in Sources */,
 				65E20ACE1FACC7450088885F /* main.cpp in Sources */,
 				65E20AF61FACCF980088885F /* MyControlEngine.cpp in Sources */,
+				657503091FD71F340091CA68 /* all_others.cpp in Sources */,
 				65E20AFB1FACD9040088885F /* Case.cpp in Sources */,
 				65C8C68A1FB1C48200A37F8F /* Vaisseaux.cpp in Sources */,
 				65BFFA491FC42E540026DB43 /* Vaisseaux2.cpp in Sources */,

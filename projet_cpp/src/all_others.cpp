@@ -1,12 +1,12 @@
 //
-//  all_others.c
+//  all_others.cpp
 //  projet_cpp
 //
 //  Created by Grace on 05/12/2017.
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-#include "all_others.h"
+#include "all_others.hpp"
 
 float distance(float x1, float y1, float x2, float y2) {
     float dx = x2 - x1;
