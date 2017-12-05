@@ -31,7 +31,7 @@ void Vaisseaux::draw() {
     }
 }
 
-void Vaisseaux::tirer() {
+void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
     struct timeval t1, t2;
     gettimeofday(&t2, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
     temps2 = t2.tv_sec * 1000000 + t2.tv_usec;
@@ -44,9 +44,26 @@ void Vaisseaux::tirer() {
     /** vitesse de deplacement des missiles */
     for (std::vector<float>::iterator missile = missiles.begin(); missile != missiles.end(); missile++) {
         *missile = *missile + vitesse;
+        
+        /**
+         COLLISION Asteroide et Missile
+         Si la distance entre posY (position du vaisseau) et getY de l'asteroids est comprise entre [0, 0.009] donc le missile et l'asteroid sont sur la meme trajectoire
+            Si la distance entre *missile et getX de l'asteroids est comprise entre [0, 0.009] donc il y a touché sa cible
+         */
+        
+        /*for (int i(0); i < asteroids->size(); i++) {
+            if ((*asteroids)[i]->getX() < 0.0f) {
+                std::cout << "------------------" << (*asteroids)[1]->getY() << std::endl;
+            }
+        }*/
+        
+//        std::cout << "------>ASTE " << (*asteroids)[1]->getY() << std::endl;
     }
+//    std::cout << "------> " << posY << std::endl;
 }
 
 void Vaisseaux::setR(float r_c) { r = r_c; }
 void Vaisseaux::setG(float g_c) { g = g_c; }
 void Vaisseaux::setB(float b_c) { b = b_c; }
+
+float Vaisseaux::getY() { return posY; }

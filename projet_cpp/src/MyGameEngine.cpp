@@ -8,7 +8,7 @@ void MyGameEngine::idle(){
     if (!menu_jeu->isOver()) {
         if (menu_jeu->isStart()) {
             for (int i(0); i < vaisseaux->size(); i++) {
-                (*vaisseaux)[i]->tirer();
+                (*vaisseaux)[i]->tirer(asteroids);
             }
 //            grille->action();
             if (menu_jeu->isRunning()) {
@@ -70,13 +70,23 @@ void MyGameEngine::startAsteroids() {
     /** vitesse de deplacement des missiles */
     /*for (std::vector<Asteroids *>::iterator asteroid = asteroids->begin(); asteroid != asteroids->end(); asteroid++) {
 //        std::cout << (*asteroid)->getX() << std::endl;
-//        if ((*asteroid)->getX() < 0.0f) {
-            std::cout << "------------------" << std::endl;
-//        }
+        if ((*asteroid)->getX() < -0.0f) {
+            std::cout << "------------------" << (*asteroid)->getX() << std::endl;
+        }
     }*/
     
+    for (int i(0); i < vaisseaux->size(); i++) {
+        std::cout << "Y - vais ------> " << (*vaisseaux)[i]->posY << std::endl;
+    }
     
+    /*for (std::vector<Asteroids *>::iterator asteroid = asteroids->begin(); asteroid != asteroids->end(); asteroid++) {
+        std::cout << "------> " << (*asteroid)->getX() << std::endl;
+        
+    }*/
     
+    for (int i(0); i < asteroids->size(); i++) {
+        std::cout << "Y - asto ------> " << (*asteroids)[i]->posY << std::endl;
+    }
     
     /** On supprime les asteroids une fois arrivee en fin de route */
     for (int i(0); i < asteroids->size(); i++) {

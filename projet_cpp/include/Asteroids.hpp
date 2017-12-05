@@ -15,6 +15,9 @@
 #include "GraphicPrimitives.h"
 
 class Asteroids {
+protected:
+    float width = 0.09;
+    float height = 0.09;
     
 public:
     Asteroids(float x, float y);
@@ -39,9 +42,12 @@ public:
     void setB(float b_c);
     
     
-    float posX, posY, width, height;
-    float r, g, b;
-    float vitesse;
+    float posX, posY;
+    float vitesse = 0.0009;
+    
+    float r = 1.0;
+    float g = 1.0;
+    float b = 1.0;
     
     long int temps1 = time(0);
     long int temps2;

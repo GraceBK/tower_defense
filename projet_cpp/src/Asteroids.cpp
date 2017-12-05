@@ -9,7 +9,7 @@
 //#include "Asteroids.hpp"
 #include "../include/Asteroids.hpp"
 
-Asteroids::Asteroids(float x, float y) : posX(x), posY(y), width(0.09), height(0.09), r(1.0), g(1.0), b(1.0), vitesse(0.0009) {}
+Asteroids::Asteroids(float x, float y) : posX(x), posY(y) {}
 
 Asteroids::~Asteroids() {}
 
@@ -40,3 +40,6 @@ void Asteroids::setB(float b_c) { b = b_c; }
 
 float Asteroids::getX() { return posX; }
 float Asteroids::getY() { return posY; }
+
+float Asteroids::getWidth() { return width; }
+float Asteroids::getHeight() { return height; }

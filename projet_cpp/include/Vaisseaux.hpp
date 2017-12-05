@@ -15,6 +15,7 @@
 #include <ctime>
 
 #include "GraphicPrimitives.h"
+#include "Asteroids.hpp"
 
 class Vaisseaux {
     
@@ -25,7 +26,7 @@ public:
     void draw();
     
     void toString();
-    void tirer();
+    void tirer(std::vector<Asteroids *> *asteroids);
     
     // GETTERS et SETTERS
     float getX();

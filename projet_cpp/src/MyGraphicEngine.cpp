@@ -56,9 +56,9 @@ void MyGraphicEngine::interface_vaisseaux() {
     char * boum = new char[v2.length() + 1];
     char * atomic = new char[v3.length() + 1];
     
-    std::strcpy(defaut, v1.c_str());
-    std::strcpy(boum, v2.c_str());
-    std::strcpy(atomic, v3.c_str());
+    strcpy(defaut, v1.c_str());
+    strcpy(boum, v2.c_str());
+    strcpy(atomic, v3.c_str());
     
     float x(-0.95), y(0.78), n(0.08);
     
