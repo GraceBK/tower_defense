@@ -74,19 +74,28 @@ void MyGameEngine::startAsteroids() {
             std::cout << "------------------" << (*asteroid)->getX() << std::endl;
         }
     }*/
-    
+    /** Collision Vaisseaux avec Asteroides */
     for (int i(0); i < vaisseaux->size(); i++) {
-        std::cout << "Y - vais ------> " << (*vaisseaux)[i]->posY << std::endl;
+        for (int j(0); j < asteroids->size(); j++) {
+            if (distance((*vaisseaux)[i]->posX, (*vaisseaux)[i]->posY, (*asteroids)[j]->posX, (*asteroids)[j]->posY) < 0.1) {
+                std::cout << " BOUM " << std::endl;
+                asteroids->erase(asteroids->begin() + j);
+                vaisseaux->erase(vaisseaux->begin() + i);
+            }
+        }
     }
     
     /*for (std::vector<Asteroids *>::iterator asteroid = asteroids->begin(); asteroid != asteroids->end(); asteroid++) {
         std::cout << "------> " << (*asteroid)->getX() << std::endl;
         
     }*/
-    
-    for (int i(0); i < asteroids->size(); i++) {
-        std::cout << "Y - asto ------> " << (*asteroids)[i]->posY << std::endl;
-    }
+//    if (variation(<#float v1#>, <#float v2#>)) {
+//        <#statements#>
+//    }
+//
+//    for (int i(0); i < asteroids->size(); i++) {
+//        std::cout << "Y - asto ------> " << (*asteroids)[i]->posY << std::endl;
+//    }
     
     /** On supprime les asteroids une fois arrivee en fin de route */
     for (int i(0); i < asteroids->size(); i++) {
@@ -98,6 +107,16 @@ void MyGameEngine::startAsteroids() {
     
 }
 
+float MyGameEngine::variation(float v1, float v2) {
+    return (v2 - v1) / v1 * 100;
+}
+
 int MyGameEngine::my_random(int n) {
     return std::rand() % n;
+}
+
+float MyGameEngine::distance(float x1, float y1, float x2, float y2) {
+    float dx = x2 - x1;
+    float dy = y2 - y1;
+    return sqrtf((dx * dx) + (dy * dy));
 }

@@ -43,4 +43,8 @@ public:
     long int temps1 = time(0);
     long int temps2;
     
+    float variation(float v1, float v2);
+    
+    float distance(float x1, float y1, float x2, float y2);
+    
 };
