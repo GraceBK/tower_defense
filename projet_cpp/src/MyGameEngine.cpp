@@ -1,8 +1,4 @@
-
-//#include "MyGameEngine.h"
-
-
-#include "../include/MyGameEngine.h"
+#include "MyGameEngine.h"
 
 void MyGameEngine::idle(){
     if (!menu_jeu->isOver()) {
@@ -47,8 +43,8 @@ void MyGameEngine::startAsteroids() {
     
     std::vector<float> my_vector;
     float posX((grille->getInitPosX()+0.4)+(grille->getCase(0).getWidth()+(0.105*(grille->getWidth()-1))));
-    float y(grille->getInitPosY()+0.105);
-    float y2 = y + grille->getCase(0).getHeight()+0.105*(11-1);
+//    float y(grille->getInitPosY()+0.105);
+//    float y2 = y + grille->getCase(0).getHeight()+0.105*(11-1);
     // on met les points de depart des Asteroids dans my_vector
     
     struct timeval t1, t2;

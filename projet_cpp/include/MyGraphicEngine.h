@@ -3,9 +3,13 @@
 #include "Engine.h"
 #include "GraphicPrimitives.h"
 #include "Damier.hpp"
-#include "Vaisseaux.hpp"
 #include "Game.hpp"
+#include "Vaisseaux.hpp"
+#include "Vaisseaux1.hpp"
+#include "Vaisseaux2.hpp"
 #include "Asteroids.hpp"
+#include "Asteroids1.hpp"
+#include "Asteroids2.hpp"
 
 class MyGraphicEngine:public GraphicEngine {
     Game *menu_jeu;

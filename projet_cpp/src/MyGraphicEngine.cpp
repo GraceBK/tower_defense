@@ -1,7 +1,4 @@
-
-//#include "MyGraphicEngine.h"
-
-#include "../include/MyGraphicEngine.h"
+#include "MyGraphicEngine.h"
 
 void MyGraphicEngine::Draw() {
 //    if (menu_jeu->isOver() == false) {

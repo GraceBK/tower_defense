@@ -6,9 +6,7 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-//#include "Damier.hpp"
-
-#include "../include/Damier.hpp"
+#include "Damier.hpp"
 
 Damier::Damier() {
     float x = pos_x_case_zero;

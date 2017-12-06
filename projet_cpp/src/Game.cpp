@@ -6,9 +6,7 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-//#include "Game.hpp"
-
-#include "../include/Game.hpp"
+#include "Game.hpp"
 
 Game::Game() {
     score = 0;

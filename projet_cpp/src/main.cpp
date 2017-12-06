@@ -7,18 +7,13 @@
 //
 
 #include <iostream>
-#include "../include/Engine.h"
-#include "../include/Game.hpp"
-#include "../include/Damier.hpp"
-#include "../include/Asteroids.hpp"
-#include "../include/MyGraphicEngine.h"
-#include "../include/MyGameEngine.h"
-#include "../include/MyControlEngine.h"
-
-/*#include "Engine.h"
-#include "MyControlEngine.h"
+#include "Engine.h"
+#include "Game.hpp"
+#include "Damier.hpp"
+#include "Asteroids.hpp"
+#include "MyGraphicEngine.h"
 #include "MyGameEngine.h"
-#include "MyGraphicEngine.h"*/
+#include "MyControlEngine.h"
 
 int main(int argc, char * argv[]) {
     // insert code here...

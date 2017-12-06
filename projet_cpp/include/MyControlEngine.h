@@ -5,6 +5,8 @@
 #include "Vaisseaux1.hpp"
 #include "Vaisseaux2.hpp"
 #include "Asteroids.hpp"
+#include "Asteroids1.hpp"
+#include "Asteroids2.hpp"
 #include "Game.hpp"
 
 class MyControlEngine:public ControlEngine {

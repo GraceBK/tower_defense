@@ -6,9 +6,7 @@
 //  Copyright © 2017 Grace BOUKOU. All rights reserved.
 //
 
-//#include "Asteroids1.hpp"
-#include "../include/Asteroids.hpp"
-#include "../include/Asteroids1.hpp"
+#include "Asteroids1.hpp"
 
 Asteroids1::Asteroids1(float x, float y) : Asteroids(x, y) {
     r = 0.69;

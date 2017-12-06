@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		657503091FD71F340091CA68 /* all_others.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657503071FD71F340091CA68 /* all_others.cpp */; };
-		6575030A1FD71F340091CA68 /* Polygone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657503081FD71F340091CA68 /* Polygone.cpp */; };
+		65831FEA1FD745E50097FDFB /* libEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65831FE91FD745E50097FDFB /* libEngine.a */; };
 		65BFFA491FC42E540026DB43 /* Vaisseaux2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */; };
 		65BFFA4C1FC42E780026DB43 /* Vaisseaux1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */; };
 		65BFFA4F1FC42EC20026DB43 /* Asteroids1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA4D1FC42EC20026DB43 /* Asteroids1.cpp */; };
@@ -21,7 +21,6 @@
 		65E20AD61FACC8480088885F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD51FACC80F0088885F /* Cocoa.framework */; };
 		65E20AD81FACC85C0088885F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD71FACC8500088885F /* OpenGL.framework */; };
 		65E20ADA1FACC87C0088885F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20AD91FACC8720088885F /* GLUT.framework */; };
-		65E20AE01FACCAD00088885F /* libEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E20ADE1FACCAA90088885F /* libEngine.a */; };
 		65E20AF51FACCF980088885F /* MyGraphicEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20AF11FACCF970088885F /* MyGraphicEngine.cpp */; };
 		65E20AF61FACCF980088885F /* MyControlEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20AF21FACCF970088885F /* MyControlEngine.cpp */; };
 		65E20AF81FACCF980088885F /* MyGameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E20AF41FACCF970088885F /* MyGameEngine.cpp */; };
@@ -42,9 +41,8 @@
 
 /* Begin PBXFileReference section */
 		657503071FD71F340091CA68 /* all_others.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = all_others.cpp; sourceTree = "<group>"; };
-		657503081FD71F340091CA68 /* Polygone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygone.cpp; sourceTree = "<group>"; };
-		6575030B1FD71F620091CA68 /* Polygone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Polygone.hpp; sourceTree = "<group>"; };
 		6575030C1FD71F620091CA68 /* all_others.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = all_others.hpp; sourceTree = "<group>"; };
+		65831FE91FD745E50097FDFB /* libEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEngine.a; path = projet_cpp/libMac/libEngine.a; sourceTree = "<group>"; };
 		65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vaisseaux2.cpp; sourceTree = "<group>"; };
 		65BFFA481FC42E540026DB43 /* Vaisseaux2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vaisseaux2.hpp; sourceTree = "<group>"; };
 		65BFFA4A1FC42E780026DB43 /* Vaisseaux1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vaisseaux1.cpp; sourceTree = "<group>"; };
@@ -91,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E20AE01FACCAD00088885F /* libEngine.a in Frameworks */,
+				65831FEA1FD745E50097FDFB /* libEngine.a in Frameworks */,
 				65E20ADA1FACC87C0088885F /* GLUT.framework in Frameworks */,
 				65E20AD81FACC85C0088885F /* OpenGL.framework in Frameworks */,
 				65E20AD61FACC8480088885F /* Cocoa.framework in Frameworks */,
@@ -132,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				65E20ADE1FACCAA90088885F /* libEngine.a */,
+				65831FE91FD745E50097FDFB /* libEngine.a */,
 				65E20AD91FACC8720088885F /* GLUT.framework */,
 				65E20AD71FACC8500088885F /* OpenGL.framework */,
 				65E20AD51FACC80F0088885F /* Cocoa.framework */,
@@ -143,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				6575030C1FD71F620091CA68 /* all_others.hpp */,
-				6575030B1FD71F620091CA68 /* Polygone.hpp */,
 				65C8C68C1FB1D2AB00A37F8F /* Game.hpp */,
 				65E20AFA1FACD9040088885F /* Case.hpp */,
 				65C8C6831FB1B58400A37F8F /* Asteroids.hpp */,
@@ -193,7 +191,6 @@
 				65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */,
 				65C8C68B1FB1D2AB00A37F8F /* Game.cpp */,
 				657503071FD71F340091CA68 /* all_others.cpp */,
-				657503081FD71F340091CA68 /* Polygone.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -263,7 +260,6 @@
 				65BFFA4C1FC42E780026DB43 /* Vaisseaux1.cpp in Sources */,
 				65C8C6841FB1B58400A37F8F /* Asteroids.cpp in Sources */,
 				65C8C6871FB1B6D000A37F8F /* Damier.cpp in Sources */,
-				6575030A1FD71F340091CA68 /* Polygone.cpp in Sources */,
 				65E20ACE1FACC7450088885F /* main.cpp in Sources */,
 				65E20AF61FACCF980088885F /* MyControlEngine.cpp in Sources */,
 				657503091FD71F340091CA68 /* all_others.cpp in Sources */,
@@ -386,6 +382,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/projet_cpp/libMac",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -398,6 +395,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/projet_cpp/libMac",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
