@@ -9,9 +9,9 @@
 #include "Asteroids2.hpp"
 
 Asteroids2::Asteroids2(float x, float y) : Asteroids(x, y) {
-    r = 0.69;
-    g = 0.098;
-    b = 0.11;
+    r = R_A2;
+    g = G_A2;
+    b = B_A2;
 }
 
 Asteroids2::~Asteroids2() {}

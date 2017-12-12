@@ -32,12 +32,12 @@ void Vaisseaux::draw() {
 void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
     struct timeval t1, t2;
     gettimeofday(&t2, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
-    temps2 = t2.tv_sec * 1000000 + t2.tv_usec;
+    temps2 = t2.tv_sec * TICK + t2.tv_usec;
     /** armement des missiles dans le canon */
-    if ((temps2 - temps1) > frequence * 1000000) {
+    if ((temps2 - temps1) > frequence * TICK) {
         missiles.push_back(posX + width); // j'arme
         gettimeofday(&t1, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
-        temps1 = t1.tv_sec * 1000000 + t1.tv_usec;
+        temps1 = t1.tv_sec * TICK + t1.tv_usec;
     }
     /** vitesse de deplacement des missiles */
     for (std::vector<float>::iterator missile = missiles.begin(); missile != missiles.end(); missile++) {

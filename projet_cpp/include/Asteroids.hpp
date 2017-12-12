@@ -13,11 +13,12 @@
 #include <sys/time.h>
 #include <ctime>
 #include "GraphicPrimitives.h"
+#include "all_others.hpp"
 
 class Asteroids {
 protected:
-    float width = 0.09;
-    float height = 0.09;
+    float width = A_SIZE;
+    float height = A_SIZE;
     int vie = 100;
     
 public:
@@ -50,9 +51,9 @@ public:
     float posX, posY;
     float vitesse = 0.0009;
     
-    float r = 1.0;
-    float g = 1.0;
-    float b = 1.0;
+    float r = R_A;
+    float g = G_A;
+    float b = B_A;
     
     long int temps1 = time(0);
     long int temps2;

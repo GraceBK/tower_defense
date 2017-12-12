@@ -9,9 +9,9 @@
 #include "Asteroids1.hpp"
 
 Asteroids1::Asteroids1(float x, float y) : Asteroids(x, y) {
-    r = 0.69;
-    g = 0.098;
-    b = 0.11;
+    r = R_A1;
+    g = G_A1;
+    b = B_A1;
 }
 
 Asteroids1::~Asteroids1() {}

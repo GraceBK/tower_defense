@@ -18,13 +18,13 @@
 #include "GraphicPrimitives.h"
 #include "Case.hpp"
 #include "Vaisseaux.hpp"
+#include "all_others.hpp"
 
 class Damier {
-    int height = 12;
-    int width = 12;
-    float decalage = 0.105;
-    float pos_x_case_zero = -0.8f;
-    float pos_y_case_zero = -0.9f;
+    int height = SIZE_GRILLE;
+    int width = SIZE_GRILLE;
+    float pos_x_case_zero = CASE_Z_X;
+    float pos_y_case_zero = CASE_Z_Y;
     
     std::vector<Case> grille;
     
