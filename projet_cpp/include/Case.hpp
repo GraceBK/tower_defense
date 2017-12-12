@@ -12,6 +12,7 @@
 #include <stdio.h>
 
 #include "GraphicPrimitives.h"
+#include "all_others.hpp"
 
 class Case {
     float posX, posY, width, height;
@@ -22,10 +23,6 @@ public:
     ~Case();
     
     void draw();
-    
-    void draw_();
-    
-    void toString();
     
     // GETTERS et SETTERS
     float getX();

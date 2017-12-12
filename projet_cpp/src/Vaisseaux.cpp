@@ -8,7 +8,7 @@
 
 #include "Vaisseaux.hpp"
 
-Vaisseaux::Vaisseaux(float x, float y) : posX(x), posY(y), width(0.1), height(0.1), r(0.298), g(0.667), b(0.361), frequence(1), puissance(5), vitesse(0.01) {}
+Vaisseaux::Vaisseaux(float x, float y) : posX(x), posY(y), width(V_SIZE), height(V_SIZE), r(R_V), g(G_V), b(B_V), frequence(1), puissance(5), vitesse(0.01) {}
 
 Vaisseaux::~Vaisseaux() {}
 

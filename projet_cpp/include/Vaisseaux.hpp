@@ -17,6 +17,7 @@
 
 #include "GraphicPrimitives.h"
 #include "Asteroids.hpp"
+#include "all_others.hpp"
 
 class Vaisseaux {
     

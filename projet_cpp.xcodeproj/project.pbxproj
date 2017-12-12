@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650822B01FDFDF520073D376 /* Missile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650822AE1FDFDF520073D376 /* Missile.cpp */; };
 		657503091FD71F340091CA68 /* all_others.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 657503071FD71F340091CA68 /* all_others.cpp */; };
 		65831FEA1FD745E50097FDFB /* libEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65831FE91FD745E50097FDFB /* libEngine.a */; };
 		65BFFA491FC42E540026DB43 /* Vaisseaux2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */; };
@@ -40,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		650822AE1FDFDF520073D376 /* Missile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Missile.cpp; sourceTree = "<group>"; };
+		650822AF1FDFDF520073D376 /* Missile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Missile.hpp; sourceTree = "<group>"; };
 		657503071FD71F340091CA68 /* all_others.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = all_others.cpp; sourceTree = "<group>"; };
 		6575030C1FD71F620091CA68 /* all_others.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = all_others.hpp; sourceTree = "<group>"; };
 		65831FE91FD745E50097FDFB /* libEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEngine.a; path = projet_cpp/libMac/libEngine.a; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 		65E20ADB1FACC9360088885F /* include */ = {
 			isa = PBXGroup;
 			children = (
+				650822AF1FDFDF520073D376 /* Missile.hpp */,
 				6575030C1FD71F620091CA68 /* all_others.hpp */,
 				65C8C68C1FB1D2AB00A37F8F /* Game.hpp */,
 				65E20AFA1FACD9040088885F /* Case.hpp */,
@@ -191,6 +195,7 @@
 				65BFFA471FC42E540026DB43 /* Vaisseaux2.cpp */,
 				65C8C68B1FB1D2AB00A37F8F /* Game.cpp */,
 				657503071FD71F340091CA68 /* all_others.cpp */,
+				650822AE1FDFDF520073D376 /* Missile.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				65BFFA4F1FC42EC20026DB43 /* Asteroids1.cpp in Sources */,
 				65E20AF51FACCF980088885F /* MyGraphicEngine.cpp in Sources */,
 				65BFFA4C1FC42E780026DB43 /* Vaisseaux1.cpp in Sources */,
+				650822B01FDFDF520073D376 /* Missile.cpp in Sources */,
 				65C8C6841FB1B58400A37F8F /* Asteroids.cpp in Sources */,
 				65C8C6871FB1B6D000A37F8F /* Damier.cpp in Sources */,
 				65E20ACE1FACC7450088885F /* main.cpp in Sources */,

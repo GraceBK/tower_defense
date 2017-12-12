@@ -9,11 +9,9 @@
 #include "Vaisseaux1.hpp"
 
 Vaisseaux1::Vaisseaux1(float x, float y) : Vaisseaux(x, y) {
-    width = 0.1;
-    height = 0.1;
-    r = 0.69;
-    g = 0.098;
-    b = 0.11;
+    r = R_V1;
+    g = G_V1;
+    b = B_V1;
     type = 1;
     frequence = 2;
 }

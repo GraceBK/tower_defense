@@ -8,21 +8,12 @@
 
 #include "Case.hpp"
 
-Case::Case(float x, float y) : posX(x), posY(y), width(0.1), height(0.1), empty(true) {}
+Case::Case(float x, float y) : posX(x), posY(y), width(C_SIZE), height(C_SIZE), empty(true) {}
 
 Case::~Case() {}
 
 void Case::draw() {
-    GraphicPrimitives::drawFillRect2D(posX, posY, width, height, 0, 0.2, 0);
-}
-
-void Case::draw_() {
-    GraphicPrimitives::drawFillRect2D(posX, posY, width, height, 0.0, 0.5, 0.255);
-}
-
-void Case::toString() {
-//    std::cout << "Case (" << posX << ", " << posY << ") --> " << isEmpty() << std::endl;
-    std::cout << isEmpty() << " " << "type_vaisseau,"; // << std::endl;
+    GraphicPrimitives::drawFillRect2D(posX, posY, width, height, R_C, G_C, B_C);
 }
 
 // GETTERS et SETTERS

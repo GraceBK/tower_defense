@@ -29,19 +29,6 @@ void Damier::draw() {
     for (int i(0); i < grille.size(); i++) {
         grille[i].draw();
     }
-//    GraphicPrimitives::drawFillRect2D(pos_x_case_zero+0.4, pos_y_case_zero+decalage, grille[0].getWidth(), grille[0].getHeight()+decalage*(taille-1), 1.0, 0.0, 0.0);
-}
-
-void Damier::draw_() {
-    for (int i(0); i < grille.size(); i++) {
-        grille[i].draw_();
-    }
-}
-
-void Damier::toString() {
-    for (int i(0); i < grille.size(); i++) {
-        grille[i].toString();
-    }
 }
 
 Case Damier::getCase(int x) {

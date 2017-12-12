@@ -34,10 +34,6 @@ public:
     
     void draw();
     
-    void draw_();
-    
-    void toString();
-    
     std::vector<int> indice_case_vaisseau(float x, float y);
     
     int mettre_vaissaux(float x, float y);
