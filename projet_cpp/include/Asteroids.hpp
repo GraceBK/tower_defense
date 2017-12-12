@@ -18,6 +18,7 @@ class Asteroids {
 protected:
     float width = 0.09;
     float height = 0.09;
+    int vie = 100;
     
 public:
     Asteroids(float x, float y);
@@ -36,12 +37,15 @@ public:
     float getWidth();
     float getHeight();
     
+    int getVie();
+    
     void setX(float newX);
     void setY(float newY);
     void setR(float r_c);
     void setG(float g_c);
     void setB(float b_c);
     
+    void setVie(int v);
     
     float posX, posY;
     float vitesse = 0.0009;

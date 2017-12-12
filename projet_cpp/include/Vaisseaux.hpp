@@ -54,6 +54,10 @@ public:
     long int temps1 = time(0);
     long int temps2;
     
+    bool atteint = false;
+    bool atteint1 = false;
+    bool atteint2 = false;
+    
     float distance(float x1, float y1, float x2, float y2);
 };
 

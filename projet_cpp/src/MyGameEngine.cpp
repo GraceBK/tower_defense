@@ -81,6 +81,9 @@ void MyGameEngine::startAsteroids() {
         }
     }
     
+    
+    
+    
     /*for (std::vector<Asteroids *>::iterator asteroid = asteroids->begin(); asteroid != asteroids->end(); asteroid++) {
         std::cout << "------> " << (*asteroid)->getX() << std::endl;
         
@@ -99,8 +102,11 @@ void MyGameEngine::startAsteroids() {
             asteroids->erase(asteroids->begin() + i);
             menu_jeu->setVie(0.1f);
         }
+        if ((*asteroids)[i]->getVie() <= 0) {
+            asteroids->erase(asteroids->begin() + i);
+            menu_jeu->setBank(menu_jeu->getBank() + 20);
+        }
     }
-    
 }
 
 float MyGameEngine::variation(float v1, float v2) {

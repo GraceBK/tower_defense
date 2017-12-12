@@ -49,6 +49,8 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
             Si la distance entre *missile et getX de l'asteroids est comprise entre [0, 0.009] donc il y a touché sa cible
          */
         
+//        std::cout << missiles.size() << std::endl;
+        
         for (int i(0); i < asteroids->size(); i++) {
             if (distance(*missile, posY, (*asteroids)[i]->getX(), (*asteroids)[i]->getY()) < 0.05) {
                 std::cout << "Touché " << i << " " << missiles.size() << std::endl;
@@ -56,18 +58,28 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
                 if (type == 1) {
                     // missile en T
                     std::cout << "T " << i << std::endl;
+                    (*asteroids)[i]->setVie(5);
                 } else if (type == 2) {
                     // missile en +
                     std::cout << "+ " << i << std::endl;
+                    (*asteroids)[i]->setVie(100);
                 } else {
                     std::cout << "n " << i << std::endl;
+                    (*asteroids)[i]->setVie(5);
                 }
+                
+                
+                /*if ((*asteroids)[i]->getVie() <= 0) {
+                    atteint = true;
+                }*/
+                
+                
                 
 //                missiles.erase(missiles.begin());
 //                for (int j(0); j < missiles.size(); j++) {
 //                    missiles.erase(missiles.begin() + j);
 //                    if (missiles.size() != 0) {
-//                        missiles.back();
+//                        missiles.erase(missile);
 //                    }
 //                    missiles.erase(missiles.begin());
 //                }

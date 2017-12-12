@@ -50,6 +50,9 @@ void Asteroids::setR(float r_c) { r = r_c; }
 void Asteroids::setG(float g_c) { g = g_c; }
 void Asteroids::setB(float b_c) { b = b_c; }
 
+void Asteroids::setVie(int v) { vie = vie - v; }
+int Asteroids::getVie() { return vie; }
+
 float Asteroids::getX() { return posX; }
 float Asteroids::getY() { return posY; }
 
