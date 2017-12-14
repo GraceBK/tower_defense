@@ -13,6 +13,9 @@
 #include <math.h>
 
 #define TICK 1000000
+#define PRIX_V 20
+#define PRIX_V1 50
+#define PRIX_V2 1000
 
 #define WIDTH 800
 #define HEIGHT 800

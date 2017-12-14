@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include "GraphicPrimitives.h"
+#include "all_others.hpp"
 
 class Game {
     float r, g, b;
