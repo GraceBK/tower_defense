@@ -19,11 +19,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             if (menu_jeu->clic_btn_run((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "RUN: A l'attacque" << std::endl;
                 menu_jeu->setRunning(true);
-//                act();
             }
-//            if () {
-//                <#statements#>
-//            }
         } else {
             if (menu_jeu->clic_btn_help((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "HELP" << std::endl;

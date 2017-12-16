@@ -18,14 +18,8 @@ void MyGraphicEngine::Draw() {
             grille->draw();
             interface_vaisseaux();
             interface_boutons();
-            int nb_tire = 0;
             for (int i(0); i < vaisseaux->size(); i++) {
                 (*vaisseaux)[i]->draw();
-//                for (int y(0); y < ((*vaisseaux)[i])->missiles.size(); y++) {
-//                    //((*vaisseaux)[i])->missiles[y]->action();
-////                    ((*vaisseaux)[i])->missiles[y]->draw();
-//                    nb_tire += ((*vaisseaux)[i])->missiles.size();
-//                }
             }
                 
             for (int i(0); i < asteroids->size(); i++) {

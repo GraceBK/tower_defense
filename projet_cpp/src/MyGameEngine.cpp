@@ -52,14 +52,8 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
     tab[10] = 0.26;
     tab[11] = 0.365;
     
-//    std::cout << tab[rand()%grille->getHeight()] << std::endl;
-    
-    
     std::vector<float> my_vector;
     float posX((grille->getInitPosX()+0.4)+(grille->getCase(0).getWidth()+(0.105*(grille->getWidth()-1))));
-//    float y(grille->getInitPosY()+0.105);
-//    float y2 = y + grille->getCase(0).getHeight()+0.105*(11-1);
-    // on met les points de depart des Asteroids dans my_vector
     
     struct timeval t1, t2;
     gettimeofday(&t2, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
@@ -69,7 +63,12 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
         /** probabilite d'avoir des asteroids differents */
         int freq = (rand()%12);
         if (freq <= 2) {
-            asteroids->push_back(new Asteroids1(posX, tab[rand()%grille->getHeight()]));
+            int freqH = (rand()%12);
+            if (freqH <= 2) {
+                asteroids->push_back(new Asteroids2(posX, tab[rand()%grille->getHeight()]));
+            } else {
+                asteroids->push_back(new Asteroids1(posX, tab[rand()%grille->getHeight()]));
+            }
             compteur_asteroides += 1;
         } else {
             asteroids->push_back(new Asteroids(posX, tab[rand()%grille->getHeight()]));
@@ -84,35 +83,6 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
         menu_jeu->setRunning(false);
     }
     
-    /** vitesse de deplacement des missiles */
-    /*for (std::vector<Asteroids *>::iterator asteroid = asteroids->begin(); asteroid != asteroids->end(); asteroid++) {
-//        std::cout << (*asteroid)->getX() << std::endl;
-        if ((*asteroid)->getX() < -0.0f) {
-            std::cout << "------------------" << (*asteroid)->getX() << std::endl;
-        }
-    }*/
-    
-    
-    for (std::vector<Asteroids *>::iterator ast = asteroids->begin(); ast != asteroids->end(); ast++) {
-//        int px = (int)((*ast)->getX() / grille->getHeight() + 5);
-//        int py = (int)((*ast)->getY() / grille->getHeight() + 5);
-//        std::cout << "@@@@@@@@@@@@ " << px << " " << py << " @@@@@@@@@@@@" << std::endl;
-        
-//        for (int i(0); i < vaisseaux->size(); i++) {
-//            float missile = (*vaisseaux)[i]->missiles.back();
-//            if ((*ast)->getX() <= missile) {
-//                std::cout << " PIOUUUUU " << std::endl;
-////                (*vaisseaux)[i]->missiles.pop_back();
-////                vaisseaux->erase(vaisseaux->begin() + i);
-//            }
-////            std::cout << "@@@@@@@@@@@@ " << px << " " << py << " @@@@@@@@@@@@" << std::endl;
-//        }
-        
-    }
-    
-    
-    
-    
     /** Collision Vaisseaux avec Asteroides */
     for (int i(0); i < vaisseaux->size(); i++) {
         for (int j(0); j < asteroids->size(); j++) {
@@ -123,21 +93,6 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
             }
         }
     }
-    
-    
-    
-    
-    /*for (std::vector<Asteroids *>::iterator asteroid = asteroids->begin(); asteroid != asteroids->end(); asteroid++) {
-        std::cout << "------> " << (*asteroid)->getX() << std::endl;
-        
-    }*/
-//    if (variation(<#float v1#>, <#float v2#>)) {
-//        <#statements#>
-//    }
-//
-//    for (int i(0); i < asteroids->size(); i++) {
-//        std::cout << "Y - asto ------> " << (*asteroids)[i]->posY << std::endl;
-//    }
     
     /** On supprime les asteroids une fois arrivee en fin de route */
     for (int i(0); i < asteroids->size(); i++) {
