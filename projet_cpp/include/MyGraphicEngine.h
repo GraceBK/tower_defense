@@ -10,6 +10,7 @@
 #include "Asteroids.hpp"
 #include "Asteroids1.hpp"
 #include "Asteroids2.hpp"
+#include "all_others.hpp"
 
 class MyGraphicEngine:public GraphicEngine {
     Game *menu_jeu;

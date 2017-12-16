@@ -19,11 +19,11 @@ void Asteroids::draw() {
 void Asteroids::move() {
     struct timeval t1, t2;
     gettimeofday(&t2, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
-    temps2 = t2.tv_sec * 1000000 + t2.tv_usec;
+    temps2 = t2.tv_sec * TICK + t2.tv_usec;
     /** armement des missiles dans le canon */
-    if ((temps2 - temps1) > 1000000) {
+    if ((temps2 - temps1) > TICK) {
         gettimeofday(&t1, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
-        temps1 = t1.tv_sec * 1000000 + t1.tv_usec;
+        temps1 = t1.tv_sec * TICK + t1.tv_usec;
     }
     /** vitesse de deplacement des missiles */
     

@@ -51,9 +51,9 @@ public:
     float posX, posY;
     float vitesse = 0.0009;
     
-    float r = R_A;
-    float g = G_A;
-    float b = B_A;
+    float r = WHITE;
+    float g = WHITE;
+    float b = WHITE;
     
     long int temps1 = time(0);
     long int temps2;

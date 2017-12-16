@@ -8,8 +8,9 @@ void MyGameEngine::idle(){
             }
 //            grille->action();
             if (menu_jeu->isRunning()) {
-                startAsteroids();
+                startAsteroids(NB_ASTO);
                 move();
+                std::cout << "-----> " << menu_jeu->isRunning() << std::endl;
             }
         }
     }
@@ -21,7 +22,19 @@ void MyGameEngine::move() {
     }
 }
 
-void MyGameEngine::startAsteroids() {
+void MyGameEngine::startAsteroids(int nombre_asteroids) {
+    /*
+     CHARGEMENT DE VAGUE
+     */
+    if ((compteur_asteroides >= nombre_asteroids)) {
+        vague += 1;
+        if (vague <= 5) {
+            std::cout << "--------" << std::endl;
+        } else {
+            std::cout << "++++++++" << std::endl;
+        }
+//        menu_jeu->setRunning(false);
+    }
     
     
     float tab[grille->getHeight()];
@@ -49,18 +62,25 @@ void MyGameEngine::startAsteroids() {
     
     struct timeval t1, t2;
     gettimeofday(&t2, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
-    temps2 = t2.tv_sec * 1000000 + t2.tv_usec;
+    temps2 = t2.tv_sec * TICK + t2.tv_usec;
     /** choix ligne */
-    if ((temps2 - temps1) > 0.9*1000000) {
+    if (((temps2 - temps1) > 0.9*TICK) && (compteur_asteroides < nombre_asteroids)) {
         /** probabilite d'avoir des asteroids differents */
         int freq = (rand()%12);
         if (freq <= 2) {
             asteroids->push_back(new Asteroids1(posX, tab[rand()%grille->getHeight()]));
+            compteur_asteroides += 1;
         } else {
             asteroids->push_back(new Asteroids(posX, tab[rand()%grille->getHeight()]));
+            compteur_asteroides += 1;
         }
         gettimeofday(&t1, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
-        temps1 = t1.tv_sec * 1000000 + t1.tv_usec;
+        temps1 = t1.tv_sec * TICK + t1.tv_usec;
+    }
+    
+    std::cout << "asto " << asteroids->size() << std::endl;
+    if (asteroids->size() == 0) {
+        menu_jeu->setRunning(false);
     }
     
     /** vitesse de deplacement des missiles */

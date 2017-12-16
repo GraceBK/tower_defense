@@ -2,53 +2,43 @@
 
 void MyGraphicEngine::Draw() {
 //    if (menu_jeu->isOver() == false) {
-        GraphicPrimitives::drawFillRect2D(-1, -1, 2.0f, 2.0f, 0, 0.098, 0);  //fond ecrant
+    GraphicPrimitives::drawFillRect2D(-1, -1, 2.0f, 2.0f, BLACK, 0.098, BLACK);  //fond ecrant
         
-        if (menu_jeu->inHelp() == true) {
-            // Si je suis dans HELP
-            menu_jeu->draw_home();
+    if (menu_jeu->inHelp() == true) {
+        // Si je suis dans HELP
+        menu_jeu->draw_home();
+        
+    } else if (menu_jeu->isStart() == true) {
+        if (menu_jeu->getVie() < 0.5f) {
+            // Si je suis dans PLAY
+            interface_player();
             
-        } else if (menu_jeu->isStart() == true) {
-            if (menu_jeu->getVie() < 0.5f) {
-                // Si je suis dans PLAY
-                interface_player();
+            menu_jeu->show_stats();
+            
+            grille->draw();
+            interface_vaisseaux();
+            interface_boutons();
                 
-                menu_jeu->show_stats();
+            for (int i(0); i < vaisseaux->size(); i++) {
+                (*vaisseaux)[i]->draw();
+            }
                 
-                grille->draw();
-                interface_vaisseaux();
-                interface_boutons();
-                
-                for (int i(0); i < vaisseaux->size(); i++) {
-                    (*vaisseaux)[i]->draw();
-                }
-                
-                for (int i(0); i < asteroids->size(); i++) {
-                    (*asteroids)[i]->draw();
-                }
-            } else {
-                
-//                GraphicPrimitives::drawText2D(menu_jeu->getBank(), -0.1f, 0.0f, 1.0f, 1.0f, 1.0f);
-                menu_jeu->drawGameOver();
-                
-//                menu_jeu->draw_home();
+            for (int i(0); i < asteroids->size(); i++) {
+                (*asteroids)[i]->draw();
             }
         } else {
-            // Je reste dans le MENU (page d'ACCEUIL)
-            menu_jeu->draw();
-        }
-    /*}*//* else {
-        // si c'est Game Over j'affiche le message Game Over ensuite je retourne normalement au menu
-        if (menu_jeu->getVie() >= 0.5f) {
             menu_jeu->drawGameOver();
         }
-    }*/
+    } else {
+        // Je reste dans le MENU (page d'ACCEUIL)
+        menu_jeu->draw();
+    }
 }
 
 void MyGraphicEngine::interface_vaisseaux() {
-    std::string v1 = "a = defaut - $ 20";
-    std::string v2 = "z = boum - $ 30";
-    std::string v3 = "e = atomic - $ 40";
+    std::string v1 = "a = $ 50";
+    std::string v2 = "z = $ 100";
+    std::string v3 = "e = $ 500";
     char * defaut = new char[v1.length() + 1];
     char * boum = new char[v2.length() + 1];
     char * atomic = new char[v3.length() + 1];
@@ -57,14 +47,16 @@ void MyGraphicEngine::interface_vaisseaux() {
     strcpy(boum, v2.c_str());
     strcpy(atomic, v3.c_str());
     
-    float x(-0.95), y(0.78), n(0.08);
+    float x(-0.4), y(0.7), n(0.08);
     
-    GraphicPrimitives::drawFillTriangle2D(x, y, x+n, y+n/2, x, y+n, 0.298, 0.667, 0.361);
-    GraphicPrimitives::drawText2D(defaut, x+0.12, y+0.02, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawFillTriangle2D(x, y-0.1, x+n, y-0.1+n/2, x, y-0.1+n, 0.69, 0.098, 0.11);
-    GraphicPrimitives::drawText2D(boum, x+0.12, y-0.08, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawFillTriangle2D(x, y-0.2, x+n, y-0.2+n/2, x, y-0.2+n, 0.573, 0.173, 0.573);
-    GraphicPrimitives::drawText2D(atomic, x+0.12, y-0.18, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawFillTriangle2D(x, y, x+n, y+n/2, x, y+n, R_V, G_V, B_V);
+    GraphicPrimitives::drawText2D(defaut, x+MGE_IV_X, y+MGE_IV_Y, WHITE, WHITE, WHITE);
+    
+    GraphicPrimitives::drawFillTriangle2D(x+0.4, y, x+0.4+n, y+n/2, x+0.4, y+n, R_V1, G_V1, B_V1);
+    GraphicPrimitives::drawText2D(boum, x+0.4+MGE_IV_X, y+MGE_IV_Y, WHITE, WHITE, WHITE);
+    
+    GraphicPrimitives::drawFillTriangle2D(x+0.8, y, x+0.8+n, y+n/2, x+0.8, y+n, R_V2, G_V2, B_V2);
+    GraphicPrimitives::drawText2D(atomic, x+0.8+MGE_IV_X, y+MGE_IV_Y, WHITE, WHITE, WHITE);
     
     delete [] defaut;
     delete [] boum;
@@ -73,28 +65,20 @@ void MyGraphicEngine::interface_vaisseaux() {
 
 void MyGraphicEngine::interface_boutons() {
     menu_jeu->draw_home();
-    menu_jeu->draw_btn_save();
     menu_jeu->draw_btn_run();
 }
 
 void MyGraphicEngine::interface_player() {
-    float x(-0.95), y(0.93);
-    char * towers = new char[7]{'T','O','W','E','R','S','\0'};
-    char * stats = new char[6]{'S','T','A','T','S','\0'};
+    float x(-0.95), y(0.95);
     char * bank = new char[5]{'B','A','N','K','\0'};
     char * score = new char[6]{'S','C','O','R','E','\0'};
     char * lives = new char[6]{'L','I','V','E','S','\0'};
     char * level = new char[6]{'L','E','V','E','L','\0'};
     
-    GraphicPrimitives::drawFillRect2D(-1.0f, 0.5f, 2.0f, 0.4f, 0, 0.2, 0);  // fond longueur
-    GraphicPrimitives::drawFillRect2D(-1.0f, -1.0f, 0.55f, 2.0f, 0, 0.298, 0);  // fond largeur
-    GraphicPrimitives::drawText2D(towers, x, y, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawText2D(stats, x + 0.55f, y, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawText2D(bank, x + 0.55f, y - 0.13f, 0.0, 0.0, 0.0);
-    GraphicPrimitives::drawText2D(score, x + 0.55f, y - 0.23f, 0.0, 0.0, 0.0);
-    GraphicPrimitives::drawText2D(lives, x + 1.1f, y - 0.13f, 0.0, 0.0, 0.0);
-    GraphicPrimitives::drawFillRect2D(x + 1.3f, y - 0.135f, 0.5f - menu_jeu->getVie(), 0.05f, 0.69, 0.098, 0.11);
-    GraphicPrimitives::drawText2D(level, x + 1.1f, y - 0.23f, 0.0, 0.0, 0.0);
-    
-//    std::cout << "VIE" << menu_jeu->getVie() << std::endl;
+    GraphicPrimitives::drawFillRect2D(-1.0f, 0.6f, 2.0f, 0.4f, BLACK, G_C, BLACK);  // fond longueur
+    GraphicPrimitives::drawText2D(bank, x + 0.55f, y - 0.005f, BLACK, BLACK, BLACK);
+    GraphicPrimitives::drawText2D(score, x + 0.55f, y - 0.1f, BLACK, BLACK, BLACK);
+    GraphicPrimitives::drawText2D(lives, x + 1.1f, y - 0.005f, BLACK, BLACK, BLACK);
+    GraphicPrimitives::drawFillRect2D(x + 1.3f, y - 0.013f, 0.5f - menu_jeu->getVie(), 0.05f, 0.69, 0.098, 0.11);
+    GraphicPrimitives::drawText2D(level, x + 1.1f, y - 0.1f, BLACK, BLACK, BLACK);
 }

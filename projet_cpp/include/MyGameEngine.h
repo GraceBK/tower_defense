@@ -13,6 +13,7 @@
 #include "Asteroids1.hpp"
 #include "Asteroids2.hpp"
 #include "Game.hpp"
+#include "all_others.hpp"
 
 class MyGameEngine:public GameEngine {
     
@@ -20,6 +21,9 @@ class MyGameEngine:public GameEngine {
     
     std::vector<Vaisseaux *> *vaisseaux;
     std::vector<Asteroids *> *asteroids;
+    
+    int compteur_asteroides = 0;
+    int vague = 1;
     
     // position du curseur
     int cursor_x = 400;
@@ -39,7 +43,7 @@ public:
     
     void move();
 
-    void startAsteroids();
+    void startAsteroids(int nombre_asteroids);
     int my_random(int n);
     
     long int temps1 = time(0);

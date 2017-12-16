@@ -9,17 +9,17 @@
 #include "Game.hpp"
 
 Game::Game() {
-    score = 0;
-    bank = 100;
+    score = SCORE;
+    bank = BANK;
 }
 
 
 void Game::drawGameOver() {
-    float x(-0.1), y(0.1), r(1.0), g(0.0), b(0.0);
+    float x(-0.1), y(0.1), r(WHITE), g(BLACK), b(BLACK);
     char sc[5];
     sprintf(sc, "%d", score);
-    GraphicPrimitives::drawText2D(game_score, x - 0.05f, y - 0.1f, 1.0f, 1.0f, 1.0f);
-    GraphicPrimitives::drawText2D(sc, x + 0.3f, y - 0.1f, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(game_score, x - 0.05f, y - 0.1f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(sc, x + 0.3f, y - 0.1f, WHITE, WHITE, WHITE);
     GraphicPrimitives::drawText2D(game_over, x, y, r, g, b);
 }
 
@@ -27,32 +27,32 @@ void Game::drawGameOver() {
 void Game::draw() {
     draw_btn_help();
     draw_btn_play();
-    draw_btn_load();
+//    draw_btn_load();
     draw_btn_exit();
 }
 
 void Game::draw_btn_help() {
     float x(-0.5f), y(-0.5f), w(0.45f), h(0.45f), r(0.09), g(0.459), b(0.722);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[5]{'H', 'E', 'L', 'P', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[5]{'H', 'E', 'L', 'P', '\0'}, x + 0.1, y + 0.2, WHITE, WHITE, WHITE);
 }
 
 void Game::draw_btn_play() {
     float x(-0.5f), y(0.05f), w(0.45f), h(0.45f), r(0.992), g(0.761), b(0.204);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[5]{'P', 'L', 'A', 'Y', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[5]{'P', 'L', 'A', 'Y', '\0'}, x + 0.1, y + 0.2, WHITE, WHITE, WHITE);
 }
 
 void Game::draw_btn_load() {
     float x(0.05f), y(0.05f), w(0.45f), h(0.45f), r(0.459), g(0.741), b(0.306);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[8]{'R', 'E', ' ', 'P', 'L', 'A', 'Y', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[8]{'R', 'E', ' ', 'P', 'L', 'A', 'Y', '\0'}, x + 0.1, y + 0.2, WHITE, WHITE, WHITE);
 }
 
 void Game::draw_btn_exit() {
     float x(0.05f), y(-0.5f), w(0.45f), h(0.45f), r(0.929), g(0.314), b(0.192);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[5]{'E', 'X', 'I', 'T', '\0'}, x + 0.1, y + 0.2, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(new char[5]{'E', 'X', 'I', 'T', '\0'}, x + 0.1, y + 0.2, WHITE, WHITE, WHITE);
 }
 
 // Gestion des clics
@@ -131,8 +131,8 @@ void Game::setPrixV2(int p) { prix_v2 = p; }
 void Game::draw_btn_save() {
     float x(0.0f), y(-0.95f), w(0.4f), h(0.1f);
     char * save = new char[12] {'S','A','U','V','E','G','A','R','D','E','R','\0'};
-    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0, 0.498, 0);
-    GraphicPrimitives::drawText2D(save, x + 0.03, y + 0.03, 0.0, 0.0, 0.0);
+    GraphicPrimitives::drawFillRect2D(x, y, w, h, BLACK, 0.498, BLACK);
+    GraphicPrimitives::drawText2D(save, x + 0.03, y + 0.03, BLACK, BLACK, BLACK);
 }
 
 bool Game::clic_btn_save(float clic_x, float clic_y) {
@@ -149,8 +149,8 @@ bool Game::clic_btn_save(float clic_x, float clic_y) {
 void Game::draw_btn_run() {
     float x(0.45f), y(-0.95f), w(0.3f), h(0.1f);
     char * wave = new char[9]{ 'A','T','T','A','Q','U','E','R','\0' };
-    GraphicPrimitives::drawFillRect2D(x, y, w, h, 0, 0.498, 0);
-    GraphicPrimitives::drawText2D(wave, x + 0.03, y + 0.03, 0.0, 0.0, 0.0);
+    GraphicPrimitives::drawFillRect2D(x, y, w, h, BLACK, 0.498, BLACK);
+    GraphicPrimitives::drawText2D(wave, x + 0.03, y + 0.03, BLACK, BLACK, BLACK);
 }
 
 bool Game::clic_btn_run(float clic_x, float clic_y) {
@@ -169,7 +169,7 @@ void Game::draw_home() {
     float x(-0.3f), y(-0.95f), w(0.25f), h(0.1f);
     char * home = new char[8]{ 'A','C','C','U','E','I','L','\0' };
     GraphicPrimitives::drawFillRect2D(x, y, w, h, 0, 0.498, 0);
-    GraphicPrimitives::drawText2D(home, x + 0.03, y + 0.03, 0.0, 0.0, 0.0);
+    GraphicPrimitives::drawText2D(home, x + 0.03, y + 0.03, BLACK, BLACK, BLACK);
 }
 
 bool Game::clic_home(float clic_x, float clic_y) {
@@ -187,7 +187,7 @@ void Game::show_stats() {
     sprintf(ar, "%d", bank);
     sprintf(sc, "%d", score);
     sprintf(le, "%d", score);
-    GraphicPrimitives::drawText2D(ar, x, y + 0.1f, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawText2D(sc, x, y, 1.0, 1.0, 1.0);
-    GraphicPrimitives::drawText2D(le, x + 0.55f, y, 1.0, 1.0, 1.0);
+    GraphicPrimitives::drawText2D(ar, x, y + 0.25f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(sc, x, y + 0.15f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(le, x + 0.55f, y + 0.15f, WHITE, WHITE, WHITE);
 }

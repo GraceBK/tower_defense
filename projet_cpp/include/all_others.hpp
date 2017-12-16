@@ -13,9 +13,8 @@
 #include <math.h>
 
 #define TICK 1000000
-#define PRIX_V 20
-#define PRIX_V1 50
-#define PRIX_V2 1000
+
+#define NB_ASTO 20
 
 #define WIDTH 800
 #define HEIGHT 800
@@ -32,6 +31,9 @@
 #define CURSOR_Y_F 400.f
 // variable vaisseaux
 #define V_SIZE 0.1
+#define PRIX_V 5
+#define PRIX_V1 100
+#define PRIX_V2 500
 
 // variable asteroids
 #define A_SIZE 0.09
@@ -40,12 +42,18 @@
 #define C_SIZE 0.1
 // vie, argent, score
 //#define VIE 100
-//#define SCORE
-//#define BANK
+#define SCORE 0
+#define BANK 100
+
+#define MGE_IV_X 0.12
+#define MGE_IV_Y 0.02
+
+
 // couleurs
-#define R_C 0
+#define BLACK 0.0
+#define WHITE 1.0
+
 #define G_C 0.2
-#define B_C 0
 
 #define R_V 0.298
 #define G_V 0.667
@@ -58,10 +66,6 @@
 #define R_V2 0.573
 #define G_V2 0.173
 #define B_V2 0.573
-
-#define R_A 1.0
-#define G_A 1.0
-#define B_A 1.0
 
 #define R_A1 0.69
 #define G_A1 0.098

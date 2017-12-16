@@ -16,15 +16,14 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                 menu_jeu->setRunning(false);
                 resetGrille();
             }
-            if (menu_jeu->clic_btn_save((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-                std::cout << "SAVE: Vous avez clique sur la SAVE" << std::endl;
-                grille->save();
-            }
             if (menu_jeu->clic_btn_run((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "RUN: A l'attacque" << std::endl;
                 menu_jeu->setRunning(true);
 //                act();
             }
+//            if () {
+//                <#statements#>
+//            }
         } else {
             if (menu_jeu->clic_btn_help((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "HELP" << std::endl;
@@ -39,21 +38,12 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                 menu_jeu->setOver(false);
                 menu_jeu->setHelp(false);
             }
-            if (menu_jeu->clic_btn_load((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-                std::cout << "LOAD" << std::endl;
-                menu_jeu->setOver(false);
-                menu_jeu->setHelp(false);
-            }
             /*
              je quitte la partie en appuyant sur la touche 'p' ou
              en cliquant sur le bouton 'quitter' de la page de depard
              */
             if (menu_jeu->clic_btn_exit((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "BYE" << std::endl;
-//                menu_jeu->setRunning(false);
-//                menu_jeu->setOver(false);
-//                menu_jeu->setStart(false);
-//                menu_jeu->setHelp(false);
                 exit(0);
             }
         }
@@ -97,6 +87,11 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
                         menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV2());
                     } else {}
                 }
+            }
+            
+            if (key == 'v') {
+                std::cout << "VAGUE d'asteroids " << std::endl;
+                menu_jeu->setRunning(false);
             }
             
         }

@@ -32,9 +32,9 @@ class Game {
     char * game_score = new char[14] {'S','C','O','R','E',' ','F','I','N','A','L',':',' ','\0'};
     
     /** Prix des vaissaux */
-    int prix_v = 20;
-    int prix_v1 = 30;
-    int prix_v2 = 40;
+    int prix_v = PRIX_V;
+    int prix_v1 = PRIX_V1;
+    int prix_v2 = PRIX_V2;
     
     float vie = 0.0f;
     
