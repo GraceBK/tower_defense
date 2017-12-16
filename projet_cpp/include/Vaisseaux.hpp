@@ -17,6 +17,7 @@
 
 #include "GraphicPrimitives.h"
 #include "Asteroids.hpp"
+#include "Missile.hpp"
 #include "all_others.hpp"
 
 class Vaisseaux {
@@ -45,7 +46,7 @@ public:
     
     float posX, posY, width, height;
     float r, g, b;
-    std::vector<float> missiles;
+    std::vector<Missile *> missiles;
     double frequence;  // la frequence de tire
     int puissance;  // la puissance du tire
     float vitesse;    // la vitesse de  deplacement du tire

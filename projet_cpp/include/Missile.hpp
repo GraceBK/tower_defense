@@ -9,6 +9,7 @@
 #ifndef Missile_hpp
 #define Missile_hpp
 
+#pragma once
 #include <stdio.h>
 #include "GraphicPrimitives.h"
 #include "all_others.hpp"
@@ -17,7 +18,6 @@ class Missile {
     
 public:
     Missile(float x, float y, float vitesse, int type);
-    ~Missile();
     
     void draw();
     bool touche();

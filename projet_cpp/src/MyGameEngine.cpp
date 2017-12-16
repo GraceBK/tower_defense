@@ -5,12 +5,13 @@ void MyGameEngine::idle(){
         if (menu_jeu->isStart()) {
             for (int i(0); i < vaisseaux->size(); i++) {
                 (*vaisseaux)[i]->tirer(asteroids);
+                for (int y(0); y < ((*vaisseaux)[i])->missiles.size(); y++) {
+                    ((*vaisseaux)[i])->missiles[y]->action();
+                }
             }
-//            grille->action();
             if (menu_jeu->isRunning()) {
                 startAsteroids(100);
                 move();
-//                std::cout << "-----> " << menu_jeu->isRunning() << std::endl;
             }
         }
     }
@@ -97,15 +98,15 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
 //        int py = (int)((*ast)->getY() / grille->getHeight() + 5);
 //        std::cout << "@@@@@@@@@@@@ " << px << " " << py << " @@@@@@@@@@@@" << std::endl;
         
-        for (int i(0); i < vaisseaux->size(); i++) {
-            float missile = (*vaisseaux)[i]->missiles.back();
-            if ((*ast)->getX() <= missile) {
-                std::cout << " PIOUUUUU " << std::endl;
-//                (*vaisseaux)[i]->missiles.pop_back();
-//                vaisseaux->erase(vaisseaux->begin() + i);
-            }
-//            std::cout << "@@@@@@@@@@@@ " << px << " " << py << " @@@@@@@@@@@@" << std::endl;
-        }
+//        for (int i(0); i < vaisseaux->size(); i++) {
+//            float missile = (*vaisseaux)[i]->missiles.back();
+//            if ((*ast)->getX() <= missile) {
+//                std::cout << " PIOUUUUU " << std::endl;
+////                (*vaisseaux)[i]->missiles.pop_back();
+////                vaisseaux->erase(vaisseaux->begin() + i);
+//            }
+////            std::cout << "@@@@@@@@@@@@ " << px << " " << py << " @@@@@@@@@@@@" << std::endl;
+//        }
         
     }
     

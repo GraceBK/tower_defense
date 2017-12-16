@@ -14,18 +14,8 @@ Vaisseaux::~Vaisseaux() {}
 
 void Vaisseaux::draw() {
     GraphicPrimitives::drawFillTriangle2D(posX, posY, posX+0.1, posY+0.05, posX, posY+0.1, r, g, b);
-    for (std::vector<float>::iterator missile = missiles.begin(); missile != missiles.end(); missile++) {
-        if (type == 1) {
-            // missile en T
-            GraphicPrimitives::drawFillRect2D(*missile/*posX+0.11*/, posY+0.045, 0.05, 0.010, 0.69, 0.098, 0.11);
-            GraphicPrimitives::drawFillRect2D(*missile/*posX+0.15*/, posY+0.025, 0.01, 0.05, 0.69, 0.098, 0.11);
-        } else if (type == 2) {
-            // missile en +
-            GraphicPrimitives::drawFillRect2D(*missile/*posX+0.11*/, posY+0.045, 0.05, 0.010, 0.573, 0.173, 0.573);
-            GraphicPrimitives::drawFillRect2D(*missile+0.02/*posX+0.13*/, posY+0.025, 0.01, 0.05, 0.573, 0.173, 0.573);
-        } else {
-            GraphicPrimitives::drawFillRect2D(*missile, posY+0.04, 0.05, 0.02, r, g, b);
-        }
+    for (int i(0); i < missiles.size(); i++) {
+        missiles[i]->draw();
     }
 }
 
@@ -35,29 +25,24 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
     temps2 = t2.tv_sec * TICK + t2.tv_usec;
     /** armement des missiles dans le canon */
     if ((temps2 - temps1) > frequence * TICK) {
-        missiles.push_back(posX + width); // j'arme
+        missiles.push_back(new Missile(posX, posY, vitesse, 1)); // j'arme
+        std::cout << "1) #####> " << missiles.size() << std::endl;
         gettimeofday(&t1, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
         temps1 = t1.tv_sec * TICK + t1.tv_usec;
     }
-    /** vitesse de deplacement des missiles */
-    for (std::vector<float>::iterator missile = missiles.begin(); missile != missiles.end(); missile++) {
-        *missile = *missile + vitesse;
-        
-        /**
-         COLLISION Asteroide et Missile
-         Si la distance entre posY (position du vaisseau) et getY de l'asteroids est comprise entre [0, 0.009] donc le missile et l'asteroid sont sur la meme trajectoire
-            Si la distance entre *missile et getX de l'asteroids est comprise entre [0, 0.009] donc il y a touché sa cible
-         */
-        
-//        std::cout << missiles.size() << std::endl;
-        
-        for (int i(0); i < asteroids->size(); i++) {
-            if (distance(*missile, posY, (*asteroids)[i]->getX(), (*asteroids)[i]->getY()) < 0.05) {
-                std::cout << "Touché " << i << " " << missiles.size() << std::endl;
-                if (missiles.size() != 0) {
-                    missiles.pop_back();
-                }
-                
+    /** missile arrive en bout de course */
+    for (int i(0); i < missiles.size(); i++) {
+        if (missiles[i]->posX >= 0.8f) {
+            missiles.erase(missiles.begin());
+            std::cout << "2) ##### " << missiles.size() << std::endl;
+        }
+    }
+    /** missile entre en collision avec un asteroise */
+    for (int i(0); i < missiles.size(); i++) {
+        for (int j(0); j < asteroids->size(); j++) {
+            if (distance(missiles[i]->posX, missiles[i]->posY, (*asteroids)[j]->getX(), (*asteroids)[j]->getY()) < 0.05) {
+                missiles.erase(missiles.begin());
+                std::cout << "3) ##### " << missiles.size() << std::endl;
                 if (type == 1) {
                     // missile en T
                     std::cout << "T " << i << std::endl;
@@ -70,47 +55,9 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
                     std::cout << "n " << i << std::endl;
                     (*asteroids)[i]->setVie(5);
                 }
-                
-                /*if ((*asteroids)[i]->getX() <= missiles.back()) {
-                    std::cout << " PIOUUUUU " << std::endl;
-                }*/
-                
-                
-                /*if ((*asteroids)[i]->getVie() <= 0) {
-                    atteint = true;
-                }*/
-                
-                
-                
-//                missiles.erase(missiles.begin());
-//                for (int j(0); j < missiles.size(); j++) {
-//                    missiles.erase(missiles.begin() + j);
-//                    if (missiles.size() != 0) {
-//                        missiles.erase(missile);
-//                    }
-//                    missiles.erase(missiles.begin());
-//                }
             }
-            /*if ((*asteroids)[i]->getX() < 0.0f) {
-                std::cout << "------------------" << (*asteroids)[1]->getY() << std::endl;
-            }*/
         }
-        
-        /*
-         if (distance(*missie, posY, (*asteoids)[i]->getX(), (*asteoids)[i]->getY() < 0.05) {
-            std::cout << "Touché" << std::endl;
-         }
-         */
-        
-        /*for (int i(0); i < asteroids->size(); i++) {
-            if ((*asteroids)[i]->getX() < 0.0f) {
-                std::cout << "------------------" << (*asteroids)[1]->getY() << std::endl;
-            }
-        }*/
-        
-//        std::cout << "------>ASTE " << (*asteroids)[1]->getY() << std::endl;
     }
-//    std::cout << "------> " << posY << std::endl;
 }
                 
 float Vaisseaux::distance(float x1, float y1, float x2, float y2) {
