@@ -54,6 +54,9 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
         for (int i(0); i < asteroids->size(); i++) {
             if (distance(*missile, posY, (*asteroids)[i]->getX(), (*asteroids)[i]->getY()) < 0.05) {
                 std::cout << "Touché " << i << " " << missiles.size() << std::endl;
+                if (missiles.size() != 0) {
+                    missiles.pop_back();
+                }
                 
                 if (type == 1) {
                     // missile en T
@@ -67,6 +70,10 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
                     std::cout << "n " << i << std::endl;
                     (*asteroids)[i]->setVie(5);
                 }
+                
+                /*if ((*asteroids)[i]->getX() <= missiles.back()) {
+                    std::cout << " PIOUUUUU " << std::endl;
+                }*/
                 
                 
                 /*if ((*asteroids)[i]->getVie() <= 0) {

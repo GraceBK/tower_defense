@@ -8,9 +8,9 @@ void MyGameEngine::idle(){
             }
 //            grille->action();
             if (menu_jeu->isRunning()) {
-                startAsteroids(NB_ASTO);
+                startAsteroids(100);
                 move();
-                std::cout << "-----> " << menu_jeu->isRunning() << std::endl;
+//                std::cout << "-----> " << menu_jeu->isRunning() << std::endl;
             }
         }
     }
@@ -26,15 +26,15 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
     /*
      CHARGEMENT DE VAGUE
      */
-    if ((compteur_asteroides >= nombre_asteroids)) {
-        vague += 1;
-        if (vague <= 5) {
-            std::cout << "--------" << std::endl;
-        } else {
-            std::cout << "++++++++" << std::endl;
-        }
-//        menu_jeu->setRunning(false);
-    }
+//    if ((compteur_asteroides >= nombre_asteroids)) {
+//        vague += 1;
+//        if (vague <= 5) {
+//            std::cout << "--------" << std::endl;
+//        } else {
+//            std::cout << "++++++++" << std::endl;
+//        }
+////        menu_jeu->setRunning(false);
+//    }
     
     
     float tab[grille->getHeight()];
@@ -78,7 +78,7 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
         temps1 = t1.tv_sec * TICK + t1.tv_usec;
     }
     
-    std::cout << "asto " << asteroids->size() << std::endl;
+//    std::cout << "asto " << asteroids->size() << std::endl;
     if (asteroids->size() == 0) {
         menu_jeu->setRunning(false);
     }
@@ -90,6 +90,28 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
             std::cout << "------------------" << (*asteroid)->getX() << std::endl;
         }
     }*/
+    
+    
+    for (std::vector<Asteroids *>::iterator ast = asteroids->begin(); ast != asteroids->end(); ast++) {
+//        int px = (int)((*ast)->getX() / grille->getHeight() + 5);
+//        int py = (int)((*ast)->getY() / grille->getHeight() + 5);
+//        std::cout << "@@@@@@@@@@@@ " << px << " " << py << " @@@@@@@@@@@@" << std::endl;
+        
+        for (int i(0); i < vaisseaux->size(); i++) {
+            float missile = (*vaisseaux)[i]->missiles.back();
+            if ((*ast)->getX() <= missile) {
+                std::cout << " PIOUUUUU " << std::endl;
+//                (*vaisseaux)[i]->missiles.pop_back();
+//                vaisseaux->erase(vaisseaux->begin() + i);
+            }
+//            std::cout << "@@@@@@@@@@@@ " << px << " " << py << " @@@@@@@@@@@@" << std::endl;
+        }
+        
+    }
+    
+    
+    
+    
     /** Collision Vaisseaux avec Asteroides */
     for (int i(0); i < vaisseaux->size(); i++) {
         for (int j(0); j < asteroids->size(); j++) {
