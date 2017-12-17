@@ -17,7 +17,7 @@
 class Game {
     float r, g, b;
     
-    int score, bank;
+    int bank;
     
     bool in_help;
     bool start;
@@ -54,7 +54,7 @@ public:
     void draw_btn_save();
     void draw_btn_run();
     
-    void show_stats();
+    void show_stats(int s, int l);
     
     
     // Gestion des clics
@@ -92,6 +92,9 @@ public:
     
     float getVie();
     void setVie(float v);
+    
+    int level = 1;
+    int score = SCORE;
 };
 
 #endif /* Game_hpp */

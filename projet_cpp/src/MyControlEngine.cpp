@@ -13,12 +13,14 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
             if (menu_jeu->clic_home((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 menu_jeu->setStart(false);
                 // J'efface les vaisseaux
-                menu_jeu->setRunning(false);
+//                menu_jeu->setRunning(false);
                 resetGrille();
             }
             if (menu_jeu->clic_btn_run((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "RUN: A l'attacque" << std::endl;
-                menu_jeu->setRunning(true);
+                if (!menu_jeu->isRunning()) {
+                    menu_jeu->setRunning(true);
+                }
             }
         } else {
             if (menu_jeu->clic_btn_help((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
@@ -83,11 +85,6 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
                         menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV2());
                     } else {}
                 }
-            }
-            
-            if (key == 'v') {
-                std::cout << "VAGUE d'asteroids " << std::endl;
-                menu_jeu->setRunning(false);
             }
             
         }

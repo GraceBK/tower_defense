@@ -49,7 +49,7 @@ public:
     void setVie(int v);
     
     float posX, posY;
-    float vitesse = 0.0009;
+    float vitesse;
     
     float r = WHITE;
     float g = WHITE;
@@ -57,6 +57,8 @@ public:
     
     long int temps1 = time(0);
     long int temps2;
+    
+    int type;
 };
 
 #endif /* Asteroids_hpp */

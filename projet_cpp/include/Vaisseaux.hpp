@@ -53,6 +53,8 @@ public:
     int type;
     int prix = 10;
     
+    int score = 0;
+    
     long int temps1 = time(0);
     long int temps2;
     

@@ -5,12 +5,13 @@
 #include "GraphicEngine.h"
 #include "libGraphicInclude.h"
 #include "GraphicPrimitives.h"
+#include "all_others.hpp"
 
 //singleton
 class Engine {
 public:
     
-    Engine(int argc, char * argv[],int width = 800,int height = 800,char * title = new char[14]{'T','o','w','e','r',' ','D','e','f','e','n','s','e','\0'});
+    Engine(int argc, char * argv[],int width = WIDTH,int height = HEIGHT,char * title = new char[14]{'T','o','w','e','r',' ','D','e','f','e','n','s','e','\0'});
     
     //these methods are in the header file because you have to see that the previous Engines are deleted...
     void setControlEngine(ControlEngine* crtE){

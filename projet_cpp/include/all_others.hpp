@@ -14,7 +14,12 @@
 
 #define TICK 1000000
 
-#define NB_ASTO 20
+#define NB_ASTO 15
+#define VITESSE_AS 0.0009
+#define VITESSE_AS1 0.020
+#define VITESSE_AS2 0.040
+
+#define VITESSE_FREIN 0.001
 
 #define WIDTH 800
 #define HEIGHT 800
@@ -31,7 +36,7 @@
 #define CURSOR_Y_F 400.f
 // variable vaisseaux
 #define V_SIZE 0.1
-#define PRIX_V 5
+#define PRIX_V 50
 #define PRIX_V1 100
 #define PRIX_V2 500
 
@@ -43,7 +48,7 @@
 // vie, argent, score
 //#define VIE 100
 #define SCORE 0
-#define BANK 100
+#define BANK 400
 
 #define MGE_IV_X 0.12
 #define MGE_IV_Y 0.02

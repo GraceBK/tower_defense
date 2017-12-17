@@ -12,6 +12,8 @@ Asteroids1::Asteroids1(float x, float y) : Asteroids(x, y) {
     r = R_A1;
     g = G_A1;
     b = B_A1;
+    vitesse = VITESSE_AS * 2;
+    type = 1;
 }
 
 Asteroids1::~Asteroids1() {}

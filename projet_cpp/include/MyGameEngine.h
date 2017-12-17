@@ -22,7 +22,7 @@ class MyGameEngine:public GameEngine {
     std::vector<Vaisseaux *> *vaisseaux;
     std::vector<Asteroids *> *asteroids;
     
-    int compteur_asteroides = 0;
+    int compteur_asteroides = NB_ASTO;
     int vague = 1;
     
     // position du curseur
@@ -42,6 +42,8 @@ public:
     Damier *grille;
     
     void move();
+    
+    void chargerVague();
 
     void startAsteroids(int nombre_asteroids);
     int my_random(int n);

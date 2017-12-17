@@ -13,7 +13,7 @@ void MyGraphicEngine::Draw() {
             // Si je suis dans PLAY
             interface_player();
             
-            menu_jeu->show_stats();
+            menu_jeu->show_stats(1, 2);
             
             grille->draw();
             interface_vaisseaux();
@@ -35,9 +35,9 @@ void MyGraphicEngine::Draw() {
 }
 
 void MyGraphicEngine::interface_vaisseaux() {
-    std::string v1 = "a = $ 50";
-    std::string v2 = "z = $ 100";
-    std::string v3 = "e = $ 500";
+    std::string v1 = "a = 50 $";
+    std::string v2 = "z = 100 $";
+    std::string v3 = "e = 500 $";
     char * defaut = new char[v1.length() + 1];
     char * boum = new char[v2.length() + 1];
     char * atomic = new char[v3.length() + 1];

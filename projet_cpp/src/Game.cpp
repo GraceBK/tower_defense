@@ -181,12 +181,12 @@ bool Game::clic_home(float clic_x, float clic_y) {
     }
 }
 
-void Game::show_stats() {
+void Game::show_stats(int s, int l) {
     float x(-0.95+0.75f), y(0.93-0.23f);
     char ar[5], sc[5], le[3];
     sprintf(ar, "%d", bank);
-    sprintf(sc, "%d", score);
-    sprintf(le, "%d", score);
+    sprintf(sc, "%d", s);
+    sprintf(le, "%d", l);
     GraphicPrimitives::drawText2D(ar, x, y + 0.25f, WHITE, WHITE, WHITE);
     GraphicPrimitives::drawText2D(sc, x, y + 0.15f, WHITE, WHITE, WHITE);
     GraphicPrimitives::drawText2D(le, x + 0.55f, y + 0.15f, WHITE, WHITE, WHITE);

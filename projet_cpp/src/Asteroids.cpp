@@ -8,7 +8,7 @@
 
 #include "Asteroids.hpp"
 
-Asteroids::Asteroids(float x, float y) : posX(x), posY(y) {}
+Asteroids::Asteroids(float x, float y) : posX(x), posY(y), vitesse(VITESSE_AS), type(0) {}
 
 Asteroids::~Asteroids() {}
 
