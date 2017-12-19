@@ -68,15 +68,6 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
             std::cout << "Page HOME (HELP)" << std::endl;
             resetGrille();
         }
-        
-        if (key == 'r') {
-            std::cout << "RE-JOUER" << std::endl;
-            if (menu_jeu->isOver()) {
-                std::cout << "retour a la grille" << std::endl;
-                resetGrille();
-            }
-        }
-        
     }
 }
 

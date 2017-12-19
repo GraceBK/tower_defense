@@ -1,7 +1,7 @@
 #include "MyGameEngine.h"
 
 void MyGameEngine::idle(){
-    if (!menu_jeu->isOver()) {
+//    if (!menu_jeu->isOver()) {
         if (menu_jeu->isStart()) {
             for (int i(0); i < vaisseaux->size(); i++) {
                 (*vaisseaux)[i]->tirer(asteroids);
@@ -15,7 +15,7 @@ void MyGameEngine::idle(){
                 move();
             }
         }
-    }
+//    }
 }
 
 void MyGameEngine::chargerVague()  {
