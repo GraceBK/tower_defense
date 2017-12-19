@@ -19,7 +19,7 @@ class Missile {
 public:
     Missile(float x, float y, float vitesse, int type);
     
-    void draw();
+    void draw(int type);
     bool touche();
     
     void action();

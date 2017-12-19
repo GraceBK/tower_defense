@@ -15,7 +15,7 @@ Vaisseaux::~Vaisseaux() {}
 void Vaisseaux::draw() {
     GraphicPrimitives::drawFillTriangle2D(posX, posY, posX+0.1, posY+0.05, posX, posY+0.1, r, g, b);
     for (int i(0); i < missiles.size(); i++) {
-        missiles[i]->draw();
+        missiles[i]->draw(type);
     }
 }
 
@@ -45,28 +45,17 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
 //                std::cout << "3) ##### " << missiles.size() << std::endl;
                 if (type == 1) {
                     // missile en T
-                    std::cout << "T " << i << std::endl;
                     (*asteroids)[j]->setVie(10);
                     (*asteroids)[j]->vitesse -= VITESSE_FREIN;
                     if ((*asteroids)[j]->vitesse <= 0) {
-                        (*asteroids)[j]->vitesse = 0;
-                    }
-                    if ((*asteroids)[j]->getVie() <= 0) {
-                        score += 4;
+                        (*asteroids)[j]->vitesse = 0.005;
                     }
                 } else if (type == 2) {
                     // missile en +
-                    std::cout << "+ " << i << std::endl;
                     (*asteroids)[j]->setVie(100);
-                    if ((*asteroids)[j]->getVie() <= 0) {
-                        score += 6;
-                    }
                 } else {
                     std::cout << "n " << i << std::endl;
                     (*asteroids)[j]->setVie(50);
-                    if ((*asteroids)[j]->getVie() <= 0) {
-                        score += 2;
-                    }
                 }
             }
         }

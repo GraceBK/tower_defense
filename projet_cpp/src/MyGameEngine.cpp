@@ -21,28 +21,35 @@ void MyGameEngine::idle(){
 void MyGameEngine::chargerVague()  {
     if ((compteur_asteroides <= 0) && (asteroids->size() <= 0)) {
         vague += 1;
+        menu_jeu->setLevel(vague);
         compteur_asteroides = NB_ASTO;
         menu_jeu->setRunning(false);
         if (vague > 2) {
             for (int i(0); i < asteroids->size(); i++) {
                 (*asteroids)[i]->setVie(-200);
                 if ((*asteroids)[i]->type == 1) {
-                    (*asteroids)[i]->vitesse += VITESSE_AS1*2;
+                    (*asteroids)[i]->vitesse = VITESSE_AS1*2;
+                    (*asteroids)[i]->setVie(200);
                 } else if ((*asteroids)[i]->type == 2) {
-                    (*asteroids)[i]->vitesse += VITESSE_AS1*3;
+                    (*asteroids)[i]->vitesse = VITESSE_AS1*3;
+                    (*asteroids)[i]->setVie(250);
                 } else {
-                    (*asteroids)[i]->vitesse += VITESSE_AS1;
+                    (*asteroids)[i]->vitesse = VITESSE_AS1;
+                    (*asteroids)[i]->setVie(150);
                 }
             }
         } else if (vague > 4) {
             for (int i(0); i < asteroids->size(); i++) {
                 (*asteroids)[i]->setVie(-500);
                 if ((*asteroids)[i]->type == 1) {
-                    (*asteroids)[i]->vitesse += VITESSE_AS2*2;
+                    (*asteroids)[i]->vitesse = VITESSE_AS2*4;
+                    (*asteroids)[i]->setVie(250);
                 } else if ((*asteroids)[i]->type == 2) {
-                    (*asteroids)[i]->vitesse += VITESSE_AS2*3;
+                    (*asteroids)[i]->vitesse = VITESSE_AS2*6;
+                    (*asteroids)[i]->setVie(300);
                 } else {
-                    (*asteroids)[i]->vitesse += VITESSE_AS2;
+                    (*asteroids)[i]->vitesse = VITESSE_AS2;
+                    (*asteroids)[i]->setVie(200);
                 }
             }
         }

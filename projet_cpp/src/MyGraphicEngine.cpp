@@ -4,16 +4,18 @@ void MyGraphicEngine::Draw() {
 //    if (menu_jeu->isOver() == false) {
     GraphicPrimitives::drawFillRect2D(-1, -1, 2.0f, 2.0f, BLACK, 0.098, BLACK);  //fond ecrant
         
-    if (menu_jeu->inHelp() == true) {
+    /*if (menu_jeu->inHelp() == true) {
         // Si je suis dans HELP
         menu_jeu->draw_home();
         
-    } else if (menu_jeu->isStart() == true) {
+    } else */
+    if (menu_jeu->isStart() == true) {
         if (menu_jeu->getVie() < 0.5f) {
             // Si je suis dans PLAY
             interface_player();
             
-            menu_jeu->show_stats(1, 2);
+            menu_jeu->setScore();
+            menu_jeu->show_stats();
             
             grille->draw();
             interface_vaisseaux();

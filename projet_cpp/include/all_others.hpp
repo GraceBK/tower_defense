@@ -15,9 +15,9 @@
 #define TICK 1000000
 
 #define NB_ASTO 15
-#define VITESSE_AS 0.0009
-#define VITESSE_AS1 0.020
-#define VITESSE_AS2 0.040
+#define VITESSE_AS 0.002
+#define VITESSE_AS1 0.090
+#define VITESSE_AS2 0.20
 
 #define VITESSE_FREIN 0.001
 
@@ -48,7 +48,8 @@
 // vie, argent, score
 //#define VIE 100
 #define SCORE 0
-#define BANK 400
+#define BANK 10000
+#define LEVEL 1
 
 #define MGE_IV_X 0.12
 #define MGE_IV_Y 0.02

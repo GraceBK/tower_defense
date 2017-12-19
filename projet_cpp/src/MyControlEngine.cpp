@@ -2,48 +2,48 @@
 
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        if (menu_jeu->inHelp()) {
-            if (menu_jeu->clic_home((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-                menu_jeu->setHelp(false);
-                // Je retourne au MENU
-            }
-        }
+//        if (menu_jeu->inHelp()) {
+//            if (menu_jeu->clic_home((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
+//                menu_jeu->setHelp(false);
+//                // Je retourne au MENU
+//            }
+//        }
         if (menu_jeu->isStart()) {
             //
             if (menu_jeu->clic_home((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-                menu_jeu->setStart(false);
+//                menu_jeu->setStart(false);
                 // J'efface les vaisseaux
 //                menu_jeu->setRunning(false);
                 resetGrille();
             }
-            if (menu_jeu->clic_btn_run((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-                std::cout << "RUN: A l'attacque" << std::endl;
-                if (!menu_jeu->isRunning()) {
-                    menu_jeu->setRunning(true);
-                }
-            }
+//            if (menu_jeu->clic_btn_run((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
+//                std::cout << "RUN: A l'attacque" << std::endl;
+//                if (!menu_jeu->isRunning()) {
+//                    menu_jeu->setRunning(true);
+//                }
+//            }
         } else {
-            if (menu_jeu->clic_btn_help((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-                std::cout << "HELP" << std::endl;
-                menu_jeu->setHelp(true);
-                menu_jeu->setRunning(false);
-                menu_jeu->setOver(false);
-                menu_jeu->setStart(false);
-            }
+//            if (menu_jeu->clic_btn_help((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
+//                std::cout << "HELP" << std::endl;
+//                menu_jeu->setHelp(true);
+//                menu_jeu->setRunning(false);
+//                menu_jeu->setOver(false);
+//                menu_jeu->setStart(false);
+//            }
             if (menu_jeu->clic_btn_play((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "PLAY" << std::endl;
                 menu_jeu->setStart(true);
                 menu_jeu->setOver(false);
-                menu_jeu->setHelp(false);
+//                menu_jeu->setHelp(false);
             }
             /*
              je quitte la partie en appuyant sur la touche 'p' ou
              en cliquant sur le bouton 'quitter' de la page de depard
              */
-            if (menu_jeu->clic_btn_exit((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-                std::cout << "BYE" << std::endl;
-                exit(0);
-            }
+//            if (menu_jeu->clic_btn_exit((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
+//                std::cout << "BYE" << std::endl;
+//                exit(0);
+//            }
         }
     }
 }
@@ -55,7 +55,7 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
                 if (menu_jeu->getBank() >= menu_jeu->getPrixV()) {
                     int case_index;
                     case_index = grille->mettre_vaissaux((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y) / -CURSOR_Y_F);
-                    std::cout << "======> " << case_index << std::endl;
+//                    std::cout << "======> " << case_index << std::endl;
                     if (case_index != -1) {
                         vaisseaux->push_back(new Vaisseaux(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
                         menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV());
@@ -67,7 +67,7 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
                 if (menu_jeu->getBank() >= menu_jeu->getPrixV1()) {
                     int case_index;
                     case_index = grille->mettre_vaissaux((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y) / -CURSOR_Y_F);
-                    std::cout << "======> " << case_index << std::endl;
+//                    std::cout << "======> " << case_index << std::endl;
                     if (case_index != -1) {
                         vaisseaux->push_back(new Vaisseaux1(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
                         menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV1());
@@ -79,15 +79,35 @@ void MyControlEngine::KeyboardReleaseCallback(unsigned char key, int x, int y) {
                 if (menu_jeu->getBank() >= menu_jeu->getPrixV2()) {
                     int case_index;
                     case_index = grille->mettre_vaissaux((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y) / -CURSOR_Y_F);
-                    std::cout << "======> " << case_index << std::endl;
+//                    std::cout << "======> " << case_index << std::endl;
                     if (case_index != -1) {
                         vaisseaux->push_back(new Vaisseaux2(grille->getCase(case_index).getX(), grille->getCase(case_index).getY()));
                         menu_jeu->setBank(menu_jeu->getBank() - menu_jeu->getPrixV2());
                     } else {}
                 }
             }
-            
         }
+        
+        if (key == 'v') {
+            std::cout << "LANCER VAGUE" << std::endl;
+            if (!menu_jeu->isRunning()) {
+                menu_jeu->setRunning(true);
+            }
+        }
+        
+        if (key == 'h') {
+            std::cout << "Page HOME (HELP)" << std::endl;
+            resetGrille();
+        }
+        
+        if (key == 'r') {
+            std::cout << "RE-JOUER" << std::endl;
+            if (menu_jeu->isOver()) {
+                std::cout << "retour a la grille" << std::endl;
+                resetGrille();
+            }
+        }
+        
     }
 }
 
@@ -112,5 +132,5 @@ void MyControlEngine::resetGrille() {
     menu_jeu->setRunning(false);
     menu_jeu->setOver(false);
     menu_jeu->setStart(false);
-    menu_jeu->setHelp(false);
+//    menu_jeu->setHelp(false);
 }

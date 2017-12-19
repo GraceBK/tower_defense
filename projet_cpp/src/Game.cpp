@@ -11,6 +11,7 @@
 Game::Game() {
     score = SCORE;
     bank = BANK;
+    level = LEVEL;
 }
 
 
@@ -25,10 +26,10 @@ void Game::drawGameOver() {
 
 // Affichage du menu principal
 void Game::draw() {
-    draw_btn_help();
+//    draw_btn_help();
     draw_btn_play();
 //    draw_btn_load();
-    draw_btn_exit();
+//    draw_btn_exit();
 }
 
 void Game::draw_btn_help() {
@@ -38,9 +39,9 @@ void Game::draw_btn_help() {
 }
 
 void Game::draw_btn_play() {
-    float x(-0.5f), y(0.05f), w(0.45f), h(0.45f), r(0.992), g(0.761), b(0.204);
+    float x(-0.25f), y(-0.7f), w(0.45f), h(0.30f), r(0.992), g(0.761), b(0.204);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[5]{'P', 'L', 'A', 'Y', '\0'}, x + 0.1, y + 0.2, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(new char[5]{'P', 'L', 'A', 'Y', '\0'}, x + 0.15, y + 0.15, WHITE, WHITE, WHITE);
 }
 
 void Game::draw_btn_load() {
@@ -56,8 +57,8 @@ void Game::draw_btn_exit() {
 }
 
 // Gestion des clics
-bool Game::clic_btn_help(float clic_x, float clic_y) {
-    float x(-0.5f), y(-0.5f), w(0.45f), h(0.45f);
+bool Game::clic_btn_play(float clic_x, float clic_y) {
+    float x(-0.25f), y(-0.7f), w(0.45f), h(0.30f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
     } else {
@@ -65,8 +66,8 @@ bool Game::clic_btn_help(float clic_x, float clic_y) {
     }
 }
 
-bool Game::clic_btn_play(float clic_x, float clic_y) {
-    float x(-0.5f), y(0.05f), w(0.45f), h(0.45f);
+bool Game::clic_btn_help(float clic_x, float clic_y) {
+    float x(-0.5f), y(-0.5f), w(0.45f), h(0.45f);
     if (clic_x >= x && clic_x <= x + w && clic_y >= y && clic_y <= y + h) {
         return true;
     } else {
@@ -117,11 +118,21 @@ void Game::setVie(float v) { vie += v; }
 
 
 int Game::getBank() { return bank; }
+int Game::getScore() { return score; }
+int Game::getLevel() { return level; }
 int Game::getPrixV() { return prix_v; }
 int Game::getPrixV1() { return prix_v1; }
 int Game::getPrixV2() { return prix_v2; }
 
 void Game::setBank(int p) { bank = p; }
+void Game::setScore() {
+    int bank_tmp = BANK;
+    if (bank > bank_tmp && bank != BANK) {
+        bank_tmp = bank;
+        score = bank_tmp / 100;
+    }
+}
+void Game::setLevel(int l){ level = l; }
 void Game::setPrixV(int p) { prix_v = p; }
 void Game::setPrixV1(int p) { prix_v1 = p; }
 void Game::setPrixV2(int p) { prix_v2 = p; }
@@ -181,12 +192,12 @@ bool Game::clic_home(float clic_x, float clic_y) {
     }
 }
 
-void Game::show_stats(int s, int l) {
+void Game::show_stats() {
     float x(-0.95+0.75f), y(0.93-0.23f);
     char ar[5], sc[5], le[3];
     sprintf(ar, "%d", bank);
-    sprintf(sc, "%d", s);
-    sprintf(le, "%d", l);
+    sprintf(sc, "%d", score);
+    sprintf(le, "%d", level);
     GraphicPrimitives::drawText2D(ar, x, y + 0.25f, WHITE, WHITE, WHITE);
     GraphicPrimitives::drawText2D(sc, x, y + 0.15f, WHITE, WHITE, WHITE);
     GraphicPrimitives::drawText2D(le, x + 0.55f, y + 0.15f, WHITE, WHITE, WHITE);
