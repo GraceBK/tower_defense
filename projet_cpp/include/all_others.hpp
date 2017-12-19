@@ -22,7 +22,7 @@
 #define VITESSE_FREIN 0.001
 
 #define WIDTH 800
-#define HEIGHT 800
+#define HEIGHT 600
 #define SIZE_GRILLE 12
 #define DECALAGE 0.105
 
@@ -31,9 +31,9 @@
 
 // position du curseur
 #define CURSOR_X 400
-#define CURSOR_Y 400
+#define CURSOR_Y 300
 #define CURSOR_X_F 400.f
-#define CURSOR_Y_F 400.f
+#define CURSOR_Y_F 300.f
 // variable vaisseaux
 #define V_SIZE 0.1
 #define PRIX_V 50
@@ -48,7 +48,7 @@
 // vie, argent, score
 //#define VIE 100
 #define SCORE 0
-#define BANK 10000
+#define BANK 500
 #define LEVEL 1
 
 #define MGE_IV_X 0.12
@@ -80,6 +80,7 @@
 #define R_A2 0.69
 #define G_A2 0.098
 #define B_A2 0.11
+
 
 float distance(float x1, float y1, float x2, float y2);
 float variation(float v1, float v2);

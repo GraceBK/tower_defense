@@ -3,12 +3,7 @@
 void MyGraphicEngine::Draw() {
 //    if (menu_jeu->isOver() == false) {
     GraphicPrimitives::drawFillRect2D(-1, -1, 2.0f, 2.0f, BLACK, 0.098, BLACK);  //fond ecrant
-        
-    /*if (menu_jeu->inHelp() == true) {
-        // Si je suis dans HELP
-        menu_jeu->draw_home();
-        
-    } else */
+    
     if (menu_jeu->isStart() == true) {
         if (menu_jeu->getVie() < 0.5f) {
             // Si je suis dans PLAY
@@ -66,7 +61,6 @@ void MyGraphicEngine::interface_vaisseaux() {
 
 void MyGraphicEngine::interface_boutons() {
     menu_jeu->draw_home();
-    menu_jeu->draw_btn_run();
 }
 
 void MyGraphicEngine::interface_player() {

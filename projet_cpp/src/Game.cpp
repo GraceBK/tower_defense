@@ -26,10 +26,19 @@ void Game::drawGameOver() {
 
 // Affichage du menu principal
 void Game::draw() {
-//    draw_btn_help();
+    float x(-0.5f);
+    GraphicPrimitives::drawText2D(welcome, x + 0.15f, 0.9f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(aide1, -0.7f, 0.7f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(aide2, -0.68f, 0.6f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(t, x - 0.05f, 0.5f, R_V, G_V, B_V);
+    GraphicPrimitives::drawText2D(t1, x - 0.05f, 0.4f, R_V1, G_V1, B_V1);
+    GraphicPrimitives::drawText2D(t2, x - 0.05f, 0.3f, R_V2, G_V2, B_V2);
+    GraphicPrimitives::drawText2D(lancer_vague, x - 0.1f, 0.2f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(replay, x - 0.1f, 0.1f, WHITE, WHITE, WHITE);
+    
+    GraphicPrimitives::drawText2D(lancer_partie, x - 0.1f, 0.0f, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(motivation, x + 0.12f, -0.3f, WHITE, WHITE, WHITE);
     draw_btn_play();
-//    draw_btn_load();
-//    draw_btn_exit();
 }
 
 void Game::draw_btn_help() {
@@ -41,7 +50,7 @@ void Game::draw_btn_help() {
 void Game::draw_btn_play() {
     float x(-0.25f), y(-0.7f), w(0.45f), h(0.30f), r(0.992), g(0.761), b(0.204);
     GraphicPrimitives::drawFillRect2D(x, y, w, h, r, g, b);
-    GraphicPrimitives::drawText2D(new char[5]{'P', 'L', 'A', 'Y', '\0'}, x + 0.15, y + 0.15, WHITE, WHITE, WHITE);
+    GraphicPrimitives::drawText2D(new char[5]{'P', 'L', 'A', 'Y', '\0'}, x + 0.17, y + 0.13, WHITE, WHITE, WHITE);
 }
 
 void Game::draw_btn_load() {

@@ -63,28 +63,17 @@ int Damier::mettre_vaissaux(float x, float y) {
             v_id = indice;
         }
     }
-    std::cout << "case -> " << v_id << std::endl;
-    std::cout << "Q1 " << grille[v_id].isEmpty() << std::endl;
+//    std::cout << "case -> " << v_id << std::endl;
+//    std::cout << "Q1 " << grille[v_id].isEmpty() << std::endl;
     if (grille[v_id].isEmpty()) {
         grille[v_id].setEmpty(false);
-        std::cout << "Q2 " << grille[v_id].isEmpty() << std::endl;
+//        std::cout << "Q2 " << grille[v_id].isEmpty() << std::endl;
         return v_id;
     } else {
-        std::cout << "Q12 " << grille[v_id].isEmpty() << std::endl;
+//        std::cout << "Q12 " << grille[v_id].isEmpty() << std::endl;
         return -1;
     }
 }
-
-//void Damier::action() {
-////    for (int i(0); i < height; i++) {
-////        for (int j(0); i < width; j++) {
-//            Vaisseaux temp = vaisseaux[4];
-////            if (temp != NULL) {
-//    temp.tirer();
-////            }
-////        }
-////    }
-//}
 
 void Damier::reset_grille() {
     for (int i(0); i < width*height; i++) {
@@ -99,7 +88,6 @@ void Damier::save() {
     outfile.open("save_partie.txt");
     
     // On ecrit les datas dans le fichier "save_partie.txt"
-//    outfile << "COUCOU tu dois enregistrer une grille (°_°)" << std::endl;
     outfile << "COUCOU tu dois enregistrer une grille (°_°)" << std::endl;
     
     // On ferme le fichier

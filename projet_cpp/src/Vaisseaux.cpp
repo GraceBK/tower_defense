@@ -26,7 +26,6 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
     /** armement des missiles dans le canon */
     if ((temps2 - temps1) > frequence * TICK) {
         missiles.push_back(new Missile(posX, posY, vitesse, 1)); // j'arme
-//        std::cout << "1) #####> " << missiles.size() << std::endl;
         gettimeofday(&t1, NULL);    // recuperer ici la valeur de l'horloge juste avant la boucle
         temps1 = t1.tv_sec * TICK + t1.tv_usec;
     }
@@ -34,7 +33,6 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
     for (int i(0); i < missiles.size(); i++) {
         if (missiles[i]->posX >= 0.8f) {
             missiles.erase(missiles.begin());
-//            std::cout << "2) ##### " << missiles.size() << std::endl;
         }
     }
     /** missile entre en collision avec un asteroise */
@@ -42,19 +40,15 @@ void Vaisseaux::tirer(std::vector<Asteroids *> *asteroids) {
         for (int j(0); j < asteroids->size(); j++) {
             if (distance(missiles[i]->posX, missiles[i]->posY, (*asteroids)[j]->getX(), (*asteroids)[j]->getY()) < 0.05) {
                 missiles.erase(missiles.begin());
-//                std::cout << "3) ##### " << missiles.size() << std::endl;
                 if (type == 1) {
-                    // missile en T
                     (*asteroids)[j]->setVie(10);
                     (*asteroids)[j]->vitesse -= VITESSE_FREIN;
                     if ((*asteroids)[j]->vitesse <= 0) {
                         (*asteroids)[j]->vitesse = 0.005;
                     }
                 } else if (type == 2) {
-                    // missile en +
                     (*asteroids)[j]->setVie(100);
                 } else {
-                    std::cout << "n " << i << std::endl;
                     (*asteroids)[j]->setVie(50);
                 }
             }

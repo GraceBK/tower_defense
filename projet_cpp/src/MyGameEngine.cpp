@@ -108,11 +108,6 @@ void MyGameEngine::startAsteroids(int nombre_asteroids) {
         temps1 = t1.tv_sec * TICK + t1.tv_usec;
     }
     
-//    std::cout << "asto " << asteroids->size() << std::endl;
-//    if (asteroids->size() == 0) {
-//        menu_jeu->setRunning(false);
-//    }
-    
     /** Collision Vaisseaux avec Asteroides */
     for (int i(0); i < vaisseaux->size(); i++) {
         for (int j(0); j < asteroids->size(); j++) {

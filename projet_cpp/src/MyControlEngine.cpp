@@ -2,48 +2,17 @@
 
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-//        if (menu_jeu->inHelp()) {
-//            if (menu_jeu->clic_home((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-//                menu_jeu->setHelp(false);
-//                // Je retourne au MENU
-//            }
-//        }
         if (menu_jeu->isStart()) {
             //
             if (menu_jeu->clic_home((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-//                menu_jeu->setStart(false);
-                // J'efface les vaisseaux
-//                menu_jeu->setRunning(false);
                 resetGrille();
             }
-//            if (menu_jeu->clic_btn_run((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-//                std::cout << "RUN: A l'attacque" << std::endl;
-//                if (!menu_jeu->isRunning()) {
-//                    menu_jeu->setRunning(true);
-//                }
-//            }
         } else {
-//            if (menu_jeu->clic_btn_help((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-//                std::cout << "HELP" << std::endl;
-//                menu_jeu->setHelp(true);
-//                menu_jeu->setRunning(false);
-//                menu_jeu->setOver(false);
-//                menu_jeu->setStart(false);
-//            }
             if (menu_jeu->clic_btn_play((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
                 std::cout << "PLAY" << std::endl;
                 menu_jeu->setStart(true);
                 menu_jeu->setOver(false);
-//                menu_jeu->setHelp(false);
             }
-            /*
-             je quitte la partie en appuyant sur la touche 'p' ou
-             en cliquant sur le bouton 'quitter' de la page de depard
-             */
-//            if (menu_jeu->clic_btn_exit((x-CURSOR_X) / CURSOR_X_F, (y-CURSOR_Y)/ -CURSOR_Y_F)) {
-//                std::cout << "BYE" << std::endl;
-//                exit(0);
-//            }
         }
     }
 }
@@ -128,9 +97,8 @@ void MyControlEngine::resetGrille() {
     for (int i = (int) asteroids->size() - 1; i >= 0; i--) {
         asteroids->erase(asteroids->begin() + i);
     }
-    menu_jeu->setBank(100);
+    menu_jeu->setBank(BANK);
     menu_jeu->setRunning(false);
     menu_jeu->setOver(false);
     menu_jeu->setStart(false);
-//    menu_jeu->setHelp(false);
 }
