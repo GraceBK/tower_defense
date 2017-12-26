@@ -26,9 +26,9 @@ class Game {
     int score;
     
     bool in_help;
-    bool start;
-    bool finished;  // fin d'une partie
-    bool is_running; // si une vague est lancee
+    bool start = false;
+    bool finished = false;  // fin d'une partie
+    bool is_running = false; // si une vague est lancee
     
     char * nX1 = new char[8]{'1', ' ', 'L', 'i', 'g', 'n', 's', '\0'};
     char * nXn = new char[6]{'M', 'u', 'l', 't', 'i', '\0'};
