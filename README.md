@@ -8,12 +8,25 @@ Développé sous macOS High Sierra l'IDE utilisé est Xcode (Version 9.2)
 
 	Xcode (dernière version de préférence)
 
-où encore dans un terminal aller dans le répertoire contenant les sources (projet_cpp/projet_cpp)
+ou encore dans un terminal aller dans le répertoire contenant les sources (projet_cpp/projet_cpp)
 et utiliser les commande suivante:
 
 	make veryclean
 	make mac
 	make run
+
+## Touche à utiliser pour une partie
+toujours positionner le curseur dans une des 6 premieres colonne de la grille et utiliser les touches
+a, z, et e pour positionner un Vaisseau selon le type voulu
+
+	- Bouton PLAY : affiche l'interface de jeu.
+    - Bouton ACCUEIL : affiche la page d'accueil.
+    - touche a : place un vaisseau ordinaire dans la case ou se trouve le curseur de la souri.
+    - touche z : place un vaisseau ralentisseur dans la case ou se trouve le curseur de la souri.
+    - touche e : place un vaisseau exterminateur dans la case ou se trouve le curseur de la souri.
+    - touche v : lance un vague d'astéroïdes.
+    - touche h : pour afficher le menu d'aide (page Accueil).
+    - touche p : pour quitter le jeu.
 
 ## Hiérarchie et contenu du repertoire projet_cpp (résultat de la commande tree projet_cpp)
 
